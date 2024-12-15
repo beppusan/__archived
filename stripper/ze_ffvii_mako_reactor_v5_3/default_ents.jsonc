@@ -1,6 +1,6 @@
 {
-	// Standardize message format
 	"modify": [
+		// Standardize message format
 		{
 			"match": {
 				"io": [
@@ -752,8 +752,8 @@
 			}
 		}
 	],
-	// Remove unnecessary entities for level system
 	"filter": [
+		// Remove unnecessary entities for level system
 		{
 			"targetname": "[PR#]dificultad_inicio_*"
 		},
