@@ -750,6 +750,102 @@
           "overrideparam": "** CURRENT DIFFICULTY ** >> EXTREME II << **"
         }
       }
+    },
+    // Add extra stages & standardize format
+    {
+      "match": {
+        "classname": "logic_relay",
+        "targetname": "[PR#]Global_St1"
+      },
+      "replace": {
+        "targetname": "Global_NORMAL"
+      }
+    },
+    {
+      "match": {
+        "classname": "logic_relay",
+        "targetname": "[PR#]Global_St2"
+      },
+      "replace": {
+        "targetname": "Global_HARD"
+      }
+    },
+    {
+      "match": {
+        "classname": "logic_relay",
+        "targetname": "[PR#]Global_St3"
+      },
+      "replace": {
+        "targetname": "Global_EXTREME"
+      }
+    },
+    {
+      "match": {
+        "classname": "logic_relay",
+        "targetname": "[PR#]Global_St4"
+      },
+      "replace": {
+        "targetname": "Global_EX2"
+      }
+    },
+    {
+      "match": {
+        "classname": "logic_case",
+        "targetname": "[PR#]Global_Case"
+      },
+      "delete": {
+        "case11": "PressedForward",
+        "case12": "PressedMoveLeft",
+        "case13": "PressedBack",
+        "case14": "PressedMoveRight",
+        "case15": "PressedAttack",
+        "case16": "PressedAttack2",
+        "io": [
+          {
+            "targetname": "[PR#]Global_St*"
+          }
+        ]
+      },
+      "insert": {
+        "case06": "6",
+        "io": [
+          {
+            "outputname": "OnCase01",
+            "targetname": "Global_NORMAL",
+            "inputname": "Trigger",
+            "delay": 0.5,
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnCase02",
+            "targetname": "Global_HARD",
+            "inputname": "Trigger",
+            "delay": 0.5,
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnCase03",
+            "targetname": "Global_EXTREME",
+            "inputname": "Trigger",
+            "delay": 0.5,
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnCase04",
+            "targetname": "Global_EX2",
+            "inputname": "Trigger",
+            "delay": 0.5,
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnCase06",
+            "targetname": "Global_EX2_HEALULTIMA",
+            "inputname": "Trigger",
+            "delay": 0.5,
+            "timestofire": 1
+          }
+        ]
+      }
     }
   ],
   "filter": [
@@ -759,6 +855,463 @@
     },
     {
       "targetname": "[PR#]dificultad_i_t_*"
+    }
+  ],
+  "add": [
+    // |=================================|
+    // | EXTREME II (HEAL & ULTIMA ONLY) | 
+    // |=================================|
+    {
+      "classname": "logic_relay",
+      "targetname": "Global_EX2_HEALULTIMA",
+      "origin": "-3779 -3540.98 1220.78",
+      "io": [
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]consola",
+          "inputname": "Command",
+          "overrideparam": "** COLOR DUE TO EXTREME DIFFICULTY **",
+          "delay": 15,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]consola",
+          "inputname": "Command",
+          "overrideparam": "** CURRENT DIFFICULTY ** >> EXTREME II << **",
+          "delay": 10,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]consola",
+          "inputname": "Command",
+          "overrideparam": "** HEAL AND ULTIMA ONLY AVAILABLE AT THE CORE **",
+          "delay": 12,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]materias_3",
+          "inputname": "Trigger",
+          "delay": 11,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cowbell",
+          "inputname": "ForceSpawn",
+          "delay": 5,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "teleportarCORE",
+          "inputname": "ForceSpawn",
+          "delay": 5,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]teleportarSx12",
+          "inputname": "ForceSpawn",
+          "delay": 10,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]nubes_secundarias",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]nubes_secundarias",
+          "inputname": "Color",
+          "overrideparam": "0 255 255",
+          "delay": 0.01,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]especial",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cloud",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]dificil_props",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]medio_breakable",
+          "inputname": "Break",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]trigger_n_d",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]trigger_n_d3",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]trigger_n_m",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]trigger_n_e",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]calcVidaM",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]sephiroth_fx",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]path_1",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]Tonemap_Normal",
+          "inputname": "Disable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]puerta_asc1",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]puerta_dasc1",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]bahamut_2",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]bahamut_3",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]bahamut_fulgor",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cancion_1_extra",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cancion_1_extra2",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cancion_3_extra_2",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]calcVidaM",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]zm_prop3",
+          "inputname": "Toggle",
+          "delay": 3,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]puerta_admin",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]AvisoExt2",
+          "inputname": "Toggle",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]baha_tr",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]bahamut_entry",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]dificil_trigger",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme_props",
+          "inputname": "EnableCollision",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]huida2_d",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]huida_e",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]Tonemap_EX2",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]tele_Ex",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]trigger_extreme",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]trigger_extreme2_ex",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger2",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger3",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger5",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger6",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger7",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger8",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger9",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger10",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger11",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger12",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger13",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_triggers",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_particula1",
+          "inputname": "Start",
+          "delay": 5,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_particula3",
+          "inputname": "Enable",
+          "delay": 5,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extremedanyo",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extremedanyo",
+          "inputname": "Trigger",
+          "delay": 2,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]canciones_extreme2_1",
+          "inputname": "PickRandom",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]canciones_extreme2_2",
+          "inputname": "PickRandom",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cancion_3",
+          "inputname": "SetSoundEventName",
+          "overrideparam": "ffvii_e2_selfvsself",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cancion_3_extra",
+          "inputname": "SetSoundEventName",
+          "overrideparam": "ffvii_tempest",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]ss_only",
+          "inputname": "SetSoundEventName",
+          "overrideparam": "vulcan",
+          "timestofire": 1
+        }
+      ]
+    },
+    // Spawn Heal material at the core
+    {
+      "classname": "env_entity_maker",
+      "targetname": "teleportarCORE",
+      "entitytemplate": "[PR#]magia_cura_template",
+      "origin": "-7632 9058 -4696"
+    },
+    // Add adminroom buttons
+    {
+      "classname": "func_button",
+      "spawnflags": "1024",
+      "speed": "5",
+      "wait": "2",
+      "origin": "-4366 -3956 1136",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/unnamed_1657.vmdl",
+      "io": [
+        {
+          "outputname": "OnPressed",
+          "targetname": "[PR#]Global_Level_Counter",
+          "inputname": "SetValue",
+          "overrideparam": "6"
+        }
+      ]
     }
   ]
 }

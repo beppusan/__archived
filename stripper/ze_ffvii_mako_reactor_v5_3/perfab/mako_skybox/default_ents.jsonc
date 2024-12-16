@@ -1,0 +1,13 @@
+{
+    "modify": [
+        {
+            "match": {
+                "classname": "math_counter",
+                "targetname": "[PR#]Global_Level_Counter"
+            },
+            "replace": {
+                "max": "16"
+            }
+        }
+    ]
+}
