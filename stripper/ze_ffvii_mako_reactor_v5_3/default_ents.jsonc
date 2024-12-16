@@ -870,7 +870,7 @@
           "outputname": "OnTrigger",
           "targetname": "[PR#]consola",
           "inputname": "Command",
-          "overrideparam": "** COLOR DUE TO EXTREME DIFFICULTY **",
+          "overrideparam": "say ** COLOR DUE TO EXTREME DIFFICULTY **",
           "delay": 15,
           "timestofire": 1
         },
@@ -878,7 +878,7 @@
           "outputname": "OnTrigger",
           "targetname": "[PR#]consola",
           "inputname": "Command",
-          "overrideparam": "** CURRENT DIFFICULTY ** >> EXTREME II << **",
+          "overrideparam": "say ** CURRENT DIFFICULTY ** >> EXTREME II << **",
           "delay": 10,
           "timestofire": 1
         },
@@ -886,8 +886,8 @@
           "outputname": "OnTrigger",
           "targetname": "[PR#]consola",
           "inputname": "Command",
-          "overrideparam": "** HEAL AND ULTIMA ONLY AVAILABLE AT THE CORE **",
-          "delay": 12,
+          "overrideparam": "say ** HEAL AND ULTIMA ONLY AVAILABLE AT THE CORE **",
+          "delay": 12.5,
           "timestofire": 1
         },
         {
@@ -907,8 +907,8 @@
         {
           "outputname": "OnTrigger",
           "targetname": "teleportarCORE",
-          "inputname": "ForceSpawn",
-          "delay": 5,
+          "inputname": "FireUser1",
+          "delay": 10,
           "timestofire": 1
         },
         {
@@ -1289,12 +1289,49 @@
         }
       ]
     },
-    // Spawn Heal material at the core
+    // Spawn HEAL at the core & remove other materials except ULTIMA
     {
       "classname": "env_entity_maker",
       "targetname": "teleportarCORE",
       "entitytemplate": "[PR#]magia_cura_template",
-      "origin": "-7632 9058 -4696"
+      "origin": "-7632 9058 -4696",
+      "io": [
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]magia_fuego",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]magia_gravedad",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]magia_hielo",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]magia_tierra",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]magia_viento",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]magia_rayo",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "ForceSpawn"
+        }
+      ]
     },
     // Add adminroom buttons
     {
