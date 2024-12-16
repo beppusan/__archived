@@ -808,6 +808,7 @@
       },
       "insert": {
         "case06": "6",
+        "case07": "7",
         "io": [
           {
             "outputname": "OnCase01",
@@ -843,6 +844,71 @@
             "inputname": "Trigger",
             "delay": 0.5,
             "timestofire": 1
+          },
+          {
+            "outputname": "OnCase07",
+            "targetname": "Global_EX2_SPECIALLASER",
+            "inputname": "Trigger",
+            "delay": 0.5,
+            "timestofire": 1
+          }
+        ]
+      }
+    },
+    // Add I/O handling to the branch for normal or special lasers
+    {
+      "match": {
+        "classname": "logic_relay",
+        "targetname": "[PR#]extreme2_trigger13"
+      },
+      "delete": {
+        "io": [
+          {
+            "targetname": "[PR#]cortes2"
+          }
+        ]
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnTrigger",
+            "targetname": "SPECIAL_LASER_BRANCH",
+            "inputname": "Test"
+          }
+        ]
+      }
+    },
+    // Remove the other type of laser when firing
+    {
+      "match": {
+        "classname": "logic_timer",
+        "targetname": "[PR#]cortes2"
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnTimer",
+            "targetname": "case5*",
+            "inputname": "Kill",
+            "delay": 0.01
+          },
+          {
+            "outputname": "OnTimer",
+            "targetname": "case6*",
+            "inputname": "Kill",
+            "delay": 0.01
+          },
+          {
+            "outputname": "OnTimer",
+            "targetname": "case7*",
+            "inputname": "Kill",
+            "delay": 0.01
+          },
+          {
+            "outputname": "OnTimer",
+            "targetname": "case8*",
+            "inputname": "Kill",
+            "delay": 0.01
           }
         ]
       }
@@ -1333,6 +1399,604 @@
         }
       ]
     },
+    // |=============================|
+    // | EXTREME II (SPECIAL LASERS) |
+    // |=============================|
+    {
+      "classname": "logic_relay",
+      "targetname": "Global_EX2_SPECIALLASER",
+      "origin": "-3779 -3540.98 1220.78",
+      "io": [
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]consola",
+          "inputname": "Command",
+          "overrideparam": "say ** COLOR DUE TO EXTREME DIFFICULTY **",
+          "delay": 15,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]consola",
+          "inputname": "Command",
+          "overrideparam": "say ** CURRENT DIFFICULTY ** >> EXTREME II SPECIAL << **",
+          "delay": 10,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]consola",
+          "inputname": "Command",
+          "overrideparam": "say ** SPECIAL LASERS AT THE END **",
+          "delay": 11,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]materias_3",
+          "inputname": "Trigger",
+          "delay": 12,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cowbell",
+          "inputname": "ForceSpawn",
+          "delay": 5,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]teleportarS1",
+          "inputname": "ForceSpawn",
+          "delay": 5,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]teleportarS2",
+          "inputname": "ForceSpawn",
+          "delay": 5,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]teleportarSx12",
+          "inputname": "ForceSpawn",
+          "delay": 12,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]nubes_secundarias",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "SPECIAL_LASER_BRANCH",
+          "inputname": "SetValue",
+          "overrideparam": "1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]especial",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cloud",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]dificil_props",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]medio_breakable",
+          "inputname": "Break",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]trigger_n_d",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]trigger_n_d3",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]trigger_n_m",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]trigger_n_e",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]calcVidaM",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]sephiroth_fx",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]path_1",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]Tonemap_Normal",
+          "inputname": "Disable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]puerta_asc1",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]puerta_dasc1",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]bahamut_2",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]bahamut_3",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]bahamut_fulgor",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cancion_1_extra",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cancion_1_extra2",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cancion_3_extra_2",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]calcVidaM",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]zm_prop3",
+          "inputname": "Toggle",
+          "delay": 3,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]puerta_admin",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]AvisoExt2",
+          "inputname": "Toggle",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]baha_tr",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]bahamut_entry",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]dificil_trigger",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme_props",
+          "inputname": "EnableCollision",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]huida2_d",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]huida_e",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]Tonemap_EX2",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]tele_Ex",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]trigger_extreme",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]trigger_extreme2_ex",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger2",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger3",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger5",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger6",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger7",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger8",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger9",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger10",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger11",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger12",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger13",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_triggers",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_particula1",
+          "inputname": "Start",
+          "delay": 5,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_particula3",
+          "inputname": "Enable",
+          "delay": 5,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extremedanyo",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extremedanyo",
+          "inputname": "Trigger",
+          "delay": 2,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]canciones_extreme2_1",
+          "inputname": "PickRandom",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]canciones_extreme2_2",
+          "inputname": "PickRandom",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cancion_3",
+          "inputname": "SetSoundEventName",
+          "overrideparam": "ffvii_e2_selfvsself",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cancion_3_extra",
+          "inputname": "SetSoundEventName",
+          "overrideparam": "ffvii_tempest",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]ss_only",
+          "inputname": "SetSoundEventName",
+          "overrideparam": "vulcan",
+          "timestofire": 1
+        }
+      ]
+    },
+    // SPECIAL LASERS AT THE END
+    {
+      "classname": "logic_branch",
+      "targetname": "SPECIAL_LASER_BRANCH",
+      "initialvalue": "0",
+      "origin": "-10769 4025.72 37",
+      "io": [
+        {
+          "outputname": "OnTrue",
+          "targetname": "cortes2sp",
+          "inputname": "Enable"
+        },
+        {
+          "outputname": "OnTrue",
+          "targetname": "[PR#]cortes2",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnFalse",
+          "targetname": "[PR#]cortes2",
+          "inputname": "Enable"
+        },
+        {
+          "outputname": "OnFalse",
+          "targetname": "cortes2sp",
+          "inputname": "Kill"
+        }
+      ]
+    },
+    {
+      "classname": "logic_timer",
+      "targetname": "cortes2sp",
+      "startdisabled": "1",
+      "userandomtime": "1",
+      "lowerrandombound": "1",
+      "upperrandombound": "2",
+      "origin": "-10769 4025.72 37",
+      "io": [
+        {
+          "outputname": "OnTimer",
+          "targetname": "[PR#]espad",
+          "inputname": "PlaySound"
+        },
+        {
+          "outputname": "OnTimer",
+          "targetname": "corterandsp",
+          "inputname": "PickRandom"
+        },
+        {
+          "outputname": "OnTimer",
+          "targetname": "[PR#]case1*",
+          "inputname": "Kill",
+          "delay": 0.01
+        },
+        {
+          "outputname": "OnTimer",
+          "targetname": "[PR#]case2*",
+          "inputname": "Kill",
+          "delay": 0.01
+        },
+        {
+          "outputname": "OnTimer",
+          "targetname": "[PR#]case3*",
+          "inputname": "Kill",
+          "delay": 0.01
+        },
+        {
+          "outputname": "OnTimer",
+          "targetname": "[PR#]case4*",
+          "inputname": "Kill",
+          "delay": 0.01
+        }
+      ]
+    },
+    {
+      "classname": "logic_case",
+      "targetname": "corterandsp",
+      "origin": "-10802 4051.22 29",
+      "io": [
+        {
+          "outputname": "OnCase01",
+          "targetname": "[PR#]SETH_LASERFIX_TEMP_HIGH",
+          "inputname": "ForceSpawn"
+        },
+        {
+          "outputname": "OnCase02",
+          "targetname": "[PR#]SETH_LASERFIX_TEMP_LOW",
+          "inputname": "ForceSpawn"
+        },
+        {
+          "outputname": "OnCase03",
+          "targetname": "[PR#]SETH_LASERFIX_TEMP_LEFT",
+          "inputname": "ForceSpawn"
+        },
+        {
+          "outputname": "OnCase04",
+          "targetname": "[PR#]SETH_LASERFIX_TEMP_RIGHT",
+          "inputname": "ForceSpawn"
+        },
+        {
+          "outputname": "OnCase05",
+          "targetname": "[PR#]SETH_LASERFIX_TEMP_HIGH",
+          "inputname": "ForceSpawn"
+        },
+        {
+          "outputname": "OnCase05",
+          "targetname": "[PR#]SETH_LASERFIX_TEMP_LOW",
+          "inputname": "ForceSpawn"
+        },
+        {
+          "outputname": "OnCase06",
+          "targetname": "[PR#]SETH_LASERFIX_TEMP_HIGH",
+          "inputname": "ForceSpawn"
+        },
+        {
+          "outputname": "OnCase06",
+          "targetname": "[PR#]SETH_LASERFIX_TEMP_LEFT",
+          "inputname": "ForceSpawn"
+        },
+        {
+          "outputname": "OnCase07",
+          "targetname": "[PR#]SETH_LASERFIX_TEMP_HIGH",
+          "inputname": "ForceSpawn"
+        },
+        {
+          "outputname": "OnCase07",
+          "targetname": "[PR#]SETH_LASERFIX_TEMP_RIGHT",
+          "inputname": "ForceSpawn"
+        },
+        {
+          "outputname": "OnCase08",
+          "targetname": "[PR#]SETH_LASERFIX_TEMP_LOW",
+          "inputname": "ForceSpawn"
+        },
+        {
+          "outputname": "OnCase08",
+          "targetname": "[PR#]SETH_LASERFIX_TEMP_LEFT",
+          "inputname": "ForceSpawn"
+        },
+        {
+          "outputname": "OnCase09",
+          "targetname": "[PR#]SETH_LASERFIX_TEMP_LOW",
+          "inputname": "ForceSpawn"
+        },
+        {
+          "outputname": "OnCase09",
+          "targetname": "[PR#]SETH_LASERFIX_TEMP_RIGHT",
+          "inputname": "ForceSpawn"
+        },
+        {
+          "outputname": "OnCase10",
+          "targetname": "[PR#]SETH_LASERFIX_TEMP_LEFT",
+          "inputname": "ForceSpawn"
+        },
+        {
+          "outputname": "OnCase10",
+          "targetname": "[PR#]SETH_LASERFIX_TEMP_RIGHT",
+          "inputname": "ForceSpawn"
+        }
+      ]
+    },
     // Add adminroom buttons
     {
       "classname": "func_button",
@@ -1347,6 +2011,22 @@
           "targetname": "[PR#]Global_Level_Counter",
           "inputname": "SetValue",
           "overrideparam": "6"
+        }
+      ]
+    },
+    {
+      "classname": "func_button",
+      "spawnflags": "1024",
+      "speed": "5",
+      "wait": "2",
+      "origin": "-4366 -3732 1136",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/unnamed_1657.vmdl",
+      "io": [
+        {
+          "outputname": "OnPressed",
+          "targetname": "[PR#]Global_Level_Counter",
+          "inputname": "SetValue",
+          "overrideparam": "7"
         }
       ]
     }

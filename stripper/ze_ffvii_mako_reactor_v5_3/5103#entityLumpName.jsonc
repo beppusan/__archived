@@ -1,0 +1,287 @@
+{
+  "modify": [
+    // Increase laser range
+    {
+      "match": {
+        "classname": "func_movelinear"
+      },
+      "replace": {
+        "movedistance": "3500"
+      }
+    }
+  ],
+  "add": [
+    // SPECIAL LASER (floating down first)
+    {
+      "classname": "func_movelinear",
+      "targetname": "case5ex&0000",
+      "movedistance": "3500",
+      "speed": "1120",
+      "spawnflags": "8",
+      "origin": "89.458984 -144.575684 55.816132",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/sephiroth_c3_1607.vmdl",
+      "io": [
+        {
+          "outputname": "OnFullyOpen",
+          "targetname": "!self",
+          "inputname": "Kill"
+        }
+      ]
+    },
+    {
+      "classname": "func_door",
+      "targetname": "case5ex_door&0000",
+      "movedir": "90 0 0",
+      "spawnflags": "4108",
+      "lip": "-45",
+      "parentname": "case5ex&0000",
+      "origin": "-72.541016 -141.585684 52.816132",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case1ex_1595.vmdl",
+      "io": [
+        {
+          "outputname": "OnFullyOpen",
+          "targetname": "!self",
+          "inputname": "Close"
+        },
+        {
+          "outputname": "OnFullyClosed",
+          "targetname": "!self",
+          "inputname": "Open"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Open",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "255 0 0",
+          "delay": 0
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "255 128 0",
+          "delay": 0.1
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "255 255 0",
+          "delay": 0.2
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "128 255 0",
+          "delay": 0.3
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "0 255 0",
+          "delay": 0.4
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "0 255 128",
+          "delay": 0.5
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "0 255 255",
+          "delay": 0.6
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "0 128 255",
+          "delay": 0.7
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "0 0 255",
+          "delay": 0.8
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "128 0 255",
+          "delay": 0.9
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "255 0 255",
+          "delay": 1.0
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "255 0 128",
+          "delay": 1.1
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]case1ex_light&0000",
+          "inputname": "SetColor",
+          "overrideparam": "255 0 0",
+          "delay": 0
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]case1ex_light&0000",
+          "inputname": "SetColor",
+          "overrideparam": "255 128 0",
+          "delay": 0.1
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]case1ex_light&0000",
+          "inputname": "SetColor",
+          "overrideparam": "255 255 0",
+          "delay": 0.2
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]case1ex_light&0000",
+          "inputname": "SetColor",
+          "overrideparam": "128 255 0",
+          "delay": 0.3
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]case1ex_light&0000",
+          "inputname": "SetColor",
+          "overrideparam": "0 255 0",
+          "delay": 0.4
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]case1ex_light&0000",
+          "inputname": "SetColor",
+          "overrideparam": "0 255 128",
+          "delay": 0.5
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]case1ex_light&0000",
+          "inputname": "SetColor",
+          "overrideparam": "0 255 255",
+          "delay": 0.6
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]case1ex_light&0000",
+          "inputname": "SetColor",
+          "overrideparam": "0 128 255",
+          "delay": 0.7
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]case1ex_light&0000",
+          "inputname": "SetColor",
+          "overrideparam": "0 0 255",
+          "delay": 0.8
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]case1ex_light&0000",
+          "inputname": "SetColor",
+          "overrideparam": "128 0 255",
+          "delay": 0.9
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]case1ex_light&0000",
+          "inputname": "SetColor",
+          "overrideparam": "255 0 255",
+          "delay": 1.0
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]case1ex_light&0000",
+          "inputname": "SetColor",
+          "overrideparam": "255 0 128",
+          "delay": 1.1
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "FireUser1",
+          "delay": 1.2
+        }
+      ]
+    },
+    {
+      "classname": "trigger_hurt",
+      "targetname": "case5ex_hurt&0000",
+      "damage": "999999",
+      "filtername": "[PR#]humanos",
+      "spawnflags": "1",
+      "parentname": "case5ex_door&0000",
+      "origin": "109.958984 -143.375684 53.816132",
+      "io": [
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "[PR#]bahamutend1",
+          "inputname": "RemoveHealth",
+          "overrideparam": "150"
+        },
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "!self",
+          "inputname": "Disable"
+        },
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "!self",
+          "inputname": "Enable",
+          "delay": 0.01
+        }
+      ]
+    },
+    {
+      "classname": "logic_relay",
+      "targetname": "SPECIAL_LASER_R_DOWN&0000",
+      "origin": "25.063477 0.000000 0.000000",
+      "io": [
+        {
+          "outputname": "OnSpawn",
+          "targetname": "!self",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnSpawn",
+          "targetname": "case5ex&0000",
+          "inputname": "Open",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnSpawn",
+          "targetname": "case5ex_door&0000",
+          "inputname": "FireUser1",
+          "timestofire": 1
+        }
+      ]
+    }
+  ]
+}
