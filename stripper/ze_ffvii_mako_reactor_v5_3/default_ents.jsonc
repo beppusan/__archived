@@ -1302,7 +1302,7 @@
       "spawnflags": "1024",
       "speed": "5",
       "wait": "2",
-      "origin": "-4366 -3956 1136",
+      "origin": "-4366 -3700 1136",
       "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/unnamed_1657.vmdl",
       "io": [
         {
