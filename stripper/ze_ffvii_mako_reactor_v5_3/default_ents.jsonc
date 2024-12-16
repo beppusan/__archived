@@ -1,764 +1,764 @@
 {
-	"modify": [
-		// Standardize message format
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say ** We have reached the core  ...**"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** We have reached the core... **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say ** ... Cloud is planting the bomb ** "
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** ...Cloud is planting the bomb **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say ** Bomb has been planted  **  Run **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** Bomb has been planted ** Run **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say **Keep shooting ! We dont know what it can do **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** Keep shooting! ** We do not know what it can do **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say **Elevator is leaving in 10s**"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** Elevator is leaving in 10 seconds **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say **  10 SECONDS LEFT **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** 10 SECONDS LEFT **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say **  20 SECONDS LEFT **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** 20 SECONDS LEFT **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say **  30 SECONDS LEFT **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** 30 SECONDS LEFT **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say **  40 SECONDS LEFT **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** 40 SECONDS LEFT **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say **  50 SECONDS LEFT **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** 50 SECONDS LEFT **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say **  60 SECONDS LEFT **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** 60 SECONDS LEFT **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say **  70 SECONDS LEFT **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** 70 SECONDS LEFT **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say **  80 SECONDS LEFT **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** 80 SECONDS LEFT **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say **  90 SECONDS LEFT **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** 90 SECONDS LEFT **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say **  100 SECONDS LEFT **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** 100 SECONDS LEFT **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say **  110 SECONDS LEFT **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** 110 SECONDS LEFT **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say **  120 SECONDS LEFT **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** 120 SECONDS LEFT **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say **Door is open**"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** Door is open **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say **Door is opening in 5**"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** Door is opening in 5 **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say ** DOOR OPENS IN 35 S **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** DOOR OPENS IN 35S **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say **Congratulations ! You beat NORMAL mode ! The challenge begins at HARD mode ! **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** Congratulations! You beat NORMAL mode! ** The challenge begins at HARD mode! **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say ** You did it ! You won at the HARDEST difficult ** Time to EXTREME mode ** Good luck ! ** "
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** You did it! You won at the HARDEST difficulty ** Time to EXTREME mode ** Good luck! **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say ** Dont stop shooting ! Dont let him attack !"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** Do not stop shooting! Do not let him attack! **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say ** TIP: GRENADES MAKE A LOT OF DAMAGE ** USE IT **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** TIP: GRENADES MAKE A LOT OF DAMAGE ** USE THEM **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say ** Bahamut is going to cast Mega Flare !! Shoot !! **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** Bahamut is going to cast Mega Flare!! Shoot!! **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say ** Bahamut is in attack position ** Keep firing !! **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** Bahamut is in attack position ** Keep firing!! **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say **Bahamut has been defeated ! ** Go go! Run upstairs ! **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** Bahamut has been defeated! ** Go go! Run upstairs! **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say ** BAHAMUT IS GOING TO EXTERMINATE ALL US ! DONT STOP SHOOTING **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** BAHAMUT IS GOING TO EXTERMINATE ALL US! ** DO NOT STOP SHOOTING! **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say ** The monster is going to attack ! **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** The monster is going to attack! **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say ** YOU DID IT! YOU WON EXTREME ! YOU OWN! ** "
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** YOU DID IT! YOU WON EXTREME! YOU OWN! **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say **Nice done! You interrumped Sephiroth s attack**"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** Nice job! You interrupted Sephiroth attack **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say ** YOU ARE THE MASTERS OF MAKO REACTOR! ** "
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** YOU ARE THE MASTERS OF MAKO REACTOR! **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say **Door opening in 10 seconds**"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** Door is opening in 10 seconds **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say ** DOOR OPENS IN 5 s **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** DOOR OPENS IN 5S **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say **Superior door opening in 30 seconds**"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** Superior door is opening in 30 seconds **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say ** BAHAMUT HAS HEALED 300 HIT POINTS**"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** BAHAMUT HAS HEALED 300 HIT POINTS **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say ** ULTIMA CAST WILL SUCCED IN 10 SECONDS **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** ULTIMA CAST WILL SUCCEED IN 10 SECONDS **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say ** Bahamut is in attack position ** Keep firing !! **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** Bahamut is in attack position ** Keep firing!! **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say ** Bahamut is going to cast Mega Flare !! Shoot !! **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** Bahamut is going to cast Mega Flare!! Shoot!! **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say ** ALL COWBELLS HAVE BEEN BROKEN ** BAHAMUT WILL NOT USE MATERIAS **  "
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** ALL COWBELLS HAVE BEEN BROKEN ** BAHAMUT WILL NOT USE MATERIAS **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say ** 1 COWBELLS LEFT!!! **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** 1 COWBELL LEFT!!! **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say **Its dead ** Go go! Run upstairs ! **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** It is dead ** Go go! Run upstairs! **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say **CURRENT DIFFICULTY ** >> EXTREME II << **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** CURRENT DIFFICULTY ** >> EXTREME II << **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say ** THIS IS A ZM ROUND ** FIND A PLACE AND RESIST ** DONT FOLLOW THE ZE PATH **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** THIS IS A ZM ROUND ** FIND A PLACE AND RESIST ** DO NOT FOLLOW THE ZE PATH **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say ** MAP COMPLETED  ** ZM ROUNDS **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** MAP COMPLETED ** ZM ROUND **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say **CURRENT DIFFICULTY ** >> HARD << **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** CURRENT DIFFICULTY ** >> HARD << **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say **CURRENT DIFFICULTY ** >> EXTREME << **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** CURRENT DIFFICULTY ** >> EXTREME << **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say **CURRENT DIFFICULTY ** >> NORMAL << **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** CURRENT DIFFICULTY ** >> NORMAL << **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "say ** Server settings initialized **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "say ** Server settings are initialized **"
-				}
-			}
-		},
-		{
-			"match": {
-				"io": [
-					{
-						"overrideparam": "**CURRENT DIFFICULTY ** >> EXTREME II << **"
-					}
-				]
-			},
-			"replace": {
-				"io":
-				{
-					"overrideparam": "** CURRENT DIFFICULTY ** >> EXTREME II << **"
-				}
-			}
-		}
-	],
-	"filter": [
-		// Remove unnecessary entities for level system
-		{
-			"targetname": "[PR#]dificultad_inicio_*"
-		},
-		{
-			"targetname": "[PR#]dificultad_i_t_*"
-		}
-	]
+  "modify": [
+    // Standardize message format
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say ** We have reached the core  ...**"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** We have reached the core... **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say ** ... Cloud is planting the bomb ** "
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** ...Cloud is planting the bomb **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say ** Bomb has been planted  **  Run **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** Bomb has been planted ** Run **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say **Keep shooting ! We dont know what it can do **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** Keep shooting! ** We do not know what it can do **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say **Elevator is leaving in 10s**"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** Elevator is leaving in 10 seconds **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say **  10 SECONDS LEFT **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** 10 SECONDS LEFT **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say **  20 SECONDS LEFT **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** 20 SECONDS LEFT **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say **  30 SECONDS LEFT **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** 30 SECONDS LEFT **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say **  40 SECONDS LEFT **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** 40 SECONDS LEFT **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say **  50 SECONDS LEFT **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** 50 SECONDS LEFT **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say **  60 SECONDS LEFT **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** 60 SECONDS LEFT **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say **  70 SECONDS LEFT **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** 70 SECONDS LEFT **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say **  80 SECONDS LEFT **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** 80 SECONDS LEFT **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say **  90 SECONDS LEFT **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** 90 SECONDS LEFT **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say **  100 SECONDS LEFT **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** 100 SECONDS LEFT **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say **  110 SECONDS LEFT **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** 110 SECONDS LEFT **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say **  120 SECONDS LEFT **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** 120 SECONDS LEFT **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say **Door is open**"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** Door is open **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say **Door is opening in 5**"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** Door is opening in 5 **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say ** DOOR OPENS IN 35 S **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** DOOR OPENS IN 35S **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say **Congratulations ! You beat NORMAL mode ! The challenge begins at HARD mode ! **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** Congratulations! You beat NORMAL mode! ** The challenge begins at HARD mode! **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say ** You did it ! You won at the HARDEST difficult ** Time to EXTREME mode ** Good luck ! ** "
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** You did it! You won at the HARDEST difficulty ** Time to EXTREME mode ** Good luck! **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say ** Dont stop shooting ! Dont let him attack !"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** Do not stop shooting! Do not let him attack! **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say ** TIP: GRENADES MAKE A LOT OF DAMAGE ** USE IT **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** TIP: GRENADES MAKE A LOT OF DAMAGE ** USE THEM **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say ** Bahamut is going to cast Mega Flare !! Shoot !! **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** Bahamut is going to cast Mega Flare!! Shoot!! **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say ** Bahamut is in attack position ** Keep firing !! **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** Bahamut is in attack position ** Keep firing!! **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say **Bahamut has been defeated ! ** Go go! Run upstairs ! **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** Bahamut has been defeated! ** Go go! Run upstairs! **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say ** BAHAMUT IS GOING TO EXTERMINATE ALL US ! DONT STOP SHOOTING **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** BAHAMUT IS GOING TO EXTERMINATE ALL US! ** DO NOT STOP SHOOTING! **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say ** The monster is going to attack ! **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** The monster is going to attack! **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say ** YOU DID IT! YOU WON EXTREME ! YOU OWN! ** "
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** YOU DID IT! YOU WON EXTREME! YOU OWN! **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say **Nice done! You interrumped Sephiroth s attack**"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** Nice job! You interrupted Sephiroth attack **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say ** YOU ARE THE MASTERS OF MAKO REACTOR! ** "
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** YOU ARE THE MASTERS OF MAKO REACTOR! **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say **Door opening in 10 seconds**"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** Door is opening in 10 seconds **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say ** DOOR OPENS IN 5 s **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** DOOR OPENS IN 5S **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say **Superior door opening in 30 seconds**"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** Superior door is opening in 30 seconds **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say ** BAHAMUT HAS HEALED 300 HIT POINTS**"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** BAHAMUT HAS HEALED 300 HIT POINTS **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say ** ULTIMA CAST WILL SUCCED IN 10 SECONDS **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** ULTIMA CAST WILL SUCCEED IN 10 SECONDS **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say ** Bahamut is in attack position ** Keep firing !! **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** Bahamut is in attack position ** Keep firing!! **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say ** Bahamut is going to cast Mega Flare !! Shoot !! **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** Bahamut is going to cast Mega Flare!! Shoot!! **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say ** ALL COWBELLS HAVE BEEN BROKEN ** BAHAMUT WILL NOT USE MATERIAS **  "
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** ALL COWBELLS HAVE BEEN BROKEN ** BAHAMUT WILL NOT USE MATERIAS **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say ** 1 COWBELLS LEFT!!! **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** 1 COWBELL LEFT!!! **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say **Its dead ** Go go! Run upstairs ! **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** It is dead ** Go go! Run upstairs! **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say **CURRENT DIFFICULTY ** >> EXTREME II << **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** CURRENT DIFFICULTY ** >> EXTREME II << **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say ** THIS IS A ZM ROUND ** FIND A PLACE AND RESIST ** DONT FOLLOW THE ZE PATH **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** THIS IS A ZM ROUND ** FIND A PLACE AND RESIST ** DO NOT FOLLOW THE ZE PATH **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say ** MAP COMPLETED  ** ZM ROUNDS **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** MAP COMPLETED ** ZM ROUND **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say **CURRENT DIFFICULTY ** >> HARD << **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** CURRENT DIFFICULTY ** >> HARD << **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say **CURRENT DIFFICULTY ** >> EXTREME << **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** CURRENT DIFFICULTY ** >> EXTREME << **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say **CURRENT DIFFICULTY ** >> NORMAL << **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** CURRENT DIFFICULTY ** >> NORMAL << **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "say ** Server settings initialized **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** Server settings are initialized **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "overrideparam": "**CURRENT DIFFICULTY ** >> EXTREME II << **"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "** CURRENT DIFFICULTY ** >> EXTREME II << **"
+        }
+      }
+    }
+  ],
+  "filter": [
+    // Remove unnecessary entities for level system
+    {
+      "targetname": "[PR#]dificultad_inicio_*"
+    },
+    {
+      "targetname": "[PR#]dificultad_i_t_*"
+    }
+  ]
 }
