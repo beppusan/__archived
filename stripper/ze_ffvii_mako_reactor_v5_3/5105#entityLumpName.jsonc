@@ -140,90 +140,6 @@
         },
         {
           "outputname": "OnUser1",
-          "targetname": "[PR#]case2ex_light&0000",
-          "inputname": "SetColor",
-          "overrideparam": "255 0 0",
-          "delay": 0
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "[PR#]case2ex_light&0000",
-          "inputname": "SetColor",
-          "overrideparam": "255 128 0",
-          "delay": 0.1
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "[PR#]case2ex_light&0000",
-          "inputname": "SetColor",
-          "overrideparam": "255 255 0",
-          "delay": 0.2
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "[PR#]case2ex_light&0000",
-          "inputname": "SetColor",
-          "overrideparam": "128 255 0",
-          "delay": 0.3
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "[PR#]case2ex_light&0000",
-          "inputname": "SetColor",
-          "overrideparam": "0 255 0",
-          "delay": 0.4
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "[PR#]case2ex_light&0000",
-          "inputname": "SetColor",
-          "overrideparam": "0 255 128",
-          "delay": 0.5
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "[PR#]case2ex_light&0000",
-          "inputname": "SetColor",
-          "overrideparam": "0 255 255",
-          "delay": 0.6
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "[PR#]case2ex_light&0000",
-          "inputname": "SetColor",
-          "overrideparam": "0 128 255",
-          "delay": 0.7
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "[PR#]case2ex_light&0000",
-          "inputname": "SetColor",
-          "overrideparam": "0 0 255",
-          "delay": 0.8
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "[PR#]case2ex_light&0000",
-          "inputname": "SetColor",
-          "overrideparam": "128 0 255",
-          "delay": 0.9
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "[PR#]case2ex_light&0000",
-          "inputname": "SetColor",
-          "overrideparam": "255 0 255",
-          "delay": 1.0
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "[PR#]case2ex_light&0000",
-          "inputname": "SetColor",
-          "overrideparam": "255 0 128",
-          "delay": 1.1
-        },
-        {
-          "outputname": "OnUser1",
           "targetname": "!self",
           "inputname": "FireUser1",
           "delay": 1.2
@@ -238,6 +154,7 @@
       "spawnflags": "1",
       "parentname": "case6ex_door&0000",
       "origin": "109.958984 -165.707227 13.816132",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case1ex_hurt_1591.vmdl",
       "io": [
         {
           "outputname": "OnStartTouch",
