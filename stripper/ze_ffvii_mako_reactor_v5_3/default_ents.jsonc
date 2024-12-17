@@ -973,7 +973,7 @@
         ]
       }
     },
-    //
+    // Update I/O to support advanced gravity effects
     {
       "match": {
         "io": [
@@ -989,7 +989,7 @@
         }
       }
     },
-    //
+    // Add I/O to enforce laser dodging at ending
     {
       "match": {
         "classname": "logic_relay",
@@ -2620,7 +2620,7 @@
         }
       ]
     },
-    //
+    // Buff Bahamut's fire, electro, and gravity attacks (+ bosshug damage)
     {
       "classname": "logic_relay",
       "targetname": "advbaha_trigger",
@@ -2679,7 +2679,7 @@
       "origin": "-7884 8984 -4664",
       "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/xb_gravedad_1641.vmdl"
     },
-    // 
+    // Add push triggers at the ending
     {
       "classname": "trigger_push",
       "targetname": "bahamutend_wind1",
