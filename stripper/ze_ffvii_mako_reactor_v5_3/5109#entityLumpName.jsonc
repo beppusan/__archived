@@ -35,7 +35,7 @@
       "maxspeed": "200",
       "parentname": "case8ex&0000",
       "origin": "-72.541016 -219.035879 52.816132",
-      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case4x_1645.vmdl",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case1ex_1595.vmdl",
       "io": [
         {
           "outputname": "OnUser1",
@@ -227,7 +227,6 @@
       "spawnflags": "1",
       "parentname": "case8ex_door&0000",
       "origin": "109.958984 -220.825879 53.816132",
-      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case4ex_1647.vmdl",
       "io": [
         {
           "outputname": "OnStartTouch",
