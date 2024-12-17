@@ -238,6 +238,7 @@
       "spawnflags": "1",
       "parentname": "case5ex_door&0000",
       "origin": "109.958984 -143.375684 53.816132",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case1ex_hurt_1591.vmdl",
       "io": [
         {
           "outputname": "OnStartTouch",
