@@ -1,0 +1,29 @@
+{
+  "modify": [
+    // Remove bahamutend killer as advanced bahamut is immune to ULTIMA 
+    {
+      "match": {
+        "classname": "logic_relay"
+      },
+      "delete": {
+        "io": [
+          {
+            "targetname": "[PR#]bahamutend",
+            "inputname": "Break"
+          }
+        ]
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnTrigger>[PR#]bahamutend>Break>>20>1",
+            "timestofire": 1
+          }
+        ]
+      }
+    }
+  ]
+}
