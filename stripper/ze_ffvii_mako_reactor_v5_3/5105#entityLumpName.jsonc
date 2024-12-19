@@ -194,8 +194,43 @@
         },
         {
           "outputname": "OnSpawn",
+          "targetname": "RAINBOW_LASER_CHECKER&0000",
+          "inputname": "FireUser1",
+          "timestofire": 1
+        }
+      ]
+    },
+    // Check if rainbow color effect is disabled
+    {
+      "classname": "logic_case",
+      "targetname": "RAINBOW_LASER_CHECKER&0000",
+      "origin": "25.063477 0.000000 0.000000",
+      "case01": "0",
+      "case02": "1",
+      "io": [
+        {
+          "outputname": "OnCase01",
           "targetname": "case6ex_door&0000",
           "inputname": "FireUser1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnCase02",
+          "targetname": "case6ex_door&0000",
+          "inputname": "Open",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "NO_RAINBOW_EFFECT",
+          "inputname": "GetValue",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Kill",
+          "delay": 0.1,
           "timestofire": 1
         }
       ]

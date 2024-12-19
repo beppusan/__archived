@@ -827,6 +827,7 @@
         "case06": "6",
         "case07": "7",
         "case08": "8",
+        "case09": "9",
         "io": [
           {
             "outputname": "OnCase01",
@@ -873,6 +874,13 @@
           {
             "outputname": "OnCase08",
             "targetname": "Global_EX3_HELLZ",
+            "inputname": "Trigger",
+            "delay": 0.5,
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnCase09",
+            "targetname": "Global_EX3_RMZS",
             "inputname": "Trigger",
             "delay": 0.5,
             "timestofire": 1
@@ -1027,6 +1035,13 @@
             "inputname": "AddOutput",
             "overrideparam": "OnStartTouch>sephiex3_sp2>Trigger>>1>-1",
             "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnStartTouch>[PR#]crrr>ForceSpawn>>4.5>-1",
+            "timestofire": 1
           }
         ]
       }
@@ -1127,6 +1142,273 @@
             "targetname": "!self",
             "inputname": "AddOutput",
             "overrideparam": "OnTrigger>bahamutend_wind1>Enable>>5>-1"
+          }
+        ]
+      }
+    },
+    // Add I/O to spawn rotating lasers located at the bridge
+    {
+      "match": {
+        "classname": "func_button",
+        "hammeruniqueid": "1519"
+      },
+      "replace": {
+        "targetname": "Door10sBridgeButton"
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnPressed>bridge2_rot>FireUser1>>0>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnPressed>NO_RAINBOW_EFFECT>SetValue>1>0>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnPressed>[PR#]consola>Command>say ** Bridge rotating in 30 seconds **>10>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnPressed>cortes3>Enable>>12.2>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnPressed>bridge2_rot>FireUser2>>40>1",
+            "timestofire": 1
+          }
+        ]
+      }
+    },
+    // Allow to spawn defending paths during the boss fight
+    {
+      "match": {
+        "classname": "logic_relay",
+        "targetname": "[PR#]bahamut_entry"
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnTrigger>bahamut_zmprops>Enable>>0>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnTrigger>bahamut_zmprops>EnableCollision>>0>1",
+            "timestofire": 1
+          }
+        ]
+      }
+    },
+    {
+      "match": {
+        "classname": "math_counter",
+        "targetname": "[PR#]bahamut_vida"
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnHitMin>bahamut_zmprops>Disable>>0>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnHitMin>bahamut_zmprops>DisableCollision>>0>1",
+            "timestofire": 1
+          }
+        ]
+      }
+    },
+    // Allow to change the music after boss dies
+    {
+      "match": {
+        "classname": "point_soundevent",
+        "targetname": "[PR#]cancion_1"
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnUser1",
+            "targetname": "[PR#]cancion_3",
+            "inputname": "StopSound"
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "StartSound"
+          }
+        ]
+      }
+    },
+    // Add I/O to trigger elevator trap
+    {
+      "match": {
+        "classname": "func_button",
+        "targetname": "[PR#]boton2"
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnPressed>[PR#]ascensort>FireUser1>>17>-1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnPressed>filter_activator_f>Enable>>17>-1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnPressed>filter_activator_f>Disable>>17.1>-1",
+            "timestofire": 1
+          }
+        ]
+      }
+    },
+    {
+      "match": {
+        "classname": "func_tracktrain",
+        "targetname": "[PR#]ascensort"
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnUser1",
+            "targetname": "expl_f",
+            "inputname": "Explode",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "explosion_mako_f",
+            "inputname": "Start",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "[PR#]explosion_mako_random",
+            "inputname": "PickRandom",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "[PR#]escal2",
+            "inputname": "Break",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "explosion_mako_f",
+            "inputname": "Stop",
+            "delay": 4,
+            "timestofire": 1
+          }
+        ]
+      }
+    },
+    // Fix the ladder immediately spawning once the trap triggers
+    {
+      "match": {
+        "classname": "func_breakable",
+        "targetname": "[PR#]escal2"
+      },
+      "delete": {
+        "io": [
+          {
+            "outputname": "OnBreak"
+          }
+        ]
+      }
+    },
+    {
+      "match": {
+        "classname": "trigger_once",
+        "hammeruniqueid": "1026"
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnStartTouch",
+            "targetname": "[PR#]escal",
+            "inputname": "Toggle",
+            "delay": 6
+          },
+          {
+            "outputname": "OnStartTouch",
+            "targetname": "[PR#]romper",
+            "inputname": "Break",
+            "delay": 6
+          }
+        ]
+      }
+    },
+    // Rotate the bridge again when bahamutend spawns
+    {
+      "match": {
+        "classname": "logic_relay",
+        "targetname": "[PR#]trigger_extreme2_ex"
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnTrigger>bridge2_rot>FireUser1>>0>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnTrigger>bridge2_rot>FireUser2>>4>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnTrigger>bahamutend_props>Enable>>0>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnTrigger>bahamutend_props>EnableCollision>>0>1",
+            "timestofire": 1
           }
         ]
       }
@@ -3425,6 +3707,1034 @@
         }
       ]
     },
+    // |============================|
+    // | EXTREME III (RMZS VERSION) | 
+    // |============================|
+    {
+      "classname": "logic_relay",
+      "targetname": "Global_EX3_RMZS",
+      "origin": "-3779 -3540.98 1220.78",
+      "io": [
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]consola",
+          "inputname": "Command",
+          "overrideparam": "say ** COLOR DUE TO EXTREME DIFFICULTY **",
+          "delay": 15,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]consola",
+          "inputname": "Command",
+          "overrideparam": "say ** CURRENT DIFFICULTY ** >> EXTREME III << **",
+          "delay": 10,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]consola",
+          "inputname": "Command",
+          "overrideparam": "say ** RMZS VERSION **",
+          "delay": 11,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]materias_3",
+          "inputname": "Trigger",
+          "delay": 12,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cowbell",
+          "inputname": "ForceSpawn",
+          "delay": 5,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]teleportarS1",
+          "inputname": "ForceSpawn",
+          "delay": 5,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]teleportarS2",
+          "inputname": "ForceSpawn",
+          "delay": 5,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]teleportarSx12",
+          "inputname": "ForceSpawn",
+          "delay": 12,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]teleportarSx12",
+          "inputname": "FireUser1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]nubes_secundarias",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]nubes_secundarias",
+          "inputname": "Color",
+          "overrideparam": "144 128 192",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "SPECIAL_LASER_BRANCH",
+          "inputname": "SetValue",
+          "overrideparam": "1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "Door10sBridgeButton",
+          "inputname": "FireUser1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]pieza_b2",
+          "inputname": "Break",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]calcVidaD",
+          "inputname": "AddOutput",
+          "overrideparam": "OnStartTouch>bahamut_vida>Add>35>0>-1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]bahamut_entry",
+          "inputname": "FireUser1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cast_",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]bahamut_vida",
+          "inputname": "FireUser1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]sephi2",
+          "inputname": "FireUser2",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]boton2",
+          "inputname": "FireUser1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]trigger_extreme2_ex",
+          "inputname": "FireUser1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]baha_vida",
+          "inputname": "AddOutput",
+          "overrideparam": "OnStartTouch>bahamutend>AddHealth>25>0>-1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger13",
+          "inputname": "FireUser1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "trigger_n_laser",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]especial",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cloud",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]dificil_props",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]medio_breakable",
+          "inputname": "Break",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]trigger_n_d",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]trigger_n_d3",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]trigger_n_m",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]trigger_n_e",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]calcVidaM",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]sephiroth_fx",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]path_1",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]Tonemap_Normal",
+          "inputname": "Disable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]puerta_asc1",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]puerta_dasc1",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]bahamut_2",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]bahamut_3",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]bahamut_fulgor",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cancion_1_extra",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cancion_1_extra2",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cancion_2",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cancion_3",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cancion_3_extra",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cancion_3_extra_2",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]ss_only",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]calcVidaM",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]zm_prop3",
+          "inputname": "Toggle",
+          "delay": 3,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]puerta_admin",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]AvisoExt2",
+          "inputname": "Toggle",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]baha_tr",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]bahamut_entry",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]dificil_trigger",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme_props",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme_props",
+          "inputname": "EnableCollision",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]huida2_d",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]huida_e",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]Tonemap_EX2",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]tele_Ex",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]trigger_extreme",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]trigger_extreme2_ex",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger2",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger3",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger5",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger6",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger7",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger8",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger9",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger10",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger11",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger12",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger13",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_triggers",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_particula1",
+          "inputname": "Start",
+          "delay": 5,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_particula3",
+          "inputname": "Enable",
+          "delay": 5,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extremedanyo",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extremedanyo",
+          "inputname": "Trigger",
+          "delay": 2,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cancion_1",
+          "inputname": "SetSoundEventName",
+          "overrideparam": "ffvii_e3rmzs_1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cancion_1",
+          "inputname": "KeyValue",
+          "overrideparam": "targetname cancion_e3rmzs",
+          "delay": 5,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]bahamut_vida",
+          "inputname": "AddOutput",
+          "overrideparam": "OnHitMin>cancion_e3rmzs>SetSoundEventName>ffvii_e3rmzs_2>0>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]bahamut_vida",
+          "inputname": "AddOutput",
+          "overrideparam": "OnHitMin>cancion_e3rmzs>FireUser1>>0.01>1",
+          "timestofire": 1
+        }
+      ]
+    },
+    // Spawn rotating lasers after the 10s door opens
+    {
+      "classname": "logic_timer",
+      "targetname": "cortes3",
+      "startdisabled": "1",
+      "userandomtime": "1",
+      "lowerrandombound": "1.5",
+      "upperrandombound": "2.5",
+      "origin": "-7793 3876.54 39.48",
+      "io": [
+        {
+          "outputname": "OnTimer",
+          "targetname": "[PR#]espad",
+          "inputname": "PlaySound"
+        },
+        {
+          "outputname": "OnTimer",
+          "targetname": "corterand3",
+          "inputname": "PickRandom"
+        },
+        {
+          "outputname": "OnTimer",
+          "targetname": "case3*",
+          "inputname": "Kill",
+          "delay": 0.01
+        },
+        {
+          "outputname": "OnTimer",
+          "targetname": "case7ex_hurt*",
+          "inputname": "SetDamage",
+          "overrideparam": "75",
+          "delay": 0.01
+        },
+        {
+          "outputname": "OnTimer",
+          "targetname": "case4*",
+          "inputname": "Kill",
+          "delay": 0.01
+        },
+        {
+          "outputname": "OnTimer",
+          "targetname": "case8ex_hurt*",
+          "inputname": "SetDamage",
+          "overrideparam": "75",
+          "delay": 0.01
+        },
+        {
+          "outputname": "OnTimer",
+          "targetname": "corterand3c",
+          "inputname": "Subtract",
+          "overrideparam": "1"
+        }
+      ]
+    },
+    {
+      "classname": "logic_case",
+      "targetname": "corterand3",
+      "origin": "-7793 3876.54 55.48",
+      "io": [
+        {
+          "outputname": "OnCase01",
+          "targetname": "[PR#]SETH_LASERFIX_TEMP_LEFT",
+          "inputname": "ForceSpawn"
+        },
+        {
+          "outputname": "OnCase02",
+          "targetname": "[PR#]SETH_LASERFIX_TEMP_RIGHT",
+          "inputname": "ForceSpawn"
+        }
+      ]
+    },
+    {
+      "classname": "math_counter",
+      "targetname": "corterand3c",
+      "max": "16",
+      "min": "0",
+      "startvalue": "3",
+      "origin": "-7793 3876.54 71.48",
+      "io": [
+        {
+          "outputname": "OnHitMin",
+          "targetname": "cortes3",
+          "inputname": "Disable"
+        },
+        {
+          "outputname": "OnHitMin",
+          "targetname": "NO_RAINBOW_EFFECT",
+          "inputname": "SetValue",
+          "overrideparam": "0",
+          "delay": 0.1
+        }
+      ]
+    },
+    // Add entity to keep laser color default for damage lasers
+    {
+      "classname": "math_counter",
+      "targetname": "NO_RAINBOW_EFFECT",
+      "max": "1",
+      "min": "0",
+      "startvalue": "0",
+      "io": [
+        {
+          "outputname": "OnGetValue",
+          "targetname": "RAINBOW_LASER_CHECKER*",
+          "inputname": "InValue"
+        }
+      ]
+    },
+    // Add entity to rotate the bridge
+    {
+      "classname": "func_rotating",
+      "targetname": "bridge2_rot",
+      "spawnflags": "66",
+      "maxspeed": "25",
+      "origin": "-9355 4864 50",
+      "io": [
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]puente_1",
+          "inputname": "SetParent",
+          "overrideparam": "bridge2_rot"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]puente_1",
+          "inputname": "KeyValue",
+          "overrideparam": "angles 0 90 0"
+        },
+        {
+          "outputname": "OnUser2",
+          "targetname": "!self",
+          "inputname": "Start"
+        },
+        {
+          "outputname": "OnUser2",
+          "targetname": "!self",
+          "inputname": "Stop",
+          "delay": 3.6
+        },
+        {
+          "outputname": "OnUser2",
+          "targetname": "[PR#]puente_1",
+          "inputname": "ClearParent",
+          "delay": 3.6
+        },
+        {
+          "outputname": "OnUser2",
+          "targetname": "[PR#]puente_1",
+          "inputname": "KeyValue",
+          "overrideparam": "angles 0 0 0",
+          "delay": 3.6
+        }
+      ]
+    },
+    // Add elevator trap triggered on the way back
+    {
+      "classname": "env_explosion",
+      "targetname": "expl_f",
+      "iradiusoverride": "500",
+      "imagnitude": "30",
+      "parentname": "[PR#]ascensort",
+      "origin": "-9808 8768 144"
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "explosion_mako_f",
+      "start_active": "0",
+      "effect_name": "particles/ffvii_go/explosiones_mako.vpcf",
+      "parentname": "[PR#]ascensort",
+      "origin": "-9808 8768 144"
+    },
+    // Add fall damage filter as failsafe
+    {
+      "classname": "filter_damage_type",
+      "targetname": "filtro_caer",
+      "damagetype": "32",
+      "nagated": "1",
+      "origin": "-9652 8384 132"
+    },
+    {
+      "classname": "trigger_multiple",
+      "targetname": "filter_activator_f",
+      "startdisabled": "1",
+      "spawnflags": "1",
+      "parentname": "[PR#]ascensort",
+      "origin": "-9808 8768 94",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/escal2_3761.vmdl",
+      "io": [
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "!activator",
+          "inputname": "SetDamageFilter",
+          "overrideparam": "filtro_caer"
+        },
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "!activator",
+          "inputname": "SetDamageFilter",
+          "overrideparam": "",
+          "delay": 4
+        }
+      ]
+    },
+    // Add custom props for extra stages
+    // @ Boss fight (purpose: forcing humans to defend)
+    {
+      "classname": "prop_dynamic",
+      "targetname": "bahamut_zmprops",
+      "spawnflags": "256",
+      "startdisabled": "1",
+      "solid": "6",
+      "disablerecieveshadows": "0",
+      "rendermode": "0",
+      "origin": "-8656 8240 -4784",
+      "model": "models/props/de_dust/du_crate_64x64.vmdl"
+    },
+    {
+      "classname": "prop_dynamic",
+      "targetname": "bahamut_zmprops",
+      "spawnflags": "256",
+      "startdisabled": "1",
+      "solid": "6",
+      "disablerecieveshadows": "0",
+      "rendermode": "0",
+      "origin": "-8512 8352 -4784",
+      "model": "models/props/de_dust/du_crate_64x64.vmdl"
+    },
+    {
+      "classname": "prop_dynamic",
+      "targetname": "bahamut_zmprops",
+      "spawnflags": "256",
+      "startdisabled": "1",
+      "solid": "6",
+      "disablerecieveshadows": "0",
+      "rendermode": "0",
+      "origin": "-8368 8464 -4784",
+      "model": "models/props/de_dust/du_crate_64x64.vmdl"
+    },
+    {
+      "classname": "prop_dynamic",
+      "targetname": "bahamut_zmprops",
+      "spawnflags": "256",
+      "startdisabled": "1",
+      "solid": "6",
+      "disablerecieveshadows": "0",
+      "rendermode": "0",
+      "origin": "-8512 8352 -4784",
+      "model": "models/props/de_dust/du_crate_64x64.vmdl"
+    },
+    {
+      "classname": "prop_dynamic",
+      "targetname": "bahamut_zmprops",
+      "spawnflags": "256",
+      "startdisabled": "1",
+      "solid": "6",
+      "disablerecieveshadows": "0",
+      "rendermode": "0",
+      "origin": "-8224 8576 -4784",
+      "model": "models/props/de_dust/du_crate_64x64.vmdl"
+    },
+    {
+      "classname": "prop_dynamic",
+      "targetname": "bahamut_zmprops",
+      "spawnflags": "256",
+      "startdisabled": "1",
+      "solid": "6",
+      "disablerecieveshadows": "0",
+      "rendermode": "0",
+      "origin": "-8080 8688 -4784",
+      "model": "models/props/de_dust/du_crate_64x64.vmdl"
+    },
+    {
+      "classname": "prop_dynamic",
+      "targetname": "bahamut_zmprops",
+      "spawnflags": "256",
+      "startdisabled": "1",
+      "solid": "6",
+      "disablerecieveshadows": "0",
+      "rendermode": "0",
+      "origin": "-7936 8800 -4784",
+      "model": "models/props/de_dust/du_crate_64x64.vmdl"
+    },
+    {
+      "classname": "prop_dynamic",
+      "targetname": "bahamut_zmprops",
+      "spawnflags": "256",
+      "startdisabled": "1",
+      "solid": "6",
+      "disablerecieveshadows": "0",
+      "rendermode": "0",
+      "origin": "-8704 10112 -4976",
+      "model": "models/props/de_dust/du_crate_64x64.vmdl"
+    },
+    {
+      "classname": "prop_dynamic",
+      "targetname": "bahamut_zmprops",
+      "spawnflags": "256",
+      "startdisabled": "1",
+      "solid": "6",
+      "disablerecieveshadows": "0",
+      "rendermode": "0",
+      "origin": "-8576 9984 -4944",
+      "model": "models/props/de_dust/du_crate_64x64.vmdl"
+    },
+    {
+      "classname": "prop_dynamic",
+      "targetname": "bahamut_zmprops",
+      "spawnflags": "256",
+      "startdisabled": "1",
+      "solid": "6",
+      "disablerecieveshadows": "0",
+      "rendermode": "0",
+      "origin": "-8448 9856 -4912",
+      "model": "models/props/de_dust/du_crate_64x64.vmdl"
+    },
+    {
+      "classname": "prop_dynamic",
+      "targetname": "bahamut_zmprops",
+      "spawnflags": "256",
+      "startdisabled": "1",
+      "solid": "6",
+      "disablerecieveshadows": "0",
+      "rendermode": "0",
+      "origin": "-8320 9728 -4880",
+      "model": "models/props/de_dust/du_crate_64x64.vmdl"
+    },
+    {
+      "classname": "prop_dynamic",
+      "targetname": "bahamut_zmprops",
+      "spawnflags": "256",
+      "startdisabled": "1",
+      "solid": "6",
+      "disablerecieveshadows": "0",
+      "rendermode": "0",
+      "origin": "-8192 9600 -4848",
+      "model": "models/props/de_dust/du_crate_64x64.vmdl"
+    },
+    {
+      "classname": "prop_dynamic",
+      "targetname": "bahamut_zmprops",
+      "spawnflags": "256",
+      "startdisabled": "1",
+      "solid": "6",
+      "disablerecieveshadows": "0",
+      "rendermode": "0",
+      "origin": "-8064 9472 -4816",
+      "model": "models/props/de_dust/du_crate_64x64.vmdl"
+    },
+    {
+      "classname": "prop_dynamic",
+      "targetname": "bahamut_zmprops",
+      "spawnflags": "256",
+      "startdisabled": "1",
+      "solid": "6",
+      "disablerecieveshadows": "0",
+      "rendermode": "0",
+      "origin": "-7936 9344 -4784",
+      "model": "models/props/de_dust/du_crate_64x64.vmdl"
+    },
+    // @ Ending
+    {
+      "classname": "prop_dynamic",
+      "targetname": "bahamutend_props",
+      "spawnflags": "256",
+      "startdisabled": "1",
+      "solid": "6",
+      "disablerecieveshadows": "0",
+      "rendermode": "0",
+      "origin": "-9810.2 3913.18 33.6467",
+      "angles": "0 270 0",
+      "model": "models/props/de_train/processor.vmdl"
+    },
+    {
+      "classname": "prop_dynamic",
+      "targetname": "bahamutend_props",
+      "spawnflags": "256",
+      "startdisabled": "1",
+      "solid": "6",
+      "disablerecieveshadows": "0",
+      "rendermode": "0",
+      "origin": "-10130.2 3913.18 33.6467",
+      "angles": "0 270 0",
+      "model": "models/props/de_train/processor.vmdl"
+    },
+    {
+      "classname": "prop_dynamic",
+      "targetname": "bahamutend_props",
+      "spawnflags": "256",
+      "startdisabled": "1",
+      "solid": "6",
+      "disablerecieveshadows": "0",
+      "rendermode": "0",
+      "origin": "-10450.2 3913.18 33.6467",
+      "angles": "0 270 0",
+      "model": "models/props/de_train/processor.vmdl"
+    },
+    {
+      "classname": "prop_dynamic",
+      "targetname": "bahamutend_props",
+      "spawnflags": "256",
+      "startdisabled": "1",
+      "solid": "6",
+      "disablerecieveshadows": "0",
+      "rendermode": "0",
+      "origin": "-10450.2 4089.18 33.6467",
+      "angles": "0 90 0",
+      "model": "models/props/de_train/processor.vmdl"
+    },
+    {
+      "classname": "prop_dynamic",
+      "targetname": "bahamutend_props",
+      "spawnflags": "256",
+      "startdisabled": "1",
+      "solid": "6",
+      "disablerecieveshadows": "0",
+      "rendermode": "0",
+      "origin": "-10130.2 4089.18 33.6467",
+      "angles": "0 90 0",
+      "model": "models/props/de_train/processor.vmdl"
+    },
+    {
+      "classname": "prop_dynamic",
+      "targetname": "bahamutend_props",
+      "spawnflags": "256",
+      "startdisabled": "1",
+      "solid": "6",
+      "disablerecieveshadows": "0",
+      "rendermode": "0",
+      "origin": "-9810.2 4089.18 33.6467",
+      "angles": "0 90 0",
+      "model": "models/props/de_train/processor.vmdl"
+    },
+    // Add laser triggered after entering the banker
+    {
+      "classname": "trigger_once",
+      "targetname": "trigger_n_laser",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "origin": "-10880 4410 128",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/trigger_n_e2_1492.vmdl",
+      "io": [
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "[PR#]seph_modelox1",
+          "inputname": "Enable"
+        },
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "[PR#]ss_seeyou",
+          "inputname": "PlaySound",
+          "delay": 1
+        },
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "[PR#]corte2",
+          "inputname": "PickRandom",
+          "delay": 1
+        },
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "[PR#]sephiroth_c",
+          "inputname": "StartForward",
+          "delay": 3.3
+        },
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "[PR#]espad",
+          "inputname": "PlaySound",
+          "delay": 3.3
+        },
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "[PR#]cortefatal",
+          "inputname": "Break",
+          "delay": 3.5
+        }
+      ]
+    },
     // Add adminroom buttons
     {
       "classname": "func_button",
@@ -3439,6 +4749,22 @@
           "targetname": "[PR#]Global_Level_Counter",
           "inputname": "SetValue",
           "overrideparam": "8"
+        }
+      ]
+    },
+    {
+      "classname": "func_button",
+      "origin": "-4366 -3476 1136",
+      "spawnflags": "1024",
+      "speed": "5",
+      "wait": "2",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/unnamed_1657.vmdl",
+      "io": [
+        {
+          "outputname": "OnPressed",
+          "targetname": "[PR#]Global_Level_Counter",
+          "inputname": "SetValue",
+          "overrideparam": "9"
         }
       ]
     },
