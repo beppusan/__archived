@@ -82,6 +82,21 @@
       "match": {
         "io": [
           {
+            "overrideparam": "say **Door is opening in 10 seconds**"
+          }
+        ]
+      },
+      "replace": {
+        "io":
+        {
+          "overrideparam": "say ** Door is opening in 10 seconds **"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
             "overrideparam": "say **Elevator is leaving in 10s**"
           }
         ]
@@ -922,7 +937,7 @@
         ]
       }
     },
-    // Add I/O handling to the branch for normal or special lasers
+    // Check if special lasers mode is enabled & Add optional input to enforce laser dodging at the ending
     {
       "match": {
         "classname": "logic_relay",
@@ -941,160 +956,7 @@
             "outputname": "OnTrigger",
             "targetname": "SPECIAL_LASER_BRANCH",
             "inputname": "Test"
-          }
-        ]
-      }
-    },
-    // Remove the other type of laser when firing
-    {
-      "match": {
-        "classname": "logic_timer",
-        "targetname": "[PR#]cortes2"
-      },
-      "insert": {
-        "io": [
-          {
-            "outputname": "OnTimer",
-            "targetname": "case5ex*",
-            "inputname": "Kill",
-            "delay": 0.01
           },
-          {
-            "outputname": "OnTimer",
-            "targetname": "case6ex*",
-            "inputname": "Kill",
-            "delay": 0.01
-          },
-          {
-            "outputname": "OnTimer",
-            "targetname": "case7ex*",
-            "inputname": "Kill",
-            "delay": 0.01
-          },
-          {
-            "outputname": "OnTimer",
-            "targetname": "case8ex*",
-            "inputname": "Kill",
-            "delay": 0.01
-          }
-        ]
-      }
-    },
-    // Add I/O handling for custom lasers
-    {
-      "match": {
-        "classname": "func_button",
-        "hammeruniqueid": "1521"
-      },
-      "replace": {
-        "targetname": "Door30sMainButton"
-      },
-      "insert": {
-        "io": [
-          {
-            "outputname": "OnUser1",
-            "targetname": "!self",
-            "inputname": "AddOutput",
-            "overrideparam": "OnPressed>sephiex3_doorway>Enable>>15>1",
-            "timestofire": 1
-          },
-          {
-            "outputname": "OnUser1",
-            "targetname": "!self",
-            "inputname": "AddOutput",
-            "overrideparam": "OnPressed>sephiex3_doorway>Disable>>40>1",
-            "timestofire": 1
-          },
-          {
-            "outputname": "OnUser1",
-            "targetname": "!self",
-            "inputname": "AddOutput",
-            "overrideparam": "OnPressed>sephiex3_doorway>FireUser1>>40>1",
-            "timestofire": 1
-          },
-          {
-            "outputname": "OnUser1",
-            "targetname": "!self",
-            "inputname": "AddOutput",
-            "overrideparam": "OnPressed>[PR#]puertaxx3>Open>>40>1",
-            "timestofire": 1
-          }
-        ]
-      }
-    },
-    {
-      "match": {
-        "classname": "trigger_once",
-        "targetname": "[PR#]sephi2"
-      },
-      "insert": {
-        "io": [
-          {
-            "outputname": "OnUser1",
-            "targetname": "!self",
-            "inputname": "AddOutput",
-            "overrideparam": "OnStartTouch>sephiex3_sp2>Trigger>>1>-1",
-            "timestofire": 1
-          },
-          {
-            "outputname": "OnUser2",
-            "targetname": "!self",
-            "inputname": "AddOutput",
-            "overrideparam": "OnStartTouch>[PR#]crrr>ForceSpawn>>4.5>-1",
-            "timestofire": 1
-          }
-        ]
-      }
-    },
-    // Update I/O to support advanced gravity effects
-    {
-      "match": {
-        "io": [
-          {
-            "targetname": "[PR#]xb_gravedad",
-            "inputname": "Disable"
-          }
-        ]
-      },
-      "replace": {
-        "io": {
-          "targetname": "[PR#]xb_gravedad*"
-        }
-      }
-    },
-    // Allow changing Bahamut's color to blue
-    {
-      "match": {
-        "classname": "trigger_once",
-        "targetname": "[PR#]trigger_n_d3_ex"
-      },
-      "insert": {
-        "io": [
-          {
-            "outputname": "OnUser1",
-            "targetname": "!self",
-            "inputname": "AddOutput",
-            "overrideparam": "OnStartTouch>[PR#]bahamut2>Color>0 0 255>0>-1",
-            "timestofire": 1
-          },
-          {
-            "outputname": "OnUser1",
-            "targetname": "!self",
-            "inputname": "AddOutput",
-            "overrideparam": "OnStartTouch>[PR#]bahamut2>Skin>0>0.1>-1",
-            "timestofire": 1
-          }
-        ]
-      }
-    },
-    // Add I/O to enforce laser dodging at ending
-    {
-      "match": {
-        "classname": "logic_relay",
-        "targetname": "[PR#]extreme2_trigger13"
-      },
-      "insert": {
-        "io": [
           {
             "outputname": "OnUser1",
             "targetname": "!self",
@@ -1146,7 +1008,83 @@
         ]
       }
     },
-    // Add I/O to spawn rotating lasers located at the bridge
+    // Remove the other type of laser when firing
+    {
+      "match": {
+        "classname": "logic_timer",
+        "targetname": "[PR#]cortes2"
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnTimer",
+            "targetname": "case5ex*",
+            "inputname": "Kill",
+            "delay": 0.01
+          },
+          {
+            "outputname": "OnTimer",
+            "targetname": "case6ex*",
+            "inputname": "Kill",
+            "delay": 0.01
+          },
+          {
+            "outputname": "OnTimer",
+            "targetname": "case7ex*",
+            "inputname": "Kill",
+            "delay": 0.01
+          },
+          {
+            "outputname": "OnTimer",
+            "targetname": "case8ex*",
+            "inputname": "Kill",
+            "delay": 0.01
+          }
+        ]
+      }
+    },
+    // Enable activation of custom lasers
+    {
+      "match": {
+        "classname": "func_button",
+        "hammeruniqueid": "1521"
+      },
+      "replace": {
+        "targetname": "Door30sMainButton"
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnPressed>sephiex3_doorway>Enable>>15>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnPressed>sephiex3_doorway>Disable>>40>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnPressed>sephiex3_doorway>FireUser1>>40>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnPressed>[PR#]puertaxx3>Open>>40>1",
+            "timestofire": 1
+          }
+        ]
+      }
+    },
     {
       "match": {
         "classname": "func_button",
@@ -1175,7 +1113,7 @@
             "outputname": "OnUser1",
             "targetname": "!self",
             "inputname": "AddOutput",
-            "overrideparam": "OnPressed>[PR#]consola>Command>say ** Bridge rotating in 30 seconds **>10>1",
+            "overrideparam": "OnPressed>[PR#]consola>Command>say ** Bridge is rotating in 30 seconds **>10>1",
             "timestofire": 1
           },
           {
@@ -1195,7 +1133,72 @@
         ]
       }
     },
-    // Allow to spawn defending paths during the boss fight
+    {
+      "match": {
+        "classname": "trigger_once",
+        "targetname": "[PR#]sephi2"
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnStartTouch>sephiex3_sp2>Trigger>>1>-1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnStartTouch>[PR#]crrr>ForceSpawn>>4.5>-1",
+            "timestofire": 1
+          }
+        ]
+      }
+    },
+    // Add support for advanced pull effects in gravity attack
+    {
+      "match": {
+        "io": [
+          {
+            "targetname": "[PR#]xb_gravedad",
+            "inputname": "Disable"
+          }
+        ]
+      },
+      "replace": {
+        "io": {
+          "targetname": "[PR#]xb_gravedad*"
+        }
+      }
+    },
+    // Allow changing Bahamut's color to blue
+    {
+      "match": {
+        "classname": "trigger_once",
+        "targetname": "[PR#]trigger_n_d3_ex"
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnStartTouch>[PR#]bahamut2>Color>0 0 255>0>-1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnStartTouch>[PR#]bahamut2>Skin>0>0.1>-1",
+            "timestofire": 1
+          }
+        ]
+      }
+    },
+    // Allow paths to be spawned for defending during the boss fight
     {
       "match": {
         "classname": "logic_relay",
@@ -1244,7 +1247,7 @@
         ]
       }
     },
-    // Allow to change the music after boss dies
+    // Allow changing the music after boss dies
     {
       "match": {
         "classname": "point_soundevent",
@@ -1265,7 +1268,7 @@
         ]
       }
     },
-    // Add I/O to trigger elevator trap
+    // Enable activation of elevator trap
     {
       "match": {
         "classname": "func_button",
@@ -4706,32 +4709,30 @@
         {
           "outputname": "OnStartTouch",
           "targetname": "[PR#]ss_seeyou",
-          "inputname": "PlaySound",
-          "delay": 1
+          "inputname": "PlaySound"
         },
         {
           "outputname": "OnStartTouch",
           "targetname": "[PR#]corte2",
-          "inputname": "PickRandom",
-          "delay": 1
+          "inputname": "PickRandom"
         },
         {
           "outputname": "OnStartTouch",
           "targetname": "[PR#]sephiroth_c",
           "inputname": "StartForward",
-          "delay": 3.3
+          "delay": 3
         },
         {
           "outputname": "OnStartTouch",
           "targetname": "[PR#]espad",
           "inputname": "PlaySound",
-          "delay": 3.3
+          "delay": 3
         },
         {
           "outputname": "OnStartTouch",
           "targetname": "[PR#]cortefatal",
           "inputname": "Break",
-          "delay": 3.5
+          "delay": 3.2
         }
       ]
     },
