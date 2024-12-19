@@ -955,25 +955,25 @@
         "io": [
           {
             "outputname": "OnTimer",
-            "targetname": "case5*",
+            "targetname": "case5ex*",
             "inputname": "Kill",
             "delay": 0.01
           },
           {
             "outputname": "OnTimer",
-            "targetname": "case6*",
+            "targetname": "case6ex*",
             "inputname": "Kill",
             "delay": 0.01
           },
           {
             "outputname": "OnTimer",
-            "targetname": "case7*",
+            "targetname": "case7ex*",
             "inputname": "Kill",
             "delay": 0.01
           },
           {
             "outputname": "OnTimer",
-            "targetname": "case8*",
+            "targetname": "case8ex*",
             "inputname": "Kill",
             "delay": 0.01
           }
@@ -2416,25 +2416,25 @@
         },
         {
           "outputname": "OnTimer",
-          "targetname": "[PR#]case1*",
+          "targetname": "[PR#]case1ex*",
           "inputname": "Kill",
           "delay": 0.01
         },
         {
           "outputname": "OnTimer",
-          "targetname": "[PR#]case2*",
+          "targetname": "[PR#]case2ex*",
           "inputname": "Kill",
           "delay": 0.01
         },
         {
           "outputname": "OnTimer",
-          "targetname": "[PR#]case3*",
+          "targetname": "[PR#]case3x*",
           "inputname": "Kill",
           "delay": 0.01
         },
         {
           "outputname": "OnTimer",
-          "targetname": "[PR#]case4*",
+          "targetname": "[PR#]case4x*",
           "inputname": "Kill",
           "delay": 0.01
         }
