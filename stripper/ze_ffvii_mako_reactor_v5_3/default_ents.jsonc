@@ -1087,11 +1087,8 @@
     },
     {
       "match": {
-        "classname": "func_button",
-        "hammeruniqueid": "1519"
-      },
-      "replace": {
-        "targetname": "Door10sBridgeButton"
+        "classname": "func_door",
+        "targetname": "[PR#]puerta5"
       },
       "insert": {
         "io": [
@@ -1099,35 +1096,14 @@
             "outputname": "OnUser1",
             "targetname": "!self",
             "inputname": "AddOutput",
-            "overrideparam": "OnPressed>bridge2_rot>FireUser1>>0>1",
+            "overrideparam": "OnFullyOpen>NO_RAINBOW_EFFECT>SetValue>1>0>1",
             "timestofire": 1
           },
           {
             "outputname": "OnUser1",
             "targetname": "!self",
             "inputname": "AddOutput",
-            "overrideparam": "OnPressed>NO_RAINBOW_EFFECT>SetValue>1>0>1",
-            "timestofire": 1
-          },
-          {
-            "outputname": "OnUser1",
-            "targetname": "!self",
-            "inputname": "AddOutput",
-            "overrideparam": "OnPressed>[PR#]consola>Command>say ** Bridge is rotating in 30 seconds **>10>1",
-            "timestofire": 1
-          },
-          {
-            "outputname": "OnUser1",
-            "targetname": "!self",
-            "inputname": "AddOutput",
-            "overrideparam": "OnPressed>cortes3>Enable>>12.2>1",
-            "timestofire": 1
-          },
-          {
-            "outputname": "OnUser1",
-            "targetname": "!self",
-            "inputname": "AddOutput",
-            "overrideparam": "OnPressed>bridge2_rot>FireUser2>>40>1",
+            "overrideparam": "OnFullyOpen>cortes3>Enable>>0>1",
             "timestofire": 1
           }
         ]
@@ -1377,7 +1353,41 @@
         ]
       }
     },
-    // Rotate the bridge again when bahamutend spawns
+    // Enable changing the bridge angles and rotating it
+    {
+      "match": {
+        "classname": "func_button",
+        "hammeruniqueid": "1519"
+      },
+      "replace": {
+        "targetname": "Door10sBridgeButton"
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnPressed>bridge2_rot>FireUser1>>0>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnPressed>[PR#]consola>Command>say ** Bridge is rotating in 30 seconds **>10>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnPressed>bridge2_rot>FireUser2>>40>1",
+            "timestofire": 1
+          }
+        ]
+      }
+    },
     {
       "match": {
         "classname": "logic_relay",
@@ -3806,6 +3816,12 @@
         {
           "outputname": "OnTrigger",
           "targetname": "Door10sBridgeButton",
+          "inputname": "FireUser1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]puerta5",
           "inputname": "FireUser1",
           "timestofire": 1
         },
