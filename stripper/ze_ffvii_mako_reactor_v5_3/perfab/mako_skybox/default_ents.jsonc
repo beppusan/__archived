@@ -7,6 +7,15 @@
       },
       "replace": {
         "max": "16"
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OutValue",
+            "targetname": "ZR_CONFIG_CHANGER",
+            "inputname": "InValue"
+          }
+        ]
       }
     }
   ]

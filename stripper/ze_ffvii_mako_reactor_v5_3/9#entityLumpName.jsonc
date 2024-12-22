@@ -1,0 +1,252 @@
+{
+  "filter": [
+    // Remove unnecessary entity
+    {
+      "targetname": "[PR#]waterana"
+    }
+  ],
+  "add": [
+    // Add meteor template entities
+    {
+      "classname": "info_particle_system",
+      "targetname": "meteor_tesla1&0000",
+      "tint_cp_color": "0 30 255",
+      "tint_cp": "3",
+      "data_cp_value": "250 13 8",
+      "data_cp": "2",
+      "start_active": "0",
+      "effect_name": "particles/tesla/tesla.vpcf",
+      "origin": "0.000000 0.000000 0.000000",
+      "io": [
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Start"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Stop",
+          "delay": 0.45
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Start",
+          "delay": 0.5
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Stop",
+          "delay": 0.95
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Start",
+          "delay": 1
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Stop",
+          "delay": 1.45
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Start",
+          "delay": 1.5
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Stop",
+          "delay": 1.95
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Start",
+          "delay": 2
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Stop",
+          "delay": 2.45
+        }
+      ]
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "meteor_tesla2&0000",
+      "tint_cp_color": "0 30 255",
+      "tint_cp": "3",
+      "data_cp_value": "150 13 8",
+      "data_cp": "2",
+      "start_active": "0",
+      "effect_name": "particles/tesla/tesla.vpcf",
+      "origin": "0.000000 0.000000 0.000000",
+      "io": [
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Start"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Stop",
+          "delay": 0.45
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Start",
+          "delay": 0.5
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Stop",
+          "delay": 0.95
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Start",
+          "delay": 1
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Stop",
+          "delay": 1.45
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Start",
+          "delay": 1.5
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Stop",
+          "delay": 1.95
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Start",
+          "delay": 2
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Stop",
+          "delay": 2.45
+        }
+      ]
+    },
+    {
+      "classname": "env_explosion",
+      "targetname": "meteor_expl&0000",
+      "iradiusoverride": "500",
+      "imagnitude": "30",
+      "parentname": "meteor_tesla1&0000",
+      "origin": "0.000000 0.000000 0.000000"
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "meteor_fx&0000",
+      "start_active": "0",
+      "effect_name": "particles/ffvii_go/explosiones_mako.vpcf",
+      "parentname": "meteor_expl&0000",
+      "origin": "0.000000 0.000000 0.000000"
+    },
+    {
+      "classname": "logic_relay",
+      "targetname": "meteo_relay&0000",
+      "origin": "0.000000 0.000000 0.000000",
+      "io": [
+        {
+          "outputname": "OnSpawn",
+          "targetname": "!self",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnSpawn",
+          "targetname": "meteor_tesla1&0000",
+          "inputname": "FireUser1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnSpawn",
+          "targetname": "meteor_tesla2&0000",
+          "inputname": "FireUser1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnSpawn",
+          "targetname": "meteor_expl&0000",
+          "inputname": "Explode",
+          "delay": 2.5,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnSpawn",
+          "targetname": "meteor_fx&0000",
+          "inputname": "Start",
+          "delay": 2.5,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnSpawn",
+          "targetname": "[PR#]explosion_mako_random",
+          "inputname": "PickRandom",
+          "delay": 2.5,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnSpawn",
+          "targetname": "meteor_fx&0000",
+          "inputname": "Explode",
+          "delay": 2.5,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnSpawn",
+          "targetname": "meteor_tesla1&0000",
+          "inputname": "Kill",
+          "delay": 5,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnSpawn",
+          "targetname": "meteor_tesla2&0000",
+          "inputname": "Kill",
+          "delay": 5,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnSpawn",
+          "targetname": "meteor_expl&0000",
+          "inputname": "Kill",
+          "delay": 5,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnSpawn",
+          "targetname": "meteor_fx&0000",
+          "inputname": "Kill",
+          "delay": 5,
+          "timestofire": 1
+        }
+      ]
+    }
+  ]
+}
