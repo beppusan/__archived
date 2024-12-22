@@ -1479,6 +1479,13 @@
             "inputname": "AddOutput",
             "overrideparam": "OnPressed>filter_activator_f>Kill>>11>1",
             "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "[PR#]point_tr1",
+            "inputname": "AddOutput",
+            "overrideparam": "OnPass>Tonemap_EX3ZED>Disable>>0>1",
+            "timestofire": 1
           }
         ]
       }
@@ -1661,22 +1668,6 @@
             "inputname": "AddOutput",
             "overrideparam": "OnTrigger>[PR#]props_extreme>Toggle>>2.5>-1",
             "timestofire": 1
-          }
-        ]
-      }
-    },
-    // Disable custom CC when the elevator arrives
-    {
-      "match": {
-        "classname": "path_track",
-        "targetname": "[PR#]point_tr1"
-      },
-      "insert": {
-        "io": [
-          {
-            "outputname": "OnPass",
-            "targetname": "Tonemap_EX3ZED",
-            "inputname": "Disable"
           }
         ]
       }
