@@ -1171,7 +1171,7 @@
             "outputname": "OnUser2",
             "targetname": "!self",
             "inputname": "AddOutput",
-            "overrideparam": "OnFullyOpen>[PR#]corterand>PicKRandoM>>3>1",
+            "overrideparam": "OnFullyOpen>[PR#]corterand>PickRandom>>3>1",
             "timestofire": 1
           },
           {
