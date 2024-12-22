@@ -146,6 +146,13 @@
         },
         {
           "outputname": "OnTrigger",
+          "targetname": "[PR#]consola",
+          "inputname": "Command",
+          "overrideparam": "zr_knockback_scale 3.0",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
           "targetname": "ZM_SEPHIROTH_BOMBTIMER",
           "inputname": "FireUser1",
           "timestofire": 1
