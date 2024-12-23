@@ -984,18 +984,75 @@
         ]
       }
     },
-    // Check if special lasers mode is enabled & Add optional input to enforce laser dodging at the ending
+    // Rework laser firing mechanics & add support for special lasers
     {
       "match": {
-        "classname": "logic_relay",
-        "targetname": "[PR#]extreme2_trigger13"
+        "classname": "point_template",
+        "hammeruniqueid": "5103"
+      },
+      "replace": {
+        "targetname": "NORMAL_LASER_TEMP"
+      }
+    },
+    {
+      "match": {
+        "classname": "point_template",
+        "hammeruniqueid": "5105"
+      },
+      "replace": {
+        "targetname": "SPECIAL_LASER_TEMP"
+      }
+    },
+    {
+      "match": {
+        "classname": "logic_timer",
+        "targetname": "[PR#]cortes2"
       },
       "delete": {
         "io": [
           {
-            "targetname": "[PR#]cortes2"
+            "targetname": "[PR#]corterand"
           }
         ]
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnTimer>NORMAL_LASER_TEMP>ForceSpawn>>0>-1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "UpperRandomBound",
+            "overrideparam": "2.0",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "LowerRandomBound",
+            "overrideparam": "1.0",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnTimer>SPECIAL_LASER_TEMP>ForceSpawn>>0>-1",
+            "timestofire": 1
+          }
+        ]
+      }
+    },
+    // Check if special lasers mode is enabled & add optional input to enforce laser dodging at the ending
+    {
+      "match": {
+        "classname": "logic_relay",
+        "targetname": "[PR#]extreme2_trigger13"
       },
       "insert": {
         "io": [
@@ -1055,41 +1112,6 @@
         ]
       }
     },
-    // Remove the other type of laser when firing
-    {
-      "match": {
-        "classname": "logic_timer",
-        "targetname": "[PR#]cortes2"
-      },
-      "insert": {
-        "io": [
-          {
-            "outputname": "OnTimer",
-            "targetname": "case5ex*",
-            "inputname": "Kill",
-            "delay": 0.01
-          },
-          {
-            "outputname": "OnTimer",
-            "targetname": "case6ex*",
-            "inputname": "Kill",
-            "delay": 0.01
-          },
-          {
-            "outputname": "OnTimer",
-            "targetname": "case7ex*",
-            "inputname": "Kill",
-            "delay": 0.01
-          },
-          {
-            "outputname": "OnTimer",
-            "targetname": "case8ex*",
-            "inputname": "Kill",
-            "delay": 0.01
-          }
-        ]
-      }
-    },
     // Enable activation of custom lasers
     {
       "match": {
@@ -1143,7 +1165,7 @@
             "outputname": "OnUser1",
             "targetname": "!self",
             "inputname": "AddOutput",
-            "overrideparam": "OnFullyOpen>NO_RAINBOW_EFFECT>SetValue>1>0>1",
+            "overrideparam": "OnFullyOpen>BRIDGE_ROTATING_LASER>SetValue>1>0>1",
             "timestofire": 1
           },
           {
@@ -1171,7 +1193,7 @@
             "outputname": "OnUser2",
             "targetname": "!self",
             "inputname": "AddOutput",
-            "overrideparam": "OnFullyOpen>[PR#]corterand>PickRandom>>3>1",
+            "overrideparam": "OnFullyOpen>NORMAL_LASER_TEMP>ForceSpawn>>3>1",
             "timestofire": 1
           },
           {
@@ -1696,6 +1718,15 @@
     },
     {
       "targetname": "[PR#]dificultad_i_t_*"
+    },
+    {
+      "targetname": "[PR#]SETH_LASERFIX_TEMP_LEFT"
+    },
+    {
+      "targetname": "[PR#]SETH_LASERFIX_TEMP_RIGHT"
+    },
+    {
+      "targetname": "[PR#]corterand"
     },
     {
       "targetname": "[PR#]watertemp"
@@ -2652,156 +2683,14 @@
       "origin": "-10769 4025.72 37",
       "io": [
         {
-          "outputname": "OnTrue",
-          "targetname": "cortes2sp",
-          "inputname": "Enable"
+          "outputname": "OnFalse",
+          "targetname": "[PR#]cortes2",
+          "inputname": "FireUser1"
         },
         {
           "outputname": "OnTrue",
           "targetname": "[PR#]cortes2",
-          "inputname": "Kill"
-        },
-        {
-          "outputname": "OnFalse",
-          "targetname": "[PR#]cortes2",
-          "inputname": "Enable"
-        },
-        {
-          "outputname": "OnFalse",
-          "targetname": "cortes2sp",
-          "inputname": "Kill"
-        }
-      ]
-    },
-    {
-      "classname": "logic_timer",
-      "targetname": "cortes2sp",
-      "startdisabled": "1",
-      "userandomtime": "1",
-      "lowerrandombound": "1",
-      "upperrandombound": "2",
-      "origin": "-10769 4025.72 37",
-      "io": [
-        {
-          "outputname": "OnTimer",
-          "targetname": "[PR#]espad",
-          "inputname": "PlaySound"
-        },
-        {
-          "outputname": "OnTimer",
-          "targetname": "corterandsp",
-          "inputname": "PickRandom"
-        },
-        {
-          "outputname": "OnTimer",
-          "targetname": "[PR#]case1ex*",
-          "inputname": "Kill",
-          "delay": 0.01
-        },
-        {
-          "outputname": "OnTimer",
-          "targetname": "[PR#]case2ex*",
-          "inputname": "Kill",
-          "delay": 0.01
-        },
-        {
-          "outputname": "OnTimer",
-          "targetname": "[PR#]case3x*",
-          "inputname": "Kill",
-          "delay": 0.01
-        },
-        {
-          "outputname": "OnTimer",
-          "targetname": "[PR#]case4x*",
-          "inputname": "Kill",
-          "delay": 0.01
-        }
-      ]
-    },
-    {
-      "classname": "logic_case",
-      "targetname": "corterandsp",
-      "origin": "-10802 4051.22 29",
-      "io": [
-        {
-          "outputname": "OnCase01",
-          "targetname": "[PR#]SETH_LASERFIX_TEMP_HIGH",
-          "inputname": "ForceSpawn"
-        },
-        {
-          "outputname": "OnCase02",
-          "targetname": "[PR#]SETH_LASERFIX_TEMP_LOW",
-          "inputname": "ForceSpawn"
-        },
-        {
-          "outputname": "OnCase03",
-          "targetname": "[PR#]SETH_LASERFIX_TEMP_LEFT",
-          "inputname": "ForceSpawn"
-        },
-        {
-          "outputname": "OnCase04",
-          "targetname": "[PR#]SETH_LASERFIX_TEMP_RIGHT",
-          "inputname": "ForceSpawn"
-        },
-        {
-          "outputname": "OnCase05",
-          "targetname": "[PR#]SETH_LASERFIX_TEMP_HIGH",
-          "inputname": "ForceSpawn"
-        },
-        {
-          "outputname": "OnCase05",
-          "targetname": "[PR#]SETH_LASERFIX_TEMP_LOW",
-          "inputname": "ForceSpawn"
-        },
-        {
-          "outputname": "OnCase06",
-          "targetname": "[PR#]SETH_LASERFIX_TEMP_HIGH",
-          "inputname": "ForceSpawn"
-        },
-        {
-          "outputname": "OnCase06",
-          "targetname": "[PR#]SETH_LASERFIX_TEMP_LEFT",
-          "inputname": "ForceSpawn"
-        },
-        {
-          "outputname": "OnCase07",
-          "targetname": "[PR#]SETH_LASERFIX_TEMP_HIGH",
-          "inputname": "ForceSpawn"
-        },
-        {
-          "outputname": "OnCase07",
-          "targetname": "[PR#]SETH_LASERFIX_TEMP_RIGHT",
-          "inputname": "ForceSpawn"
-        },
-        {
-          "outputname": "OnCase08",
-          "targetname": "[PR#]SETH_LASERFIX_TEMP_LOW",
-          "inputname": "ForceSpawn"
-        },
-        {
-          "outputname": "OnCase08",
-          "targetname": "[PR#]SETH_LASERFIX_TEMP_LEFT",
-          "inputname": "ForceSpawn"
-        },
-        {
-          "outputname": "OnCase09",
-          "targetname": "[PR#]SETH_LASERFIX_TEMP_LOW",
-          "inputname": "ForceSpawn"
-        },
-        {
-          "outputname": "OnCase09",
-          "targetname": "[PR#]SETH_LASERFIX_TEMP_RIGHT",
-          "inputname": "ForceSpawn"
-        },
-        {
-          "outputname": "OnCase10",
-          "targetname": "[PR#]SETH_LASERFIX_TEMP_LEFT",
-          "inputname": "ForceSpawn"
-        },
-        {
-          "outputname": "OnCase10",
-          "targetname": "[PR#]SETH_LASERFIX_TEMP_RIGHT",
-          "inputname": "ForceSpawn"
+          "inputname": "FireUser2"
         }
       ]
     },
@@ -4543,6 +4432,21 @@
     },
     // Spawn rotating lasers after the 10s door opens
     {
+      "classname": "math_counter",
+      "targetname": "BRIDGE_ROTATING_LASER",
+      "max": "1",
+      "min": "0",
+      "startvalue": "0",
+      "origin": "-7793 3876.54 55.48",
+      "io": [
+        {
+          "outputname": "OnGetValue",
+          "targetname": "SPECIAL_LASER_CASE*",
+          "inputname": "InValue"
+        }
+      ]
+    },
+    {
       "classname": "logic_timer",
       "targetname": "cortes3",
       "startdisabled": "1",
@@ -4558,57 +4462,14 @@
         },
         {
           "outputname": "OnTimer",
-          "targetname": "corterand3",
-          "inputname": "PickRandom"
-        },
-        {
-          "outputname": "OnTimer",
-          "targetname": "case3*",
-          "inputname": "Kill",
-          "delay": 0.01
-        },
-        {
-          "outputname": "OnTimer",
-          "targetname": "case7ex_hurt*",
-          "inputname": "SetDamage",
-          "overrideparam": "75",
-          "delay": 0.01
-        },
-        {
-          "outputname": "OnTimer",
-          "targetname": "case4*",
-          "inputname": "Kill",
-          "delay": 0.01
-        },
-        {
-          "outputname": "OnTimer",
-          "targetname": "case8ex_hurt*",
-          "inputname": "SetDamage",
-          "overrideparam": "75",
-          "delay": 0.01
+          "targetname": "SPECIAL_LASER_TEMP",
+          "inputname": "ForceSpawn"
         },
         {
           "outputname": "OnTimer",
           "targetname": "corterand3c",
           "inputname": "Subtract",
           "overrideparam": "1"
-        }
-      ]
-    },
-    {
-      "classname": "logic_case",
-      "targetname": "corterand3",
-      "origin": "-7793 3876.54 55.48",
-      "io": [
-        {
-          "outputname": "OnCase01",
-          "targetname": "[PR#]SETH_LASERFIX_TEMP_LEFT",
-          "inputname": "ForceSpawn"
-        },
-        {
-          "outputname": "OnCase02",
-          "targetname": "[PR#]SETH_LASERFIX_TEMP_RIGHT",
-          "inputname": "ForceSpawn"
         }
       ]
     },
@@ -4627,25 +4488,10 @@
         },
         {
           "outputname": "OnHitMin",
-          "targetname": "NO_RAINBOW_EFFECT",
+          "targetname": "BRIDGE_ROTATING_LASER",
           "inputname": "SetValue",
           "overrideparam": "0",
           "delay": 0.1
-        }
-      ]
-    },
-    // Add entity to keep laser color default for damage lasers
-    {
-      "classname": "math_counter",
-      "targetname": "NO_RAINBOW_EFFECT",
-      "max": "1",
-      "min": "0",
-      "startvalue": "0",
-      "io": [
-        {
-          "outputname": "OnGetValue",
-          "targetname": "RAINBOW_LASER_CHECKER*",
-          "inputname": "InValue"
         }
       ]
     },

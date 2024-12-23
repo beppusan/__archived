@@ -1,21 +1,5 @@
 {
   "modify": [
-    // Stop firing lasers when Sephiroth dies
-    {
-      "match": {
-        "classname": "func_breakable",
-        "targetname": "[PR#]bahamutend1"
-      },
-      "insert": {
-        "io": [
-          {
-            "outputname": "OnBreak",
-            "targetname": "cortes2sp",
-            "inputname": "Disable"
-          }
-        ]
-      }
-    },
     // Enable some messages when bahamutend dies
     {
       "match": {

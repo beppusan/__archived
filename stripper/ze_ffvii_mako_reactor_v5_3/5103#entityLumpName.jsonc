@@ -1,25 +1,21 @@
 {
-  "modify": [
-    // Increase laser range
+  "filter": [
+    // Remove all entities to rework laser mechanics
     {
-      "match": {
-        "classname": "func_movelinear"
-      },
-      "replace": {
-        "movedistance": "3500"
-      }
+      "classname": "*"
     }
   ],
   "add": [
-    // SPECIAL LASER (floating down first)
+    // CROUCH
     {
       "classname": "func_movelinear",
-      "targetname": "case5ex&0000",
+      "targetname": "case1ex&0000",
       "movedistance": "3500",
       "speed": "1120",
       "spawnflags": "8",
-      "origin": "89.458984 -144.575684 55.816132",
-      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/sephiroth_c3_1607.vmdl",
+      "movedir": "0 0 0",
+      "origin": "-72.541016 -141.585693 55.816132",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case1ex_1595.vmdl",
       "io": [
         {
           "outputname": "OnFullyOpen",
@@ -29,139 +25,15 @@
       ]
     },
     {
-      "classname": "func_door",
-      "targetname": "case5ex_door&0000",
-      "movedir": "90 0 0",
-      "spawnflags": "4108",
-      "lip": "-45",
-      "parentname": "case5ex&0000",
-      "origin": "-72.541016 -141.585684 52.816132",
-      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case1ex_1595.vmdl",
-      "io": [
-        {
-          "outputname": "OnFullyOpen",
-          "targetname": "!self",
-          "inputname": "Close"
-        },
-        {
-          "outputname": "OnFullyClosed",
-          "targetname": "!self",
-          "inputname": "Open"
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "Open",
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "Color",
-          "overrideparam": "255 0 0",
-          "delay": 0
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "Color",
-          "overrideparam": "255 128 0",
-          "delay": 0.1
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "Color",
-          "overrideparam": "255 255 0",
-          "delay": 0.2
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "Color",
-          "overrideparam": "128 255 0",
-          "delay": 0.3
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "Color",
-          "overrideparam": "0 255 0",
-          "delay": 0.4
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "Color",
-          "overrideparam": "0 255 128",
-          "delay": 0.5
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "Color",
-          "overrideparam": "0 255 255",
-          "delay": 0.6
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "Color",
-          "overrideparam": "0 128 255",
-          "delay": 0.7
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "Color",
-          "overrideparam": "0 0 255",
-          "delay": 0.8
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "Color",
-          "overrideparam": "128 0 255",
-          "delay": 0.9
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "Color",
-          "overrideparam": "255 0 255",
-          "delay": 1.0
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "Color",
-          "overrideparam": "255 0 128",
-          "delay": 1.1
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "FireUser1",
-          "delay": 1.2
-        }
-      ]
-    },
-    {
       "classname": "trigger_hurt",
-      "targetname": "case5ex_hurt&0000",
+      "targetname": "case1ex_hurt&0000",
       "damage": "999999",
       "filtername": "[PR#]humanos",
       "spawnflags": "1",
-      "parentname": "case5ex_door&0000",
-      "origin": "109.958984 -143.375684 53.816132",
+      "parentname": "case1ex&0000",
+      "origin": "112.926758 -143.375732 59.316132",
       "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case1ex_hurt_1591.vmdl",
       "io": [
-        {
-          "outputname": "OnStartTouch",
-          "targetname": "[PR#]bahamutend1",
-          "inputname": "RemoveHealth",
-          "overrideparam": "150"
-        },
         {
           "outputname": "OnStartTouch",
           "targetname": "!self",
@@ -172,12 +44,628 @@
           "targetname": "!self",
           "inputname": "Enable",
           "delay": 0.01
+        },
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "[PR#]bahamutend1",
+          "inputname": "RemoveHealth",
+          "overrideparam": "150"
         }
       ]
     },
     {
+      "classname": "light_omni2",
+      "targetname": "case1ex_light&0000",
+      "fade_size_end": "0.25",
+      "fade_size_start": "0.25",
+      "showlight": "0",
+      "rendertocubemaps": "1",
+      "brightnessscale": "1.0",
+      "showfade_size_end": "0.05",
+      "shadowfade_size_start": "0.10",
+      "pvs_modify_entity": "0",
+      "shadowpriority": "-1",
+      "shadowmapsize": "-1",
+      "castshadows": "1",
+      "minroughness": "0",
+      "bakespeculartocubemaps": "0",
+      "inner_angle": "180.0",
+      "outer_angle": "180.0",
+      "size_params": "2.0 24.0 0.15",
+      "shape": "3",
+      "bouncescale": "1.0",
+      "bouncelight": "1",
+      "skirt": "0.422",
+      "range": "256",
+      "bright_lumens": "304",
+      "colortemperature": "6600",
+      "color": "145 255 255",
+      "colormode": "0",
+      "directlight": "2",
+      "enabled": "1",
+      "brightness_legacy": "0.304688",
+      "brightness": "-1.72",
+      "brightness_nits": "2979",
+      "brightness_candelas": "24",
+      "brightness_units": "0",
+      "clientsideentity": "0",
+      "parentname": "case1ex&0000",
+      "origin": "121.429688 -253.208252 53.646461"
+    },
+    {
+      "classname": "light_omni2",
+      "targetname": "case1ex_light&0000",
+      "fade_size_end": "0.25",
+      "fade_size_start": "0.25",
+      "showlight": "0",
+      "rendertocubemaps": "1",
+      "brightnessscale": "1.0",
+      "showfade_size_end": "0.05",
+      "shadowfade_size_start": "0.10",
+      "pvs_modify_entity": "0",
+      "shadowpriority": "-1",
+      "shadowmapsize": "-1",
+      "castshadows": "1",
+      "minroughness": "0",
+      "bakespeculartocubemaps": "0",
+      "inner_angle": "180.0",
+      "outer_angle": "180.0",
+      "size_params": "2.0 24.0 0.15",
+      "shape": "3",
+      "bouncescale": "1.0",
+      "bouncelight": "1",
+      "skirt": "0.422",
+      "range": "256",
+      "bright_lumens": "304",
+      "colortemperature": "6600",
+      "color": "145 255 255",
+      "colormode": "0",
+      "directlight": "2",
+      "enabled": "1",
+      "brightness_legacy": "0.304688",
+      "brightness": "-1.72",
+      "brightness_nits": "2979",
+      "brightness_candelas": "24",
+      "brightness_units": "0",
+      "clientsideentity": "0",
+      "parentname": "case1ex&0000",
+      "origin": "121.429688 -145.856201 53.646461"
+    },
+    {
+      "classname": "light_omni2",
+      "targetname": "case1ex_light&0000",
+      "fade_size_end": "0.25",
+      "fade_size_start": "0.25",
+      "showlight": "0",
+      "rendertocubemaps": "1",
+      "brightnessscale": "1.0",
+      "showfade_size_end": "0.05",
+      "shadowfade_size_start": "0.10",
+      "pvs_modify_entity": "0",
+      "shadowpriority": "-1",
+      "shadowmapsize": "-1",
+      "castshadows": "1",
+      "minroughness": "0",
+      "bakespeculartocubemaps": "0",
+      "inner_angle": "180.0",
+      "outer_angle": "180.0",
+      "size_params": "2.0 24.0 0.15",
+      "shape": "3",
+      "bouncescale": "1.0",
+      "bouncelight": "1",
+      "skirt": "0.422",
+      "range": "256",
+      "bright_lumens": "304",
+      "colortemperature": "6600",
+      "color": "145 255 255",
+      "colormode": "0",
+      "directlight": "2",
+      "enabled": "1",
+      "brightness_legacy": "0.304688",
+      "brightness": "-1.72",
+      "brightness_nits": "2979",
+      "brightness_candelas": "24",
+      "brightness_units": "0",
+      "clientsideentity": "0",
+      "parentname": "case1ex&0000",
+      "origin": "121.429688 -29.008789 53.646461"
+    },
+    // JUMP
+    {
+      "classname": "func_movelinear",
+      "targetname": "case2ex&0000",
+      "movedistance": "3500",
+      "speed": "1120",
+      "spawnflags": "8",
+      "movedir": "0 0 0",
+      "origin": "-72.541016 -141.585693 23.816132",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_1597.vmdl",
+      "io": [
+        {
+          "outputname": "OnFullyOpen",
+          "targetname": "!self",
+          "inputname": "Kill"
+        }
+      ]
+    },
+    {
+      "classname": "trigger_hurt",
+      "targetname": "case2ex_hurt&0000",
+      "damage": "999999",
+      "filtername": "[PR#]humanos",
+      "spawnflags": "1",
+      "parentname": "case2ex&0000",
+      "origin": "112.988281 -143.375732 24.816132",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_hurt_1600.",
+      "io": [
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "!self",
+          "inputname": "Disable"
+        },
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "!self",
+          "inputname": "Enable",
+          "delay": 0.01
+        },
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "[PR#]bahamutend1",
+          "inputname": "RemoveHealth",
+          "overrideparam": "150"
+        }
+      ]
+    },
+    {
+      "classname": "light_omni2",
+      "targetname": "case2ex_light&0000",
+      "fade_size_end": "0.25",
+      "fade_size_start": "0.25",
+      "showlight": "0",
+      "rendertocubemaps": "1",
+      "brightnessscale": "1.0",
+      "showfade_size_end": "0.05",
+      "shadowfade_size_start": "0.10",
+      "pvs_modify_entity": "0",
+      "shadowpriority": "-1",
+      "shadowmapsize": "-1",
+      "castshadows": "1",
+      "minroughness": "0",
+      "bakespeculartocubemaps": "0",
+      "inner_angle": "180.0",
+      "outer_angle": "180.0",
+      "size_params": "2.0 24.0 0.15",
+      "shape": "3",
+      "bouncescale": "1.0",
+      "bouncelight": "1",
+      "skirt": "0.422",
+      "range": "256",
+      "bright_lumens": "304",
+      "colortemperature": "6600",
+      "color": "145 255 255",
+      "colormode": "0",
+      "directlight": "2",
+      "enabled": "1",
+      "brightness_legacy": "0.304688",
+      "brightness": "-1.72",
+      "brightness_nits": "2979",
+      "brightness_candelas": "24",
+      "brightness_units": "0",
+      "clientsideentity": "0",
+      "parentname": "case2ex&0000",
+      "origin": "121.429688 -252.495605 22.739639"
+    },
+    {
+      "classname": "light_omni2",
+      "targetname": "case2ex_light&0000",
+      "fade_size_end": "0.25",
+      "fade_size_start": "0.25",
+      "showlight": "0",
+      "rendertocubemaps": "1",
+      "brightnessscale": "1.0",
+      "showfade_size_end": "0.05",
+      "shadowfade_size_start": "0.10",
+      "pvs_modify_entity": "0",
+      "shadowpriority": "-1",
+      "shadowmapsize": "-1",
+      "castshadows": "1",
+      "minroughness": "0",
+      "bakespeculartocubemaps": "0",
+      "inner_angle": "180.0",
+      "outer_angle": "180.0",
+      "size_params": "2.0 24.0 0.15",
+      "shape": "3",
+      "bouncescale": "1.0",
+      "bouncelight": "1",
+      "skirt": "0.422",
+      "range": "256",
+      "bright_lumens": "304",
+      "colortemperature": "6600",
+      "color": "145 255 255",
+      "colormode": "0",
+      "directlight": "2",
+      "enabled": "1",
+      "brightness_legacy": "0.304688",
+      "brightness": "-1.72",
+      "brightness_nits": "2979",
+      "brightness_candelas": "24",
+      "brightness_units": "0",
+      "clientsideentity": "0",
+      "parentname": "case2ex&0000",
+      "origin": "121.429688 -145.856201 22.739639"
+    },
+    {
+      "classname": "light_omni2",
+      "targetname": "case2ex_light&0000",
+      "fade_size_end": "0.25",
+      "fade_size_start": "0.25",
+      "showlight": "0",
+      "rendertocubemaps": "1",
+      "brightnessscale": "1.0",
+      "showfade_size_end": "0.05",
+      "shadowfade_size_start": "0.10",
+      "pvs_modify_entity": "0",
+      "shadowpriority": "-1",
+      "shadowmapsize": "-1",
+      "castshadows": "1",
+      "minroughness": "0",
+      "bakespeculartocubemaps": "0",
+      "inner_angle": "180.0",
+      "outer_angle": "180.0",
+      "size_params": "2.0 24.0 0.15",
+      "shape": "3",
+      "bouncescale": "1.0",
+      "bouncelight": "1",
+      "skirt": "0.422",
+      "range": "256",
+      "bright_lumens": "304",
+      "colortemperature": "6600",
+      "color": "145 255 255",
+      "colormode": "0",
+      "directlight": "2",
+      "enabled": "1",
+      "brightness_legacy": "0.304688",
+      "brightness": "-1.72",
+      "brightness_nits": "2979",
+      "brightness_candelas": "24",
+      "brightness_units": "0",
+      "clientsideentity": "0",
+      "parentname": "case2ex&0000",
+      "origin": "121.429688 -32.651855 22.739639"
+    },
+    // SLASH 
+    {
+      "classname": "func_movelinear",
+      "targetname": "case3ex&0000",
+      "movedistance": "3500",
+      "speed": "1120",
+      "spawnflags": "8",
+      "movedir": "0 0 0",
+      "origin": "-214.84082 -141.285645 64.527161",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case3x_1587.vmdl",
+      "io": [
+        {
+          "outputname": "OnFullyOpen",
+          "targetname": "!self",
+          "inputname": "Kill"
+        }
+      ]
+    },
+    {
+      "classname": "trigger_hurt",
+      "targetname": "case3ex_hurt&0000",
+      "damage": "999999",
+      "filtername": "[PR#]humanos",
+      "spawnflags": "1",
+      "parentname": "case3ex&0000",
+      "origin": "106.24707 -145.285645 53.284599",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case3ex_1589.vmdl",
+      "io": [
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "!self",
+          "inputname": "Disable"
+        },
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "!self",
+          "inputname": "Enable",
+          "delay": 0.01
+        },
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "[PR#]bahamutend1",
+          "inputname": "RemoveHealth",
+          "overrideparam": "150"
+        }
+      ]
+    },
+    {
+      "classname": "light_omni2",
+      "targetname": "case3ex_light&0000",
+      "fade_size_end": "0.25",
+      "fade_size_start": "0.25",
+      "showlight": "0",
+      "rendertocubemaps": "1",
+      "brightnessscale": "1.0",
+      "showfade_size_end": "0.05",
+      "shadowfade_size_start": "0.10",
+      "pvs_modify_entity": "0",
+      "shadowpriority": "-1",
+      "shadowmapsize": "-1",
+      "castshadows": "1",
+      "minroughness": "0",
+      "bakespeculartocubemaps": "0",
+      "inner_angle": "180.0",
+      "outer_angle": "180.0",
+      "size_params": "2.0 24.0 0.15",
+      "shape": "3",
+      "bouncescale": "1.0",
+      "bouncelight": "1",
+      "skirt": "0.422",
+      "range": "256",
+      "bright_lumens": "304",
+      "colortemperature": "6600",
+      "color": "145 255 255",
+      "colormode": "0",
+      "directlight": "2",
+      "enabled": "1",
+      "brightness_legacy": "0.304688",
+      "brightness": "-1.72",
+      "brightness_nits": "2979",
+      "brightness_candelas": "24",
+      "brightness_units": "0",
+      "clientsideentity": "0",
+      "parentname": "case3ex&0000",
+      "origin": "121.429688 -263.077881 23.057144"
+    },
+    {
+      "classname": "light_omni2",
+      "targetname": "case3ex_light&0000",
+      "fade_size_end": "0.25",
+      "fade_size_start": "0.25",
+      "showlight": "0",
+      "rendertocubemaps": "1",
+      "brightnessscale": "1.0",
+      "showfade_size_end": "0.05",
+      "shadowfade_size_start": "0.10",
+      "pvs_modify_entity": "0",
+      "shadowpriority": "-1",
+      "shadowmapsize": "-1",
+      "castshadows": "1",
+      "minroughness": "0",
+      "bakespeculartocubemaps": "0",
+      "inner_angle": "180.0",
+      "outer_angle": "180.0",
+      "size_params": "2.0 24.0 0.15",
+      "shape": "3",
+      "bouncescale": "1.0",
+      "bouncelight": "1",
+      "skirt": "0.422",
+      "range": "256",
+      "bright_lumens": "304",
+      "colortemperature": "6600",
+      "color": "145 255 255",
+      "colormode": "0",
+      "directlight": "2",
+      "enabled": "1",
+      "brightness_legacy": "0.304688",
+      "brightness": "-1.72",
+      "brightness_nits": "2979",
+      "brightness_candelas": "24",
+      "brightness_units": "0",
+      "clientsideentity": "0",
+      "parentname": "case3ex&0000",
+      "origin": "121.429688 -145.856202 59.503204"
+    },
+    {
+      "classname": "light_omni2",
+      "targetname": "case3ex_light&0000",
+      "fade_size_end": "0.25",
+      "fade_size_start": "0.25",
+      "showlight": "0",
+      "rendertocubemaps": "1",
+      "brightnessscale": "1.0",
+      "showfade_size_end": "0.05",
+      "shadowfade_size_start": "0.10",
+      "pvs_modify_entity": "0",
+      "shadowpriority": "-1",
+      "shadowmapsize": "-1",
+      "castshadows": "1",
+      "minroughness": "0",
+      "bakespeculartocubemaps": "0",
+      "inner_angle": "180.0",
+      "outer_angle": "180.0",
+      "size_params": "2.0 24.0 0.15",
+      "shape": "3",
+      "bouncescale": "1.0",
+      "bouncelight": "1",
+      "skirt": "0.422",
+      "range": "256",
+      "bright_lumens": "304",
+      "colortemperature": "6600",
+      "color": "145 255 255",
+      "colormode": "0",
+      "directlight": "2",
+      "enabled": "1",
+      "brightness_legacy": "0.304688",
+      "brightness": "-1.72",
+      "brightness_nits": "2979",
+      "brightness_candelas": "24",
+      "brightness_units": "0",
+      "clientsideentity": "0",
+      "parentname": "case3ex&0000",
+      "origin": "121.429688 -21.351563 97.029648"
+    },
+    // BACKSLASH
+    {
+      "classname": "func_movelinear",
+      "targetname": "case4ex&0000",
+      "movedistance": "3500",
+      "speed": "1120",
+      "spawnflags": "8",
+      "movedir": "0 0 0",
+      "origin": "-214.840820 -146.265625 45.666130",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case4x_1645.vmdl",
+      "io": [
+        {
+          "outputname": "OnFullyOpen",
+          "targetname": "!self",
+          "inputname": "Kill"
+        }
+      ]
+    },
+    {
+      "classname": "trigger_hurt",
+      "targetname": "case4ex_hurt&0000",
+      "damage": "999999",
+      "filtername": "[PR#]humanos",
+      "spawnflags": "1",
+      "parentname": "case4ex&0000",
+      "origin": "105.947266 -142.265625 45.506134",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case4ex_1647.vmdl",
+      "io": [
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "!self",
+          "inputname": "Disable"
+        },
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "!self",
+          "inputname": "Enable",
+          "delay": 0.01
+        },
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "[PR#]bahamutend1",
+          "inputname": "RemoveHealth",
+          "overrideparam": "150"
+        }
+      ]
+    },
+    {
+      "classname": "light_omni2",
+      "targetname": "case4ex_light&0000",
+      "fade_size_end": "0.25",
+      "fade_size_start": "0.25",
+      "showlight": "0",
+      "rendertocubemaps": "1",
+      "brightnessscale": "1.0",
+      "showfade_size_end": "0.05",
+      "shadowfade_size_start": "0.10",
+      "pvs_modify_entity": "0",
+      "shadowpriority": "-1",
+      "shadowmapsize": "-1",
+      "castshadows": "1",
+      "minroughness": "0",
+      "bakespeculartocubemaps": "0",
+      "inner_angle": "180.0",
+      "outer_angle": "180.0",
+      "size_params": "2.0 24.0 0.15",
+      "shape": "3",
+      "bouncescale": "1.0",
+      "bouncelight": "1",
+      "skirt": "0.422",
+      "range": "256",
+      "bright_lumens": "304",
+      "colortemperature": "6600",
+      "color": "145 255 255",
+      "colormode": "0",
+      "directlight": "2",
+      "enabled": "1",
+      "brightness_legacy": "0.304688",
+      "brightness": "-1.72",
+      "brightness_nits": "2979",
+      "brightness_candelas": "24",
+      "brightness_units": "0",
+      "clientsideentity": "0",
+      "parentname": "case4ex&0000",
+      "origin": "121.429688 -266.888916 81.395096"
+    },
+    {
+      "classname": "light_omni2",
+      "targetname": "case4ex_light&0000",
+      "fade_size_end": "0.25",
+      "fade_size_start": "0.25",
+      "showlight": "0",
+      "rendertocubemaps": "1",
+      "brightnessscale": "1.0",
+      "showfade_size_end": "0.05",
+      "shadowfade_size_start": "0.10",
+      "pvs_modify_entity": "0",
+      "shadowpriority": "-1",
+      "shadowmapsize": "-1",
+      "castshadows": "1",
+      "minroughness": "0",
+      "bakespeculartocubemaps": "0",
+      "inner_angle": "180.0",
+      "outer_angle": "180.0",
+      "size_params": "2.0 24.0 0.15",
+      "shape": "3",
+      "bouncescale": "1.0",
+      "bouncelight": "1",
+      "skirt": "0.422",
+      "range": "256",
+      "bright_lumens": "304",
+      "colortemperature": "6600",
+      "color": "145 255 255",
+      "colormode": "0",
+      "directlight": "2",
+      "enabled": "1",
+      "brightness_legacy": "0.304688",
+      "brightness": "-1.72",
+      "brightness_nits": "2979",
+      "brightness_candelas": "24",
+      "brightness_units": "0",
+      "clientsideentity": "0",
+      "parentname": "case4ex&0000",
+      "origin": "121.429688 -145.856201 47.535362"
+    },
+    {
+      "classname": "light_omni2",
+      "targetname": "case4ex_light&0000",
+      "fade_size_end": "0.25",
+      "fade_size_start": "0.25",
+      "showlight": "0",
+      "rendertocubemaps": "1",
+      "brightnessscale": "1.0",
+      "showfade_size_end": "0.05",
+      "shadowfade_size_start": "0.10",
+      "pvs_modify_entity": "0",
+      "shadowpriority": "-1",
+      "shadowmapsize": "-1",
+      "castshadows": "1",
+      "minroughness": "0",
+      "bakespeculartocubemaps": "0",
+      "inner_angle": "180.0",
+      "outer_angle": "180.0",
+      "size_params": "2.0 24.0 0.15",
+      "shape": "3",
+      "bouncescale": "1.0",
+      "bouncelight": "1",
+      "skirt": "0.422",
+      "range": "256",
+      "bright_lumens": "304",
+      "colortemperature": "6600",
+      "color": "145 255 255",
+      "colormode": "0",
+      "directlight": "2",
+      "enabled": "1",
+      "brightness_legacy": "0.304688",
+      "brightness": "-1.72",
+      "brightness_nits": "2979",
+      "brightness_candelas": "24",
+      "brightness_units": "0",
+      "clientsideentity": "0",
+      "parentname": "case4ex&0000",
+      "origin": "121.429688 -28.694825 9.482109"
+    },
+    // Add laser firing logic 
+    {
       "classname": "logic_relay",
-      "targetname": "SPECIAL_LASER_R_DOWN&0000",
+      "targetname": "NORMAL_LASER_RELAY&0000",
       "origin": "25.063477 0.000000 0.000000",
       "io": [
         {
@@ -188,42 +676,105 @@
         },
         {
           "outputname": "OnSpawn",
-          "targetname": "case5ex&0000",
+          "targetname": "NORMAL_LASER_PICKER&0000",
+          "inputname": "FireUser1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnSpawn",
+          "targetname": "case1ex&0000",
           "inputname": "Open",
           "timestofire": 1
         },
         {
           "outputname": "OnSpawn",
-          "targetname": "RAINBOW_LASER_CHECKER&0000",
-          "inputname": "FireUser1",
-          "timestofire": 1
-        }
-      ]
-    },
-    // Check if rainbow color effect is disabled
-    {
-      "classname": "logic_case",
-      "targetname": "RAINBOW_LASER_CHECKER&0000",
-      "origin": "25.063477 0.000000 0.000000",
-      "case01": "0",
-      "case02": "1",
-      "io": [
-        {
-          "outputname": "OnCase01",
-          "targetname": "case5ex_door&0000",
-          "inputname": "FireUser1",
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase02",
-          "targetname": "case5ex_door&0000",
+          "targetname": "case2ex&0000",
           "inputname": "Open",
           "timestofire": 1
         },
         {
+          "outputname": "OnSpawn",
+          "targetname": "case3ex&0000",
+          "inputname": "Open",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnSpawn",
+          "targetname": "case4ex&0000",
+          "inputname": "Open",
+          "timestofire": 1
+        }
+      ]
+    },
+    {
+      "classname": "logic_case",
+      "targetname": "NORMAL_LASER_PICKER&0000",
+      "origin": "331.359375 -101.355713 -3.183868",
+      "io": [
+        {
+          "outputname": "OnCase01",
+          "targetname": "case2ex&0000",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnCase01",
+          "targetname": "case3ex&0000",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnCase01",
+          "targetname": "case4ex&0000",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnCase02",
+          "targetname": "case1ex&0000",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnCase02",
+          "targetname": "case3ex&0000",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnCase02",
+          "targetname": "case4ex&0000",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnCase03",
+          "targetname": "case1ex&0000",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnCase03",
+          "targetname": "case2ex&0000",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnCase03",
+          "targetname": "case4ex&0000",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnCase04",
+          "targetname": "case1ex&0000",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnCase04",
+          "targetname": "case2ex&0000",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnCase04",
+          "targetname": "case3ex&0000",
+          "inputname": "Kill"
+        },
+        {
           "outputname": "OnUser1",
-          "targetname": "NO_RAINBOW_EFFECT",
-          "inputname": "GetValue",
+          "targetname": "!self",
+          "inputname": "PickRandom",
           "timestofire": 1
         },
         {
