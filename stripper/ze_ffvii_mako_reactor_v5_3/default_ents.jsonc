@@ -1251,6 +1251,55 @@
         ]
       }
     },
+    // Enable extra events when the 10-second door opens
+    {
+      "match": {
+        "classname": "func_button",
+        "hammeruniqueid": "1519"
+      },
+      "replace": {
+        "targetname": "Door10sBridgeButton"
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnPressed>bridge2_rot>FireUser1>>0>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnPressed>[PR#]consola>Command>say ** Bridge is rotating in 30 seconds **>10>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnPressed>bridge2_rot>FireUser2>>40>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnPressed>[PR#]pFinal>SetSpeed>150>0>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnPressed>[PR#]pFinal>Open>>0.1>1",
+            "timestofire": 1
+          }
+        ]
+      }
+    },
     // Add support for advanced pull effects in gravity attack
     {
       "match": {
@@ -1548,41 +1597,7 @@
         ]
       }
     },
-    // Enable changing the bridge angles and rotating it
-    {
-      "match": {
-        "classname": "func_button",
-        "hammeruniqueid": "1519"
-      },
-      "replace": {
-        "targetname": "Door10sBridgeButton"
-      },
-      "insert": {
-        "io": [
-          {
-            "outputname": "OnUser1",
-            "targetname": "!self",
-            "inputname": "AddOutput",
-            "overrideparam": "OnPressed>bridge2_rot>FireUser1>>0>1",
-            "timestofire": 1
-          },
-          {
-            "outputname": "OnUser1",
-            "targetname": "!self",
-            "inputname": "AddOutput",
-            "overrideparam": "OnPressed>[PR#]consola>Command>say ** Bridge is rotating in 30 seconds **>10>1",
-            "timestofire": 1
-          },
-          {
-            "outputname": "OnUser1",
-            "targetname": "!self",
-            "inputname": "AddOutput",
-            "overrideparam": "OnPressed>bridge2_rot>FireUser2>>40>1",
-            "timestofire": 1
-          }
-        ]
-      }
-    },
+    // Rotate the bridge again when bahamutend spawns
     {
       "match": {
         "classname": "logic_relay",
@@ -4991,6 +5006,12 @@
           "inputname": "InValue",
           "overrideparam": "train",
           "delay": 13.5,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "Door10sBridgeButton",
+          "inputname": "FireUser2",
           "timestofire": 1
         },
         {
