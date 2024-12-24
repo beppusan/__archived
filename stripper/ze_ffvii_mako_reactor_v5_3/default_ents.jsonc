@@ -1251,7 +1251,7 @@
         ]
       }
     },
-    // Enable extra events when the 10s door opens
+    // Enable extra events when the 10-second door opens
     {
       "match": {
         "classname": "func_button",
@@ -1314,6 +1314,31 @@
         "io": {
           "targetname": "[PR#]xb_gravedad*"
         }
+      }
+    },
+    // Allow changing Bahamut's color to blue
+    {
+      "match": {
+        "classname": "trigger_once",
+        "targetname": "[PR#]trigger_n_d3_ex"
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnStartTouch>[PR#]bahamut2>Color>0 0 255>0>-1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnStartTouch>[PR#]bahamut2>Skin>0>0.1>-1",
+            "timestofire": 1
+          }
+        ]
       }
     },
     // Allow paths to be spawned for defending during the boss fight
@@ -1572,20 +1597,7 @@
         ]
       }
     },
-    // Update bahamutend skin changer and enable extra events after the final 35s door opens
-    {
-      "match": {
-        "classname": "trigger_once",
-        "targetname": "[PR#]trigger_n_d3_ex"
-      },
-      "delete": {
-        "io": [
-          {
-            "targetname": "[PR#]bahamut2"
-          }
-        ]
-      }
-    },
+    // Rotate the bridge again when bahamutend spawns
     {
       "match": {
         "classname": "logic_relay",
@@ -1594,49 +1606,28 @@
       "insert": {
         "io": [
           {
-            "outputname": "OnTrigger",
-            "targetname": "[PR#]bahamut2",
-            "inputname": "Skin",
-            "overrideparam": "1",
-            "timestofire": 1
-          },
-          {
             "outputname": "OnUser1",
-            "targetname": "!self",
-            "inputname": "AddOutput",
-            "overrideparam": "OnTrigger>[PR#]bahamut2>Skin>0>0.1>1",
-            "timestofire": 1
-          },
-          {
-            "outputname": "OnUser1",
-            "targetname": "!self",
-            "inputname": "AddOutput",
-            "overrideparam": "OnTrigger>[PR#]bahamut2>Color>0 0 255>0.1>1",
-            "timestofire": 1
-          },
-          {
-            "outputname": "OnUser2",
             "targetname": "!self",
             "inputname": "AddOutput",
             "overrideparam": "OnTrigger>bridge2_rot>FireUser1>>0>1",
             "timestofire": 1
           },
           {
-            "outputname": "OnUser2",
+            "outputname": "OnUser1",
             "targetname": "!self",
             "inputname": "AddOutput",
             "overrideparam": "OnTrigger>bridge2_rot>FireUser2>>4>1",
             "timestofire": 1
           },
           {
-            "outputname": "OnUser2",
+            "outputname": "OnUser1",
             "targetname": "!self",
             "inputname": "AddOutput",
             "overrideparam": "OnTrigger>bahamutend_props>Enable>>0>1",
             "timestofire": 1
           },
           {
-            "outputname": "OnUser2",
+            "outputname": "OnUser1",
             "targetname": "!self",
             "inputname": "AddOutput",
             "overrideparam": "OnTrigger>bahamutend_props>EnableCollision>>0>1",
@@ -2845,7 +2836,7 @@
         },
         {
           "outputname": "OnTrigger",
-          "targetname": "[PR#]trigger_extreme2_ex",
+          "targetname": "[PR#]trigger_n_d3_ex",
           "inputname": "FireUser1",
           "timestofire": 1
         },
@@ -4049,7 +4040,7 @@
         {
           "outputname": "OnTrigger",
           "targetname": "[PR#]trigger_extreme2_ex",
-          "inputname": "FireUser2",
+          "inputname": "FireUser1",
           "timestofire": 1
         },
         {
