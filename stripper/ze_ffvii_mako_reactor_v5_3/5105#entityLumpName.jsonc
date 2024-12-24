@@ -2489,33 +2489,25 @@
       "io": [
         {
           "outputname": "OnCase01",
-          "targetname": "case5ex_move&0000",
-          "inputname": "Kill"
-        },
-        {
-          "outputname": "OnCase01",
-          "targetname": "case6ex_move&0000",
-          "inputname": "Kill"
-        },
-        {
-          "outputname": "OnCase01",
           "targetname": "case8ex_move&0000",
-          "inputname": "Kill"
-        },
-        {
-          "outputname": "OnCase02",
-          "targetname": "case5ex_move&0000",
-          "inputname": "Kill"
-        },
-        {
-          "outputname": "OnCase02",
-          "targetname": "case6ex_move&0000",
           "inputname": "Kill"
         },
         {
           "outputname": "OnCase02",
           "targetname": "case7ex_move&0000",
           "inputname": "Kill"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "case5ex_move&0000",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "case6ex_move&0000",
+          "inputname": "Kill",
+          "timestofire": 1
         },
         {
           "outputname": "OnUser1",
