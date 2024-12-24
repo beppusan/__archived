@@ -1316,27 +1316,16 @@
         }
       }
     },
-    // Allow changing Bahamut's color to blue
+    // Remove bahamutend skin changer
     {
       "match": {
         "classname": "trigger_once",
         "targetname": "[PR#]trigger_n_d3_ex"
       },
-      "insert": {
+      "delete": {
         "io": [
           {
-            "outputname": "OnUser1",
-            "targetname": "!self",
-            "inputname": "AddOutput",
-            "overrideparam": "OnStartTouch>[PR#]bahamut2>Color>0 0 255>0>-1",
-            "timestofire": 1
-          },
-          {
-            "outputname": "OnUser1",
-            "targetname": "!self",
-            "inputname": "AddOutput",
-            "overrideparam": "OnStartTouch>[PR#]bahamut2>Skin>0>0.1>-1",
-            "timestofire": 1
+            "targetname": "[PR#]bahamut2"
           }
         ]
       }
@@ -1597,45 +1586,6 @@
         ]
       }
     },
-    // Rotate the bridge again when bahamutend spawns
-    {
-      "match": {
-        "classname": "logic_relay",
-        "targetname": "[PR#]trigger_extreme2_ex"
-      },
-      "insert": {
-        "io": [
-          {
-            "outputname": "OnUser1",
-            "targetname": "!self",
-            "inputname": "AddOutput",
-            "overrideparam": "OnTrigger>bridge2_rot>FireUser1>>0>1",
-            "timestofire": 1
-          },
-          {
-            "outputname": "OnUser1",
-            "targetname": "!self",
-            "inputname": "AddOutput",
-            "overrideparam": "OnTrigger>bridge2_rot>FireUser2>>4>1",
-            "timestofire": 1
-          },
-          {
-            "outputname": "OnUser1",
-            "targetname": "!self",
-            "inputname": "AddOutput",
-            "overrideparam": "OnTrigger>bahamutend_props>Enable>>0>1",
-            "timestofire": 1
-          },
-          {
-            "outputname": "OnUser1",
-            "targetname": "!self",
-            "inputname": "AddOutput",
-            "overrideparam": "OnTrigger>bahamutend_props>EnableCollision>>0>1",
-            "timestofire": 1
-          }
-        ]
-      }
-    },
     // Enable activation of huge explosion after superior 30s door opens
     {
       "match": {
@@ -1709,7 +1659,25 @@
         ]
       }
     },
-    // Trigger the final event after the door is opened
+    // Restore bahamutend skin changer using another entity
+    {
+      "match": {
+        "classname": "logic_relay",
+        "targetname": "[PR#]trigger_extreme2_ex"
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnTrigger",
+            "targetname": "[PR#]bahamut2",
+            "inputname": "Skin",
+            "overrideparam": "1",
+            "timestofire": 1
+          }
+        ]
+      }
+    },
+    // Trigger extra events after the final 35s door opens
     {
       "match": {
         "classname": "trigger_once",
@@ -1719,7 +1687,7 @@
         "io": [
           {
             "outputname": "OnStartTouch",
-            "targetname": "trigger_extreme3zed",
+            "targetname": "trigger_extreme3_ex",
             "inputname": "Trigger"
           }
         ]
@@ -2836,7 +2804,7 @@
         },
         {
           "outputname": "OnTrigger",
-          "targetname": "[PR#]trigger_n_d3_ex",
+          "targetname": "trigger_extreme3_ex",
           "inputname": "FireUser1",
           "timestofire": 1
         },
@@ -3060,6 +3028,12 @@
         {
           "outputname": "OnTrigger",
           "targetname": "[PR#]trigger_extreme2_ex",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "trigger_extreme3_ex",
           "inputname": "Enable",
           "timestofire": 1
         },
@@ -4039,8 +4013,8 @@
         },
         {
           "outputname": "OnTrigger",
-          "targetname": "[PR#]trigger_extreme2_ex",
-          "inputname": "FireUser1",
+          "targetname": "trigger_extreme3_ex",
+          "inputname": "FireUser2",
           "timestofire": 1
         },
         {
@@ -4300,6 +4274,12 @@
         {
           "outputname": "OnTrigger",
           "targetname": "[PR#]trigger_extreme2_ex",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "trigger_extreme3_ex",
           "inputname": "Enable",
           "timestofire": 1
         },
@@ -5058,8 +5038,8 @@
         },
         {
           "outputname": "OnTrigger",
-          "targetname": "trigger_extreme3zed",
-          "inputname": "Enable",
+          "targetname": "trigger_extreme3_ex",
+          "inputname": "FireUser3",
           "timestofire": 1
         },
         {
@@ -5282,6 +5262,12 @@
         {
           "outputname": "OnTrigger",
           "targetname": "[PR#]trigger_extreme2_ex",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "trigger_extreme3_ex",
           "inputname": "Enable",
           "timestofire": 1
         },
@@ -6257,247 +6243,6 @@
       "startdisabled": "1",
       "origin": "-7743.37 -1057.82 42.9868"
     },
-    // Add final trigger relay
-    {
-      "classname": "logic_relay",
-      "targetname": "trigger_extreme3zed",
-      "startdisabled": "1",
-      "origin": "-9424 5952 65",
-      "io": [
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]puertaxx1",
-          "inputname": "Close",
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]puertaxx3",
-          "inputname": "Close",
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]tele_bal",
-          "inputname": "Disable",
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]puerta5",
-          "inputname": "Open",
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]barrera33",
-          "inputname": "Kill",
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "extreme3zed_props",
-          "inputname": "Enable",
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "extreme3zed_props",
-          "inputname": "EnableCollision",
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]dasdas",
-          "inputname": "Disable",
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]puertafinal",
-          "inputname": "Disable",
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]AFKHurter",
-          "inputname": "Disable",
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "explosion_e3zed",
-          "inputname": "InValue",
-          "overrideparam": "ending",
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]consola",
-          "inputname": "Command",
-          "overrideparam": "** FINAL DOOR OPENS IN 30S **",
-          "delay": 35,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]consola",
-          "inputname": "Command",
-          "overrideparam": "** ALL MATERIAS ARE DISABLED!! **",
-          "delay": 38,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]magia_cura_button",
-          "inputname": "Lock",
-          "delay": 38,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]hielo_f_button",
-          "inputname": "Lock",
-          "delay": 38,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]rayo_bot",
-          "inputname": "Lock",
-          "delay": 38,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]magia_viento_button",
-          "inputname": "Lock",
-          "delay": 38,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]magia_tierra_button",
-          "inputname": "Lock",
-          "delay": 38,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]1b",
-          "inputname": "Lock",
-          "delay": 38,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]boton_ultima",
-          "inputname": "Lock",
-          "delay": 38,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]magia_gravedad_button",
-          "inputname": "Lock",
-          "delay": 38,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]consola",
-          "inputname": "Command",
-          "overrideparam": "** 5 **",
-          "delay": 60,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]consola",
-          "inputname": "Command",
-          "overrideparam": "** 4 **",
-          "delay": 61,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]consola",
-          "inputname": "Command",
-          "overrideparam": "** 3 **",
-          "delay": 62,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]consola",
-          "inputname": "Command",
-          "overrideparam": "** 2 **",
-          "delay": 63,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]consola",
-          "inputname": "Command",
-          "overrideparam": "** 1 **",
-          "delay": 64,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]consola",
-          "inputname": "Command",
-          "overrideparam": "** RUUUUUUUUN! **",
-          "delay": 65,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]puertaxx1",
-          "inputname": "Open",
-          "delay": 65,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]consola",
-          "inputname": "Command",
-          "overrideparam": "** THE REACTOR IS GOING TO EXPLODE!! **",
-          "delay": 67,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]consola",
-          "inputname": "Command",
-          "overrideparam": "** WE HAVE TO ESCAPE FROM HERE!! **",
-          "delay": 68,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]ss_only",
-          "inputname": "SetSoundEventName",
-          "overrideparam": "seph_onlythechosen",
-          "delay": 89.4,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "sephi_bossarena",
-          "inputname": "CountPlayersInZone",
-          "delay": 89.5,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "sephi_knife_teleport",
-          "inputname": "Enable",
-          "delay": 89.5,
-          "timestofire": 1
-        }
-      ]
-    },
     // Add custom props for EX3 ZED
     // @ Inside Reactor
     {
@@ -6896,6 +6641,288 @@
       "origin": "-8828 -802 -172",
       "angles": "0 90 0",
       "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/telee_1358.vmdl"
+    },
+    // Add custom endings for EX3 stages
+    {
+      "classname": "logic_relay",
+      "targetname": "trigger_extreme3_ex",
+      "startdisabled": "1",
+      "origin": "-9424 5952 65",
+      "io": [
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]bahamut2>Skin>0>0.1>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]bahamut2>Color>0 0 255>0.1>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser2",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>bridge2_rot>FireUser1>>0>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser2",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>bridge2_rot>FireUser2>>4>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser2",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>bahamutend_props>Enable>>0>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser2",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>bahamutend_props>EnableCollision>>0>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]puertaxx1>Close>>0>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]puertaxx3>Close>>0>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]tele_bal>Disable>>0>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]puerta5>Open>>0>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]barrera33>Kill>>0>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>extreme3zed_props>Enable>>0>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>extreme3zed_props>EnableCollision>>0>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]dasdas>Disable>>0>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]puertafinal>Disable>>0>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]AFKHurter>Disable>>0>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>explosion_e3zed>InValue>ending>0>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]consola>Command>say ** FINAL DOOR OPENS IN 30S **>35>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]consola>Command>say ** ALL MATERIAS ARE DISABLED!! **>38>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]magia_cura_button>Lock>>38>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]hielo_f_button>Lock>>38>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]rayo_bot>Lock>>38>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]magia_viento_button>Lock>>38>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]magia_tierra_button>Lock>>38>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]1b>Lock>>38>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]boton_ultima>Lock>>38>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]magia_gravedad_button>Lock>>38>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]consola>Command>say ** 5 **>60>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]consola>Command>say ** 4 **>61>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]consola>Command>say ** 3 **>62>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]consola>Command>say ** 2 **>63>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]consola>Command>say ** 1 **>64>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]consola>Command>say ** RUUUUUUUUN! **>65>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]puertaxx1>Open>>65>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]consola>Command>say ** THE REACTOR IS GOING TO EXPLODE!! **>67>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]consola>Command>say ** WE HAVE TO ESCAPE FROM HERE!! **>68>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]ss_only>SetSoundEventName>seph_onlythechosen>89.4>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>sephi_bossarena>CountPlayersInZone>>89.5>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>sephi_knife_teleport>Enable>>89.5>1",
+          "timestofire": 1
+        }
+      ]
     },
     // Add adminroom buttons
     {
