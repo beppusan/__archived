@@ -78,12 +78,6 @@
         },
         {
           "outputname": "OnPlayerPickup",
-          "targetname": "ZM_SEPHIROTH_HEALTH",
-          "inputname": "Enable",
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnPlayerPickup",
           "targetname": "ZM_SEPHIROTH_BOMBTIMER",
           "inputname": "Enable",
           "timestofire": 1
@@ -163,11 +157,6 @@
         },
         {
           "outputname": "OnBreak",
-          "targetname": "ZM_SEPHIROTH_HEALTH",
-          "inputname": "Disable"
-        },
-        {
-          "outputname": "OnBreak",
           "targetname": "ZM_SEPHIROTH_BOMBTIMER",
           "inputname": "Disable"
         },
@@ -198,29 +187,6 @@
           "targetname": "sephi_ending_win",
           "inputname": "FireUser1",
           "delay": 1
-        },
-        {
-          "outputname": "OnHealthChanged",
-          "targetname": "sephi_health_tracker",
-          "inputname": "Multiply"
-        },
-        {
-          "outputname": "OnHealthChanged",
-          "targetname": "sephi_health_tracker",
-          "inputname": "GetValue",
-          "delay": 0.01
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "AddHealth",
-          "overrideparam": "360"
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "sephi_health_init",
-          "inputname": "Add",
-          "overrideparam": "360"
         }
       ]
     },
@@ -527,69 +493,6 @@
           "targetname": "ZM_SEPHIROTH_LASERS",
           "inputname": "SetValue",
           "overrideparam": "3"
-        }
-      ]
-    },
-    // Add sephiroth health display and calculations
-    {
-      "classname": "point_worldtext",
-      "targetname": "ZM_SEPHIROTH_HEALTH",
-      "reorient_mode": "1",
-      "justify_vertical": "1",
-      "justify_horizontal": "1",
-      "font_name": "Tahoma Bold",
-      "font_size": "160",
-      "world_units_per_pixel": "0.15",
-      "color": "255 32 32 255",
-      "fullbright": "1",
-      "enabled": "0",
-      "message": "20",
-      "parentname": "ZM_SEPHIROTH_KNIFE",
-      "origin": "-311.000000 -9071.799805 -433.341995",
-      "angles": "0 90 90"
-    },
-    {
-      "classname": "math_counter",
-      "targetname": "sephi_health_tracker",
-      "max": "0",
-      "min": "0",
-      "startvalue": "0",
-      "parentname": "ZM_SEPHIROTH_KNIFE",
-      "origin": "-311.000000 -9071.799805 -433.341995",
-      "io": [
-        {
-          "outputname": "OnGetValue",
-          "targetname": "ZM_SEPHIROTH_HEALTH",
-          "inputname": "SetIntMessage"
-        },
-        {
-          "outputname": "OnGetValue",
-          "targetname": "!self",
-          "inputname": "Add",
-          "overrideparam": "999999"
-        }
-      ]
-    },
-    {
-      "classname": "math_counter",
-      "targetname": "sephi_health_init",
-      "max": "999999",
-      "min": "0",
-      "startvalue": "0",
-      "parentname": "ZM_SEPHIROTH_KNIFE",
-      "origin": "-311.000000 -9071.799805 -433.341995",
-      "io": [
-        {
-          "outputname": "OutValue",
-          "targetname": "sephi_health_tracker",
-          "inputname": "SetHitMax"
-        },
-        {
-          "outputname": "OutValue",
-          "targetname": "sephi_health_tracker",
-          "inputname": "Add",
-          "overrideparam": "999999",
-          "delay": 0.01
         }
       ]
     },
