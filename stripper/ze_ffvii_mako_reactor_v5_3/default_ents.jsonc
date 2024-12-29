@@ -7007,63 +7007,85 @@
     },
     // Detect players inside/outside the boss arena
     {
-      "classname": "game_zone_player",
+      "classname": "trigger_multiple",
       "targetname": "sephi_bossarena",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "filtername": "[PR#]humanos",
       "origin": "-9600 -1602 -284",
       "angles": "0 270 0",
       "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/telee_1358.vmdl",
       "io": [
         {
-          "outputname": "OnPlayerInZone",
-          "targetname": "sephi_humanos",
-          "inputname": "TestActivator"
-        },
-        {
-          "outputname": "OnPlayerInZone",
-          "targetname": "sephi_zombis",
-          "inputname": "TestActivator"
-        },
-        {
-          "outputname": "OnPlayerOutZone",
+          "outputname": "OnStartTouch",
           "targetname": "!activator",
           "inputname": "KeyValue",
-          "overrideparam": "origin -8832 -800 -264"
-        }
-      ]
-    },
-    {
-      "classname": "filter_activator_team",
-      "targetname": "sephi_humanos",
-      "filterteam": "3",
-      "origin": "-9600 -1602 -284",
-      "io": [
+          "overrideparam": "targetname zed_inside_arena"
+        },
         {
-          "outputname": "OnPass",
+          "outputname": "OnStartTouch",
           "targetname": "!activator",
           "inputname": "SetDamageFilter",
           "overrideparam": "[PR#]no_zombies"
         },
         {
-          "outputname": "OnPass",
+          "outputname": "OnStartTouch",
           "targetname": "ZM_SEPHIROTH_HITBOX",
-          "inputname": "FireUser1"
+          "inputname": "AddHealth",
+          "overrideparam": "360"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Disable",
+          "delay": 0.02,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephi_afktp",
+          "inputname": "Enable",
+          "delay": 0.03,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephi_afktp",
+          "inputname": "Disable",
+          "delay": 0.05,
+          "timestofire": 1
         }
       ]
     },
     {
-      "classname": "filter_activator_team",
-      "targetname": "sephi_zombis",
-      "filterteam": "3",
-      "negated": "1",
-      "origin": "-9600 -1602 -284",
+      "classname": "trigger_multiple",
+      "targetname": "sephi_afktp",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "filtername": "zed_outside_arena",
+      "origin": "-8634.5 2427.5 -4968",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/boom2_984.vmdl",
       "io": [
         {
-          "outputname": "OnPass",
+          "outputname": "OnStartTouch",
           "targetname": "!activator",
           "inputname": "KeyValue",
           "overrideparam": "origin -8832 -800 -264"
         }
       ]
+    },
+    {
+      "classname": "filter_activator_name",
+      "targetname": "zed_outside_arena",
+      "filtername": "zed_inside_arena",
+      "negated": "1",
+      "origin": "-9600 -1602 -284"
     },
     // Add a teleporter where a zombie can pick up the knife
     {
@@ -7525,7 +7547,7 @@
           "outputname": "OnUser3",
           "targetname": "!self",
           "inputname": "AddOutput",
-          "overrideparam": "OnTrigger>sephi_bossarena>CountPlayersInZone>>89.5>1",
+          "overrideparam": "OnTrigger>sephi_bossarena>FireUser1>>89.5>1",
           "timestofire": 1
         },
         {
