@@ -2,7 +2,7 @@
   "filter": [
     // Remove all entities to rework laser mechanics
     {
-      "classname": "*"
+      "classname": "/.*/"
     }
   ],
   "add": [
@@ -43,6 +43,12 @@
           "outputname": "OnFullyClosed",
           "targetname": "!self",
           "inputname": "Open"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Open",
+          "timestofire": 1
         },
         {
           "outputname": "OnUser1",
@@ -591,6 +597,12 @@
           "outputname": "OnFullyClosed",
           "targetname": "!self",
           "inputname": "Open"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Open",
+          "timestofire": 1
         },
         {
           "outputname": "OnUser1",

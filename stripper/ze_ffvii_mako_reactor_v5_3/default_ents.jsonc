@@ -1419,14 +1419,14 @@
             "outputname": "OnUser1",
             "targetname": "!self",
             "inputname": "AddOutput",
-            "overrideparam": "OnPressed>filter_activator_f>Enable>>17>-1",
+            "overrideparam": "OnPressed>ascensor_failsafe>Enable>>17>-1",
             "timestofire": 1
           },
           {
             "outputname": "OnUser1",
             "targetname": "!self",
             "inputname": "AddOutput",
-            "overrideparam": "OnPressed>filter_activator_f>Disable>>17.1>-1",
+            "overrideparam": "OnPressed>ascensor_failsafe>Disable>>17.1>-1",
             "timestofire": 1
           }
         ]
@@ -1516,6 +1516,13 @@
             "outputname": "OnUser2",
             "targetname": "!self",
             "inputname": "AddOutput",
+            "overrideparam": "OnStart>ascensor_danyo>Disable>>7>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
             "overrideparam": "OnStart>[PR#]consola>Command>sv_falldamage_scale 1>33>1",
             "timestofire": 1
           },
@@ -1586,7 +1593,7 @@
         ]
       }
     },
-    // Enable activation of huge explosion after superior 30s door opens
+    // Trigger huge explosion after superior 30s door opens
     {
       "match": {
         "classname": "func_door",
@@ -1595,10 +1602,10 @@
       "insert": {
         "io": [
           {
-            "outputname": "OnUser1",
-            "targetname": "!self",
-            "inputname": "AddOutput",
-            "overrideparam": "OnFullyOpen>explosion_e3zed>InValue>inside1>1>1",
+            "outputname": "OnFullyOpen",
+            "targetname": "extreme3zed_trigger2",
+            "inputname": "Trigger",
+            "delay": 1,
             "timestofire": 1
           }
         ]
@@ -1691,6 +1698,27 @@
             "inputname": "Trigger"
           }
         ]
+      }
+    },
+    // Rename point_template entities for clarity
+    {
+      "match": {
+        "classname": "point_template",
+        "hammeruniqueid": "9"
+      },
+      "replace": {
+        "spawnflags": "0",
+        "targetname": "meteor_template"
+      }
+    },
+    {
+      "match": {
+        "classname": "point_template",
+        "hammeruniqueid": "5101"
+      },
+      "replace": {
+        "spawnflags": "0",
+        "targetname": "ZM_SEPHIROTH_LASERTEMP"
       }
     }
   ],
@@ -4558,17 +4586,17 @@
       "classname": "filter_damage_type",
       "targetname": "filtro_caer",
       "damagetype": "32",
-      "nagated": "1",
+      "negated": "1",
       "origin": "-9652 8384 132"
     },
     {
       "classname": "trigger_multiple",
-      "targetname": "filter_activator_f",
-      "startdisabled": "1",
+      "targetname": "ascensor_failsafe",
       "spawnflags": "1",
+      "startdisabled": "1",
       "parentname": "[PR#]ascensort",
-      "origin": "-9808 8768 94",
-      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/escal2_3761.vmdl",
+      "origin": "-9804 8752 244.62",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/fix_tierra_1490.vmdl",
       "io": [
         {
           "outputname": "OnStartTouch",
@@ -4962,6 +4990,20 @@
         },
         {
           "outputname": "OnTrigger",
+          "targetname": "ULTIMA_TELEPORT_RELAY",
+          "inputname": "Enable",
+          "delay": 12.1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "ULTIMA_TELEPORT_RELAY",
+          "inputname": "FireUser1",
+          "delay": 12.1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
           "targetname": "[PR#]nubes_secundarias",
           "inputname": "Enable",
           "timestofire": 1
@@ -4982,9 +5024,8 @@
         },
         {
           "outputname": "OnTrigger",
-          "targetname": "explosion_e3zed",
-          "inputname": "InValue",
-          "overrideparam": "train",
+          "targetname": "extreme3zed_trigger1",
+          "inputname": "Trigger",
           "delay": 13.5,
           "timestofire": 1
         },
@@ -5004,18 +5045,6 @@
           "outputname": "OnTrigger",
           "targetname": "[PR#]ascensort",
           "inputname": "FireUser2",
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "ULTIMA_TELEPORT_RELAY",
-          "inputname": "Enable",
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "ULTIMA_TELEPORT_RELAY",
-          "inputname": "FireUser1",
           "timestofire": 1
         },
         {
@@ -5237,12 +5266,6 @@
         },
         {
           "outputname": "OnTrigger",
-          "targetname": "[PR#]huida_e",
-          "inputname": "Enable",
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
           "targetname": "[PR#]Tonemap_EX2",
           "inputname": "Enable",
           "timestofire": 1
@@ -5350,6 +5373,34 @@
         },
         {
           "outputname": "OnTrigger",
+          "targetname": "extreme3zed_trigger1",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "extreme3zed_trigger2",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "extreme3zed_trigger3",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "extreme3zed_trigger4",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
           "targetname": "[PR#]extreme2_particula1",
           "inputname": "Start",
           "delay": 5,
@@ -5373,13 +5424,6 @@
           "targetname": "[PR#]extremedanyo",
           "inputname": "Trigger",
           "delay": 2,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]cancion_3",
-          "inputname": "SetSoundEventName",
-          "overrideparam": "ffvii_e2_selfvsself",
           "timestofire": 1
         },
         {
@@ -5529,245 +5573,7 @@
         }
       ]
     },
-    // Add custom explosions
-    {
-      "classname": "info_particle_system",
-      "targetname": "explosion_mako_z",
-      "start_active": "0",
-      "effect_name": "particles/fire_01/explosion_huge.vpcf",
-      "origin": "-7112 -657 463",
-      "io": [
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "Start"
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "Stop",
-          "delay": 0.1
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "explosion_mako5",
-          "inputname": "PlaySound"
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "[PR#]shakeelve",
-          "inputname": "StartShake"
-        },
-        {
-          "outputname": "OnUser4",
-          "targetname": "!self",
-          "inputname": "KeyValue",
-          "overrideparam": "origin -8896 -788 -208",
-          "timestofire": 1
-        }
-      ]
-    },
-    {
-      "classname": "info_particle_system",
-      "targetname": "explosion_mako_z1",
-      "start_active": "0",
-      "effect_name": "particles/fire_01/explosion_huge.vpcf",
-      "origin": "-9138 -1940 140",
-      "io": [
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "Start"
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "Stop",
-          "delay": 0.1
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "explosion_mako5",
-          "inputname": "PlaySound"
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "[PR#]shakeelve",
-          "inputname": "StartShake"
-        },
-        {
-          "outputname": "OnUser4",
-          "targetname": "!self",
-          "inputname": "KeyValue",
-          "overrideparam": "origin -8896 -1420 -208",
-          "timestofire": 1
-        }
-      ]
-    },
-    {
-      "classname": "info_particle_system",
-      "targetname": "explosion_mako_z1",
-      "start_active": "0",
-      "effect_name": "particles/fire_01/explosion_huge.vpcf",
-      "origin": "-9854 -2014 270",
-      "io": [
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "Start"
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "Stop",
-          "delay": 0.1
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "explosion_mako5",
-          "inputname": "PlaySound"
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "[PR#]shakeelve",
-          "inputname": "StartShake"
-        },
-        {
-          "outputname": "OnUser4",
-          "targetname": "!self",
-          "inputname": "KeyValue",
-          "overrideparam": "origin -9436 -136 -336",
-          "timestofire": 1
-        }
-      ]
-    },
-    {
-      "classname": "info_particle_system",
-      "targetname": "explosion_mako_z1",
-      "start_active": "0",
-      "effect_name": "particles/fire_01/explosion_huge.vpcf",
-      "origin": "-10384 -1430 160",
-      "io": [
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "Start"
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "Stop",
-          "delay": 0.1
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "explosion_mako5",
-          "inputname": "PlaySound"
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "[PR#]shakeelve",
-          "inputname": "StartShake"
-        },
-        {
-          "outputname": "OnUser4",
-          "targetname": "!self",
-          "inputname": "KeyValue",
-          "overrideparam": "origin -9426 -1830 -330",
-          "timestofire": 1
-        }
-      ]
-    },
-    {
-      "classname": "info_particle_system",
-      "targetname": "explosion_mako_z2",
-      "start_active": "0",
-      "effect_name": "particles/fire_01/explosion_huge.vpcf",
-      "origin": "-9866 -1830 -330",
-      "io": [
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "Start"
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "Stop",
-          "delay": 0.1
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "explosion_mako5",
-          "inputname": "PlaySound"
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "[PR#]shakeelve",
-          "inputname": "StartShake"
-        }
-      ]
-    },
-    {
-      "classname": "info_particle_system",
-      "targetname": "explosion_mako_z2",
-      "start_active": "0",
-      "effect_name": "particles/fire_01/explosion_huge.vpcf",
-      "origin": "-10222 -1294 198",
-      "io": [
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "Start"
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "Stop",
-          "delay": 0.1
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "explosion_mako5",
-          "inputname": "PlaySound"
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "[PR#]shakeelve",
-          "inputname": "StartShake"
-        }
-      ]
-    },
-    {
-      "classname": "info_particle_system",
-      "targetname": "explosion_mako_z2",
-      "start_active": "0",
-      "effect_name": "particles/fire_01/explosion_huge.vpcf",
-      "origin": "-10222 -806 198",
-      "io": [
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "Start"
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "Stop",
-          "delay": 0.1
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "explosion_mako5",
-          "inputname": "PlaySound"
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "[PR#]shakeelve",
-          "inputname": "StartShake"
-        }
-      ]
-    },
+    // Add custom huge explosions across the entire map
     {
       "classname": "ambient_generic",
       "targetname": "explosion_mako5",
@@ -5775,338 +5581,942 @@
       "radius": "1250",
       "health": "10",
       "message": "explode_2",
-      "parentname": "explosion_mako_z",
+      "origin": "-8600.177246 -175.586250 40"
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "explosion_mako_huge1_1",
+      "start_active": "0",
+      "effect_name": "particles/fire_01/explosion_huge.vpcf",
       "origin": "-7112 -657 463"
     },
     {
-      "classname": "logic_case",
-      "targetname": "explosion_e3zed",
-      "case01": "train",
-      "case02": "inside1",
-      "case03": "ending",
-      "case04": "final",
-      "origin": "-7423.4 -1210.52 58.8884",
+      "classname": "info_particle_system",
+      "targetname": "explosion_mako_huge1_2",
+      "start_active": "0",
+      "effect_name": "particles/fire_01/explosion_huge.vpcf",
+      "origin": "-6986 -2350 240"
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "explosion_mako_huge1_3",
+      "start_active": "0",
+      "effect_name": "particles/fire_01/explosion_huge.vpcf",
+      "origin": "-7446 -3054 96"
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "explosion_mako_huge1_4",
+      "start_active": "0",
+      "effect_name": "particles/fire_01/explosion_huge.vpcf",
+      "origin": "-7110 -3856 224"
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "explosion_mako_huge1_5",
+      "start_active": "0",
+      "effect_name": "particles/fire_01/explosion_huge.vpcf",
+      "origin": "-6986 -2350 240"
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "explosion_mako_huge1_6",
+      "start_active": "0",
+      "effect_name": "particles/fire_01/explosion_huge.vpcf",
+      "origin": "-7112 -688 56"
+    },
+    {
+      "classname": "logic_relay",
+      "targetname": "extreme3zed_trigger1",
+      "triggeronce": "1",
+      "startdisabled": "1",
+      "origin": "-7112 -657 463",
       "io": [
         {
-          "outputname": "OnCase01",
-          "targetname": "explosion_mako_z",
-          "inputname": "FireUser1",
-          "delay": 1.5,
-          "timestofire": 1
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako_huge1_1",
+          "inputname": "Start",
+          "delay": 1.5
         },
         {
-          "outputname": "OnCase01",
-          "targetname": "explosion_mako_z",
-          "inputname": "KeyValue",
-          "overrideparam": "origin -6986 -2350 240",
-          "delay": 2.9,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase01",
-          "targetname": "explosion_mako_z",
-          "inputname": "FireUser1",
-          "delay": 3,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase01",
-          "targetname": "explosion_mako_z",
-          "inputname": "KeyValue",
-          "overrideparam": "origin -7446 -3054 96",
-          "delay": 4.4,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase01",
-          "targetname": "explosion_mako_z",
-          "inputname": "FireUser1",
-          "delay": 4.5,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase01",
-          "targetname": "explosion_mako_z",
-          "inputname": "KeyValue",
-          "overrideparam": "origin -7110 -3856 224",
-          "delay": 5.9,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase01",
-          "targetname": "explosion_mako_z",
-          "inputname": "FireUser1",
-          "delay": 6,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase01",
-          "targetname": "explosion_mako_z",
-          "inputname": "KeyValue",
-          "overrideparam": "origin -6986 -2350 240",
-          "delay": 7.4,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase01",
-          "targetname": "explosion_mako_z",
-          "inputname": "FireUser1",
-          "delay": 7.5,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase01",
-          "targetname": "explosion_mako_z",
-          "inputname": "KeyValue",
-          "overrideparam": "origin -7112 -688 56",
-          "delay": 9.9,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase01",
+          "outputname": "OnTrigger",
           "targetname": "explosion_mako5",
-          "inputname": "KeyValue",
-          "overrideparam": "targetname #DIFF_EXPLOSION_SOUND",
-          "delay": 9.9,
-          "timestofire": 1
+          "inputname": "PlaySound",
+          "delay": 1.5
         },
         {
-          "outputname": "OnCase01",
-          "targetname": "explosion_mako_z",
-          "inputname": "FireUser1",
-          "delay": 10,
-          "timestofire": 1
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]shakeelve",
+          "inputname": "StartShake",
+          "delay": 1.5
         },
         {
-          "outputname": "OnCase01",
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako_huge1_2",
+          "inputname": "Start",
+          "delay": 3
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako5",
+          "inputname": "PlaySound",
+          "delay": 3
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]shakeelve",
+          "inputname": "StartShake",
+          "delay": 3
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako_huge1_3",
+          "inputname": "Start",
+          "delay": 4.5
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako5",
+          "inputname": "PlaySound",
+          "delay": 4.5
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]shakeelve",
+          "inputname": "StartShake",
+          "delay": 4.5
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako_huge1_4",
+          "inputname": "Start",
+          "delay": 6
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako5",
+          "inputname": "PlaySound",
+          "delay": 6
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]shakeelve",
+          "inputname": "StartShake",
+          "delay": 6
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako_huge1_5",
+          "inputname": "Start",
+          "delay": 7.5
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako5",
+          "inputname": "PlaySound",
+          "delay": 7.5
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]shakeelve",
+          "inputname": "StartShake",
+          "delay": 7.5
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako_huge1_6",
+          "inputname": "Start",
+          "delay": 10
+        },
+        {
+          "outputname": "OnTrigger",
           "targetname": "[PR#]ch2",
           "inputname": "PlaySound",
-          "delay": 10,
-          "timestofire": 1
+          "delay": 10
         },
         {
-          "outputname": "OnCase01",
-          "targetname": "trigger_meteor",
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]shakeelve",
+          "inputname": "StartShake",
+          "delay": 10
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "fire_mako_f1",
           "inputname": "FireUser1",
-          "delay": 10,
-          "timestofire": 1
+          "delay": 10
         },
         {
-          "outputname": "OnCase01",
-          "targetname": "explosion_mako_z",
-          "inputname": "KeyValue",
-          "overrideparam": "origin -7996 3424 96",
-          "delay": 11,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase01",
-          "targetname": "#DIFF_EXPLOSION_SOUND",
-          "inputname": "KeyValue",
-          "overrideparam": "targetname explosion_mako5",
-          "delay": 11,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase02",
-          "targetname": "explosion_mako_z",
+          "outputname": "OnTrigger",
+          "targetname": "fire_mako_f2",
           "inputname": "FireUser1",
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase02",
-          "targetname": "explosion_mako_z",
-          "inputname": "KeyValue",
-          "overrideparam": "origin -7416 3220 96",
-          "delay": 1.9,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase02",
-          "targetname": "explosion_mako_z",
-          "inputname": "FireUser1",
-          "delay": 2,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase02",
-          "targetname": "explosion_mako_z",
-          "inputname": "KeyValue",
-          "overrideparam": "origin -9776 7024 232",
-          "delay": 3,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase03",
-          "targetname": "explosion_mako_z",
-          "inputname": "FireUser1",
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase02",
-          "targetname": "explosion_mako_z",
-          "inputname": "KeyValue",
-          "overrideparam": "origin 9264 6872 160",
-          "delay": 1.4,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase03",
-          "targetname": "explosion_mako_z",
-          "inputname": "FireUser1",
-          "delay": 1.5,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase03",
-          "targetname": "explosion_mako_z",
-          "inputname": "KeyValue",
-          "overrideparam": "origin 9264 6872 160",
-          "delay": 4.4,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase03",
-          "targetname": "explosion_mako_z",
-          "inputname": "FireUser1",
-          "delay": 4.5,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase03",
-          "targetname": "explosion_mako_z",
-          "inputname": "KeyValue",
-          "overrideparam": "origin -8128 3992 56",
-          "delay": 14.9,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase03",
-          "targetname": "explosion_mako_z",
-          "inputname": "FireUser1",
-          "delay": 15,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase03",
-          "targetname": "explosion_mako_z",
-          "inputname": "KeyValue",
-          "overrideparam": "origin -8224 3328 90",
-          "delay": 34.9,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase03",
-          "targetname": "explosion_mako_z",
-          "inputname": "FireUser1",
-          "delay": 35,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase03",
-          "targetname": "explosion_mako_z",
-          "inputname": "KeyValue",
-          "overrideparam": "origin -7438 3452 156",
-          "delay": 44.9,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase03",
-          "targetname": "explosion_mako_z",
-          "inputname": "FireUser1",
-          "delay": 45,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase03",
-          "targetname": "explosion_mako_z",
-          "inputname": "KeyValue",
-          "overrideparam": "origin -7132 3196 238",
-          "delay": 51.9,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase03",
-          "targetname": "explosion_mako_z",
-          "inputname": "FireUser1",
-          "delay": 52,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase03",
-          "targetname": "explosion_mako_z",
-          "inputname": "KeyValue",
-          "overrideparam": "origin -8584 1760 -104",
-          "delay": 66.4,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase03",
-          "targetname": "explosion_mako_z",
-          "inputname": "FireUser1",
-          "delay": 66.5,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase03",
-          "targetname": "explosion_mako_z",
-          "inputname": "KeyValue",
-          "overrideparam": "origin -8380 3236 190",
-          "delay": 69.4,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase03",
-          "targetname": "explosion_mako_z",
-          "inputname": "FireUser1",
-          "delay": 69.5,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase03",
-          "targetname": "explosion_mako_z",
-          "inputname": "KeyValue",
-          "overrideparam": "origin -8518 -1490 96",
-          "delay": 74.4,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase03",
-          "targetname": "explosion_mako_z1",
-          "inputname": "KeyValue",
-          "overrideparam": "targetname explosion_mako_z",
-          "delay": 74.4,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase03",
-          "targetname": "explosion_mako_z",
-          "inputname": "FireUser1",
-          "delay": 74.5,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase03",
-          "targetname": "explosion_mako_z",
-          "inputname": "FireUser4",
-          "delay": 75,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase03",
-          "targetname": "explosion_mako_z2",
-          "inputname": "KeyValue",
-          "overrideparam": "targetname explosion_mako_z",
-          "delay": 75,
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnCase04",
-          "targetname": "explosion_mako_z",
-          "inputname": "FireUser1",
-          "timestofire": 1
+          "delay": 13
         }
       ]
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "explosion_mako_huge2_1",
+      "start_active": "0",
+      "effect_name": "particles/fire_01/explosion_huge.vpcf",
+      "origin": "-7996 3424 96"
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "explosion_mako_huge2_2",
+      "start_active": "0",
+      "effect_name": "particles/fire_01/explosion_huge.vpcf",
+      "origin": "-7416 3220 96"
+    },
+    {
+      "classname": "logic_relay",
+      "targetname": "extreme3zed_trigger2",
+      "triggeronce": "1",
+      "startdisabled": "1",
+      "origin": "-7996 3424 96",
+      "io": [
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako_huge2_1",
+          "inputname": "Start",
+          "delay": 2
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako5",
+          "inputname": "PlaySound",
+          "delay": 2
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]shakeelve",
+          "inputname": "StartShake",
+          "delay": 2
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "fire_mako_f3",
+          "inputname": "FireUser1",
+          "delay": 2
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako_huge2_2",
+          "inputname": "Start",
+          "delay": 3
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako5",
+          "inputname": "PlaySound",
+          "delay": 3
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]shakeelve",
+          "inputname": "StartShake",
+          "delay": 3
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "fire_mako_f4",
+          "inputname": "FireUser1",
+          "delay": 3
+        }
+      ]
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "explosion_mako_huge3_1",
+      "start_active": "0",
+      "effect_name": "particles/fire_01/explosion_huge.vpcf",
+      "origin": "-9776 7024 232"
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "explosion_mako_huge3_2",
+      "start_active": "0",
+      "effect_name": "particles/fire_01/explosion_huge.vpcf",
+      "origin": "-9264 6872 160"
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "explosion_mako_huge3_3",
+      "start_active": "0",
+      "effect_name": "particles/fire_01/explosion_huge.vpcf",
+      "origin": "-9352 5604 96"
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "explosion_mako_huge3_4",
+      "start_active": "0",
+      "effect_name": "particles/fire_01/explosion_huge.vpcf",
+      "origin": "-8128 3992 56"
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "explosion_mako_huge4_1",
+      "start_active": "0",
+      "effect_name": "particles/fire_01/explosion_huge.vpcf",
+      "origin": "-8224 3328 90"
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "explosion_mako_huge4_2",
+      "start_active": "0",
+      "effect_name": "particles/fire_01/explosion_huge.vpcf",
+      "origin": "-7438 3452 156"
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "explosion_mako_huge4_3",
+      "start_active": "0",
+      "effect_name": "particles/fire_01/explosion_huge.vpcf",
+      "origin": "-7132 3196 238"
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "explosion_mako_huge5_1",
+      "start_active": "0",
+      "effect_name": "particles/fire_01/explosion_huge.vpcf",
+      "origin": "-8584 1760 -104"
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "explosion_mako_huge5_2",
+      "start_active": "0",
+      "effect_name": "particles/fire_01/explosion_huge.vpcf",
+      "origin": "-8380 3236 190"
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "explosion_mako_huge5_3",
+      "start_active": "0",
+      "effect_name": "particles/fire_01/explosion_huge.vpcf",
+      "origin": "-8518 -1490 96"
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "explosion_mako_huge5_3",
+      "start_active": "0",
+      "effect_name": "particles/fire_01/explosion_huge.vpcf",
+      "origin": "-9138 -1940 140"
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "explosion_mako_huge5_3",
+      "start_active": "0",
+      "effect_name": "particles/fire_01/explosion_huge.vpcf",
+      "origin": "-9854 -2014 270"
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "explosion_mako_huge5_3",
+      "start_active": "0",
+      "effect_name": "particles/fire_01/explosion_huge.vpcf",
+      "origin": "-10384 -1430 160"
+    },
+    {
+      "classname": "logic_relay",
+      "targetname": "extreme3zed_trigger3",
+      "triggeronce": "1",
+      "startdisabled": "1",
+      "origin": "-9776 7024 232",
+      "io": [
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako_huge3_1",
+          "inputname": "Start"
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako5",
+          "inputname": "PlaySound"
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]shakeelve",
+          "inputname": "StartShake"
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako_huge3_2",
+          "inputname": "Start",
+          "delay": 1.5
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako5",
+          "inputname": "PlaySound",
+          "delay": 1.5
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]shakeelve",
+          "inputname": "StartShake",
+          "delay": 1.5
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako_huge3_3",
+          "inputname": "Start",
+          "delay": 4.5
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako5",
+          "inputname": "PlaySound",
+          "delay": 4.5
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]shakeelve",
+          "inputname": "StartShake",
+          "delay": 4.5
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako_huge3_4",
+          "inputname": "Start",
+          "delay": 15
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako5",
+          "inputname": "PlaySound",
+          "delay": 15
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]shakeelve",
+          "inputname": "StartShake",
+          "delay": 15
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako_huge4_1",
+          "inputname": "Start",
+          "delay": 35
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako5",
+          "inputname": "PlaySound",
+          "delay": 35
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]shakeelve",
+          "inputname": "StartShake",
+          "delay": 35
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako_huge4_2",
+          "inputname": "Start",
+          "delay": 45
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako5",
+          "inputname": "PlaySound",
+          "delay": 45
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]shakeelve",
+          "inputname": "StartShake",
+          "delay": 45
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "fire_mako_f5",
+          "inputname": "FireUser1",
+          "delay": 45
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako_huge4_3",
+          "inputname": "Start",
+          "delay": 52
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako5",
+          "inputname": "PlaySound",
+          "delay": 52
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]shakeelve",
+          "inputname": "StartShake",
+          "delay": 52
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako_huge5_1",
+          "inputname": "Start",
+          "delay": 66.5
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako5",
+          "inputname": "PlaySound",
+          "delay": 66.5
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]shakeelve",
+          "inputname": "StartShake",
+          "delay": 66.5
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako_huge5_2",
+          "inputname": "Start",
+          "delay": 69.5
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako5",
+          "inputname": "PlaySound",
+          "delay": 69.5
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]shakeelve",
+          "inputname": "StartShake",
+          "delay": 69.5
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako_huge5_3",
+          "inputname": "Start",
+          "delay": 74.5
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako5",
+          "inputname": "PlaySound",
+          "delay": 74.5
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako5",
+          "inputname": "PlaySound",
+          "delay": 74.5
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako5",
+          "inputname": "PlaySound",
+          "delay": 74.5
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako5",
+          "inputname": "PlaySound",
+          "delay": 74.5
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]shakeelve",
+          "inputname": "StartShake",
+          "delay": 74.5
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]shakeelve",
+          "inputname": "StartShake",
+          "delay": 74.5
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]shakeelve",
+          "inputname": "StartShake",
+          "delay": 74.5
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]shakeelve",
+          "inputname": "StartShake",
+          "delay": 74.5
+        }
+      ]
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "explosion_mako_huge6",
+      "start_active": "0",
+      "effect_name": "particles/fire_01/explosion_huge.vpcf",
+      "origin": "-8896 -788 -208"
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "explosion_mako_huge6",
+      "start_active": "0",
+      "effect_name": "particles/fire_01/explosion_huge.vpcf",
+      "origin": "-8896 -1420 -208"
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "explosion_mako_huge6",
+      "start_active": "0",
+      "effect_name": "particles/fire_01/explosion_huge.vpcf",
+      "origin": "-9436 -136 -336"
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "explosion_mako_huge6",
+      "start_active": "0",
+      "effect_name": "particles/fire_01/explosion_huge.vpcf",
+      "origin": "-9426 -1830 -330"
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "explosion_mako_huge6",
+      "start_active": "0",
+      "effect_name": "particles/fire_01/explosion_huge.vpcf",
+      "origin": "-9866 -1830 -330"
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "explosion_mako_huge6",
+      "start_active": "0",
+      "effect_name": "particles/fire_01/explosion_huge.vpcf",
+      "origin": "-10222 -1294 198"
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "explosion_mako_huge6",
+      "start_active": "0",
+      "effect_name": "particles/fire_01/explosion_huge.vpcf",
+      "origin": "-10222 -806 198"
+    },
+    {
+      "classname": "logic_relay",
+      "targetname": "extreme3zed_trigger4",
+      "triggeronce": "1",
+      "startdisabled": "1",
+      "origin": "-8896 -788 -208",
+      "io": [
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako_huge6",
+          "inputname": "Start"
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako5",
+          "inputname": "PlaySound"
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako5",
+          "inputname": "PlaySound"
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako5",
+          "inputname": "PlaySound"
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako5",
+          "inputname": "PlaySound"
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako5",
+          "inputname": "PlaySound"
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako5",
+          "inputname": "PlaySound"
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "explosion_mako5",
+          "inputname": "PlaySound"
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]shakeelve",
+          "inputname": "StartShake"
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]shakeelve",
+          "inputname": "StartShake"
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]shakeelve",
+          "inputname": "StartShake"
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]shakeelve",
+          "inputname": "StartShake"
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]shakeelve",
+          "inputname": "StartShake"
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]shakeelve",
+          "inputname": "StartShake"
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]shakeelve",
+          "inputname": "StartShake"
+        }
+      ]
+    },
+    // Add custom fire using particles across the entire map
+    {
+      "classname": "info_particle_system",
+      "targetname": "fire_mako_f1",
+      "effect_name": "particles/ffvii_go/fuego_area.vpcf",
+      "origin": "-7558 -744 32",
+      "io": [
+        {
+          "outputname": "OnUser1",
+          "targetname": "fire_mako_f1",
+          "inputname": "Start"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "fire_mako_hurt1",
+          "inputname": "Enable"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "fire_mako_f1",
+          "inputname": "Stop",
+          "delay": 15
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "fire_mako_hurt1",
+          "inputname": "Disable",
+          "delay": 15
+        }
+      ]
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "fire_mako_f1",
+      "effect_name": "particles/ffvii_go/fuego_area.vpcf",
+      "origin": "-7558 -744 32"
+    },
+    {
+      "classname": "trigger_hurt",
+      "targetname": "fire_mako_hurt1",
+      "damage": "2",
+      "damagecap": "2",
+      "damagetype": "1024",
+      "filtername": "[PR#]humanos",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "origin": "-7558 -744 32",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/fuego_a3_615.vmdl"
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "fire_mako_f2",
+      "effect_name": "particles/ffvii_go/fuego_area.vpcf",
+      "origin": "-8476 10 32",
+      "io": [
+        {
+          "outputname": "OnUser1",
+          "targetname": "fire_mako_f2",
+          "inputname": "Start"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "fire_mako_hurt2",
+          "inputname": "Enable"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "fire_mako_f2",
+          "inputname": "Stop",
+          "delay": 15
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "fire_mako_hurt2",
+          "inputname": "Disable",
+          "delay": 15
+        }
+      ]
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "fire_mako_f2",
+      "effect_name": "particles/ffvii_go/fuego_area.vpcf",
+      "origin": "-8476 10 32"
+    },
+    {
+      "classname": "trigger_hurt",
+      "targetname": "fire_mako_hurt2",
+      "damage": "2",
+      "damagecap": "2",
+      "damagetype": "1024",
+      "filtername": "[PR#]humanos",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "origin": "-8476 10 32",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/fuego_a3_615.vmdl"
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "fire_mako_f3",
+      "effect_name": "particles/ffvii_go/fuego_area.vpcf",
+      "origin": "-7996 3244 96",
+      "io": [
+        {
+          "outputname": "OnUser1",
+          "targetname": "fire_mako_f3",
+          "inputname": "Start"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "fire_mako_hurt3",
+          "inputname": "Enable"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "fire_mako_f3",
+          "inputname": "Stop",
+          "delay": 15
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "fire_mako_hurt3",
+          "inputname": "Disable",
+          "delay": 15
+        }
+      ]
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "fire_mako_f3",
+      "effect_name": "particles/ffvii_go/fuego_area.vpcf",
+      "origin": "-7996 3244 96"
+    },
+    {
+      "classname": "trigger_hurt",
+      "targetname": "fire_mako_hurt3",
+      "damage": "2",
+      "damagecap": "2",
+      "damagetype": "1024",
+      "filtername": "[PR#]humanos",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "origin": "-7996 3244 96",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/fuego_a3_615.vmdl"
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "fire_mako_f4",
+      "effect_name": "particles/ffvii_go/fuego_area.vpcf",
+      "origin": "-7416 3220 96",
+      "io": [
+        {
+          "outputname": "OnUser1",
+          "targetname": "fire_mako_f4",
+          "inputname": "Start"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "fire_mako_hurt4",
+          "inputname": "Enable"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "fire_mako_f4",
+          "inputname": "Stop",
+          "delay": 15
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "fire_mako_hurt4",
+          "inputname": "Disable",
+          "delay": 15
+        }
+      ]
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "fire_mako_f4",
+      "effect_name": "particles/ffvii_go/fuego_area.vpcf",
+      "origin": "-7416 3220 96"
+    },
+    {
+      "classname": "trigger_hurt",
+      "targetname": "fire_mako_hurt4",
+      "damage": "2",
+      "damagecap": "2",
+      "damagetype": "1024",
+      "filtername": "[PR#]humanos",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "origin": "-7416 3220 96",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/fuego_a3_615.vmdl"
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "fire_mako_f5",
+      "effect_name": "particles/ffvii_go/fuego_area.vpcf",
+      "origin": "-7752 3328 64",
+      "io": [
+        {
+          "outputname": "OnUser1",
+          "targetname": "fire_mako_f5",
+          "inputname": "Start"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "fire_mako_hurt5",
+          "inputname": "Enable"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "fire_mako_f5",
+          "inputname": "Stop",
+          "delay": 15
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "fire_mako_hurt5",
+          "inputname": "Disable",
+          "delay": 15
+        }
+      ]
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "fire_mako_f5",
+      "effect_name": "particles/ffvii_go/fuego_area.vpcf",
+      "origin": "-7752 3328 64"
+    },
+    {
+      "classname": "trigger_hurt",
+      "targetname": "fire_mako_hurt5",
+      "damage": "2",
+      "damagecap": "2",
+      "damagetype": "1024",
+      "filtername": "[PR#]humanos",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "origin": "-7752 3328 64",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/fuego_a3_615.vmdl"
     },
     // Add meteor spawners
     {
@@ -6120,7 +6530,7 @@
       "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/boom2zm2_1499.vmdl",
       "io": [
         {
-          "outputname": "OnStartTouch",
+          "outputname": "OnTrigger",
           "targetname": "teleportarMETEOR",
           "inputname": "ForceSpawnAtEntityOrigin",
           "overrideparam": "!activator"
@@ -6165,21 +6575,37 @@
           "inputname": "Command",
           "overrideparam": "say ** WARNING: Meteor is incoming... **",
           "timestofire": 1
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "meteor_starting",
+          "inputname": "Fade",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]puerta8",
+          "inputname": "AddOutput",
+          "overrideparam": "OnFullyOpen>meteor_spawner>Disable>>0>1",
+          "timestofire": 1
         }
       ]
-    },
-    {
-      "classname": "point_template",
-      "targetname": "meteor_template",
-      "spawnflags": "0",
-      "origin": "-7752 -612 36",
-      "hammeruniqueid": "9",
-      "entitylumpname": "9#entityLumpName"
     },
     {
       "classname": "env_entity_maker",
       "targetname": "teleportarMETEOR",
       "entitytemplate": "meteor_template",
+      "origin": "-7752 -612 42"
+    },
+    {
+      "classname": "env_fade",
+      "targetname": "meteor_starting",
+      "reversefadeduration": "0",
+      "rendercolor": "255 255 255",
+      "renderamt": "25",
+      "holdtime": "0",
+      "duration": "1",
+      "spawnflags": "9",
       "origin": "-7752 -612 42"
     },
     // Elevator trap that instantly kills humans
@@ -6191,8 +6617,7 @@
       "spawnflags": "1",
       "startdisabled": "1",
       "origin": "-9814 8741 -389",
-      "angles": "0 0 90",
-      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/trigger_extreme_1340.vmdl"
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/unnamed_1833.vmdl"
     },
     {
       "classname": "info_particle_system",
@@ -6228,6 +6653,112 @@
       "origin": "-9984 10352 -4932",
       "angles": "0 45 0"
     },
+    // Add a custom explosion and teleport ULTIMA to different positions for optional events
+    {
+      "classname": "info_particle_system",
+      "targetname": "ultima_expl_f",
+      "start_active": "0",
+      "effect_name": "particles/ffvii_go/explosiones_mako.vpcf",
+      "origin": "-7184 9501.860352 -4456",
+      "io": [
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Start"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]explosion_mako_random",
+          "inputname": "PickRandom"
+        }
+      ]
+    },
+    {
+      "classname": "logic_relay",
+      "targetname": "ULTIMA_TELEPORT_RELAY",
+      "startdisabled": "1",
+      "origin": "-7184 9501.860352 -4456",
+      "io": [
+        {
+          "outputname": "OnTrigger",
+          "targetname": "!self",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "ultima_expl_f",
+          "inputname": "FireUser1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "ULTIMA_TELEPORT_CASE",
+          "inputname": "PickRandom",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]magia_ultima",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "teleportarSx4",
+          "inputname": "ForceSpawn",
+          "delay": 0.1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "teleportarSx5",
+          "inputname": "ForceSpawn",
+          "delay": 0.1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "ULTIMA_TELEPORT_RELAY",
+          "inputname": "Kill",
+          "delay": 0.1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]consola>Command>say ** ULTIMA GOT BOOMED. SHALAKAKA... **>0>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>Tonemap_EX3ZED>Enable>>26>1",
+          "timestofire": 1
+        }
+      ]
+    },
+    {
+      "classname": "logic_case",
+      "targetname": "ULTIMA_TELEPORT_CASE",
+      "origin": "-7184 9501.860352 -4456",
+      "io": [
+        {
+          "outputname": "OnCase01",
+          "targetname": "teleportarSx4",
+          "inputname": "KeyValue",
+          "overrideparam": "EntityTemplate magia_ultima_template"
+        },
+        {
+          "outputname": "OnCase02",
+          "targetname": "teleportarSx5",
+          "inputname": "KeyValue",
+          "overrideparam": "EntityTemplate magia_ultima_template"
+        }
+      ]
+    },
     // Add extra CC during boss fight
     {
       "classname": "post_processing_volume",
@@ -6241,7 +6772,8 @@
       "postprocessing": "postprocess/extreme3_baha.vpost",
       "spawnflags": "4097",
       "startdisabled": "1",
-      "origin": "-7743.37 -1057.82 42.9868"
+      "origin": "-7743.37 -1057.82 42.9868",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/Tonemap_EX2_5225.vmdl"
     },
     // Add custom props for EX3 ZED
     // @ Inside Reactor
@@ -6346,7 +6878,7 @@
     {
       "classname": "func_brush",
       "targetname": "extreme3zed_props",
-      "solidity": "2",
+      "solidity": "0",
       "spawnflags": "2",
       "startdisabled": "1",
       "origin": "-8889 145 -312",
@@ -6356,18 +6888,31 @@
     {
       "classname": "func_brush",
       "targetname": "extreme3zed_props",
-      "solidity": "2",
+      "solidity": "0",
       "spawnflags": "2",
       "startdisabled": "1",
       "origin": "-10414 145 -312",
       "angles": "0 0 0",
       "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/extreme2_triggers_1525.vmdl"
     },
+    // @ Final arena (purpose: restrict its size)
+    {
+      "classname": "func_brush",
+      "targetname": "extreme3zed_props",
+      "solidity": "0",
+      "spawnflags": "2",
+      "startdisabled": "1",
+      "rendermode": "1",
+      "renderamt": "0",
+      "origin": "-9630.29 -1968 -98",
+      "angles": "0 0 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/fsadas_1846.vmdl"
+    },
     // ZM cage @ final arena
     {
       "classname": "func_brush",
       "targetname": "extreme3zed_props",
-      "solidity": "2",
+      "solidity": "0",
       "spawnflags": "2",
       "startdisabled": "1",
       "rendermode": "1",
@@ -6379,7 +6924,7 @@
     {
       "classname": "func_brush",
       "targetname": "extreme3zed_props",
-      "solidity": "2",
+      "solidity": "0",
       "spawnflags": "2",
       "startdisabled": "1",
       "rendermode": "1",
@@ -6391,7 +6936,7 @@
     {
       "classname": "func_brush",
       "targetname": "extreme3zed_props",
-      "solidity": "2",
+      "solidity": "0",
       "spawnflags": "2",
       "startdisabled": "1",
       "rendermode": "1",
@@ -6403,7 +6948,7 @@
     {
       "classname": "func_brush",
       "targetname": "extreme3zed_props",
-      "solidity": "2",
+      "solidity": "0",
       "spawnflags": "2",
       "startdisabled": "1",
       "rendermode": "1",
@@ -6415,7 +6960,7 @@
     {
       "classname": "func_brush",
       "targetname": "extreme3zed_props",
-      "solidity": "2",
+      "solidity": "0",
       "spawnflags": "2",
       "startdisabled": "1",
       "rendermode": "1",
@@ -6424,6 +6969,7 @@
       "angles": "0 270 90",
       "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case1ex_1595.vmdl"
     },
+    // Add push entities to guide players into the boss arena
     {
       "classname": "trigger_push",
       "targetname": "extreme3zed_props",
@@ -6432,7 +6978,22 @@
       "speed": "500",
       "pushdir": "0 180 0",
       "origin": "-8856 1360 -150.146",
-      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/unnamed_724.vmdl"
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/unnamed_724.vmdl",
+      "io": [
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "!activator",
+          "inputname": "SetDamageFilter",
+          "overrideparam": "filtro_caer"
+        },
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "!activator",
+          "inputname": "SetDamageFilter",
+          "overrideparam": "",
+          "delay": 2
+        }
+      ]
     },
     {
       "classname": "trigger_push",
@@ -6448,17 +7009,18 @@
     {
       "classname": "game_zone_player",
       "targetname": "sephi_bossarena",
-      "origin": "-9600 -1602 -272",
+      "origin": "-9600 -1602 -284",
+      "angles": "0 270 0",
       "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/telee_1358.vmdl",
       "io": [
         {
           "outputname": "OnPlayerInZone",
-          "targetname": "humanos",
+          "targetname": "sephi_humanos",
           "inputname": "TestActivator"
         },
         {
           "outputname": "OnPlayerInZone",
-          "targetname": "zombis",
+          "targetname": "sephi_zombis",
           "inputname": "TestActivator"
         },
         {
@@ -6471,9 +7033,9 @@
     },
     {
       "classname": "filter_activator_team",
-      "targetname": "humanos",
+      "targetname": "sephi_humanos",
       "filterteam": "3",
-      "origin": "-9600 -1602 -272",
+      "origin": "-9600 -1602 -284",
       "io": [
         {
           "outputname": "OnPass",
@@ -6483,17 +7045,17 @@
         },
         {
           "outputname": "OnPass",
-          "targetname": "ZM_SEPHIROTH_BOX",
-          "inputname": "AddHealth",
-          "overrideparam": "360"
+          "targetname": "ZM_SEPHIROTH_HITBOX",
+          "inputname": "FireUser1"
         }
       ]
     },
     {
       "classname": "filter_activator_team",
-      "targetname": "zombis",
-      "filterteam": "2",
-      "origin": "-9600 -1602 -272",
+      "targetname": "sephi_zombis",
+      "filterteam": "3",
+      "negated": "1",
+      "origin": "-9600 -1602 -284",
       "io": [
         {
           "outputname": "OnPass",
@@ -6509,7 +7071,9 @@
       "targetname": "sephi_knife_teleport",
       "spawnflags": "1",
       "startdisabled": "1",
-      "filtername": "[PR#]humanos",
+      "filtername": "[PR#]zombis",
+      "origin": "-8832 -800 -245.5",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/dasdas_1671.vmdl",
       "io": [
         {
           "outputname": "OnStartTouch",
@@ -6521,7 +7085,13 @@
           "outputname": "OnStartTouch",
           "targetname": "!activator",
           "inputname": "KeyValue",
-          "overrideparam": "origin -3712 -3628 1244",
+          "overrideparam": "origin -9856 -4776 -384",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "ZM_SEPHIROTH_STRIPPER",
+          "inputname": "Enable",
           "timestofire": 1
         }
       ]
@@ -6540,9 +7110,9 @@
     },
     {
       "classname": "env_fade",
-      "targetname": "sephi_ending",
+      "targetname": "sephi_ending_win",
       "reversefadeduration": "0",
-      "rendercolor": "255 255 255",
+      "rendercolor": "0 255 0",
       "renderamt": "200",
       "holdtime": "0",
       "duration": "3",
@@ -6552,69 +7122,70 @@
         {
           "outputname": "OnUser1",
           "targetname": "!self",
-          "inputname": "Color",
-          "overrideparam": "0 255 0"
-        },
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "Fade",
-          "delay": 0.1
+          "inputname": "Fade"
         },
         {
           "outputname": "OnUser1",
           "targetname": "[PR#]consola",
           "inputname": "Command",
-          "overrideparam": "say ** Congratulations! YOU WON Extreme3 ZED version! **",
-          "delay": 0.1
+          "overrideparam": "say ** Congratulations! YOU WON Extreme3 ZED version! **"
         },
         {
           "outputname": "OnUser1",
-          "targetname": "explosion_e3zed",
-          "inputname": "FireUser4",
-          "delay": 0.1
+          "targetname": "extreme3zed_trigger4",
+          "inputname": "Trigger"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]zr_toggle_respawn",
+          "inputname": "Trigger"
         },
         {
           "outputname": "OnUser1",
           "targetname": "sephi_ending_Tnuke",
           "inputname": "Enable",
           "delay": 3
-        },
+        }
+      ]
+    },
+    {
+      "classname": "env_fade",
+      "targetname": "sephi_ending_lose",
+      "reversefadeduration": "0",
+      "rendercolor": "255 0 0",
+      "renderamt": "200",
+      "holdtime": "0",
+      "duration": "3",
+      "spawnflags": "9",
+      "origin": "-9600 -1602 -256",
+      "io": [
         {
-          "outputname": "OnUser2",
+          "outputname": "OnUser1",
           "targetname": "!self",
-          "inputname": "Color",
-          "overrideparam": "255 0 0"
+          "inputname": "Fade"
         },
         {
-          "outputname": "OnUser2",
-          "targetname": "!self",
-          "inputname": "Fade",
-          "delay": 0.1
+          "outputname": "OnUser1",
+          "targetname": "[PR#]consola",
+          "inputname": "Command",
+          "overrideparam": "say ** YOU HAVE FAILED **"
         },
         {
-          "outputname": "OnUser2",
+          "outputname": "OnUser1",
           "targetname": "[PR#]consola",
           "inputname": "Command",
           "overrideparam": "say ** YOU HAVE FAILED **",
-          "delay": 0.1
+          "delay": 0.5
         },
         {
-          "outputname": "OnUser2",
+          "outputname": "OnUser1",
           "targetname": "[PR#]consola",
           "inputname": "Command",
           "overrideparam": "say ** YOU HAVE FAILED **",
-          "delay": 0.6
+          "delay": 1
         },
         {
-          "outputname": "OnUser2",
-          "targetname": "[PR#]consola",
-          "inputname": "Command",
-          "overrideparam": "say ** YOU HAVE FAILED **",
-          "delay": 1.1
-        },
-        {
-          "outputname": "OnUser2",
+          "outputname": "OnUser1",
           "targetname": "sephi_ending_CTnuke",
           "inputname": "Enable",
           "delay": 3
@@ -6638,7 +7209,7 @@
       "spawnflags": "1",
       "startdisabled": "1",
       "damage": "999999",
-      "origin": "-8828 -802 -172",
+      "origin": "-7796 -802 -172",
       "angles": "0 90 0",
       "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/telee_1358.vmdl"
     },
@@ -6723,6 +7294,13 @@
           "outputname": "OnUser3",
           "targetname": "!self",
           "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]bahamutend1>Kill>>0>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
           "overrideparam": "OnTrigger>[PR#]barrera33>Kill>>0>1",
           "timestofire": 1
         },
@@ -6751,6 +7329,13 @@
           "outputname": "OnUser3",
           "targetname": "!self",
           "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]teleporte_extreme>Disable>>0>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
           "overrideparam": "OnTrigger>[PR#]puertafinal>Disable>>0>1",
           "timestofire": 1
         },
@@ -6765,7 +7350,14 @@
           "outputname": "OnUser3",
           "targetname": "!self",
           "inputname": "AddOutput",
-          "overrideparam": "OnTrigger>explosion_e3zed>InValue>ending>0>1",
+          "overrideparam": "OnTrigger>extreme3zed_trigger3>Trigger>>0>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]bahamutend>FireUser1>>0.01>1",
           "timestofire": 1
         },
         {
@@ -6885,6 +7477,27 @@
           "targetname": "!self",
           "inputname": "AddOutput",
           "overrideparam": "OnTrigger>[PR#]puertaxx1>Open>>65>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]teleporte_masivo2>Disable>>65>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]trigger_extreme>Disable>>65>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser3",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]restaurador>Kill>>65>1",
           "timestofire": 1
         },
         {
