@@ -1,5 +1,6 @@
 {
   "modify": [
+    // Change max value of stage counter to allow adding more stages
     {
       "match": {
         "classname": "math_counter",
@@ -14,6 +15,106 @@
             "outputname": "OutValue",
             "targetname": "ZR_CONFIG_CHANGER",
             "inputname": "InValue"
+          }
+        ]
+      }
+    },
+    // Add support for rainbow skybox
+    {
+      "match": {
+        "classname": "prop_dynamic",
+        "targetname": "[PR#]nubes_secundarias"
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "Color",
+            "overrideparam": "255 0 0"
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "Color",
+            "overrideparam": "255 128 0",
+            "delay": 0.1
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "Color",
+            "overrideparam": "255 255 0",
+            "delay": 0.2
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "Color",
+            "overrideparam": "128 255 0",
+            "delay": 0.3
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "Color",
+            "overrideparam": "0 255 0",
+            "delay": 0.4
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "Color",
+            "overrideparam": "0 255 128",
+            "delay": 0.5
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "Color",
+            "overrideparam": "0 255 255",
+            "delay": 0.6
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "Color",
+            "overrideparam": "0 128 255",
+            "delay": 0.7
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "Color",
+            "overrideparam": "0 0 255",
+            "delay": 0.8
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "Color",
+            "overrideparam": "128 0 255",
+            "delay": 0.9
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "Color",
+            "overrideparam": "255 0 255",
+            "delay": 1.0
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "Color",
+            "overrideparam": "255 0 128",
+            "delay": 1.1
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "FireUser1",
+            "delay": 1.2
           }
         ]
       }

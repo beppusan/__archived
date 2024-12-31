@@ -884,6 +884,7 @@
         "case09": "9",
         "case10": "10",
         "case12": "12",
+        "case13": "13",
         "io": [
           {
             "outputname": "OnCase01",
@@ -951,6 +952,13 @@
           {
             "outputname": "OnCase12",
             "targetname": "Global_EX3_SRZS",
+            "inputname": "Trigger",
+            "delay": 0.5,
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnCase13",
+            "targetname": "Global_EX4_ZEDDYS",
             "inputname": "Trigger",
             "delay": 0.5,
             "timestofire": 1
@@ -1110,6 +1118,22 @@
     // Enable activation of custom lasers
     {
       "match": {
+        "classname": "func_breakable",
+        "targetname": "[PR#]verja_tren"
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnBreak>sephiex4_case1>Trigger>>0>-1"
+          }
+        ]
+      }
+    },
+    {
+      "match": {
         "classname": "func_button",
         "hammeruniqueid": "1521"
       },
@@ -1144,6 +1168,20 @@
             "targetname": "!self",
             "inputname": "AddOutput",
             "overrideparam": "OnPressed>[PR#]puertaxx3>Open>>40>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnPressed>sephiex4_sp>Trigger>>23>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "sephiex3_sp1",
+            "inputname": "AddOutput",
+            "overrideparam": "OnTrigger>[PR#]espad>PlaySound>>0>1",
             "timestofire": 1
           }
         ]
@@ -1357,6 +1395,41 @@
     },
     {
       "match": {
+        "classname": "func_button",
+        "hammeruniqueid": "798"
+      },
+      "insert": {
+        "targetname": "Door10sReactorButton",
+        "io": [
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnPressed>sephiex4_case3_move>FireUser1>>0>-1",
+            "timestofire": 1
+          }
+        ]
+      }
+    },
+    {
+      "match": {
+        "classname": "path_track",
+        "targetname": "[PR#]point_tr2"
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnUser1",
+            "targetname":  "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnPass>sephiex4_case4_move>FireUser1>>0>1",
+            "timestofire": 1
+          }
+        ]
+      }
+    },
+    {
+      "match": {
         "classname": "trigger_once",
         "targetname": "[PR#]sephi2"
       },
@@ -1424,6 +1497,27 @@
             "inputname": "AddOutput",
             "overrideparam": "OnPressed>[PR#]pFinal>Open>>0.1>1",
             "timestofire": 1
+          },
+          {
+            "outputname": "OnUser3",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnPressed>bridge2_rot>FireUser1>>0>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser3",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnPressed>[PR#]consola>Command>say ** Bridge is rotating in 45 seconds **>10>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser3",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnPressed>bridge2_rot>FireUser2>>55>1",
+            "timestofire": 1
           }
         ]
       }
@@ -1469,7 +1563,7 @@
         ]
       }
     },
-    // Allow paths to be spawned for defending during the boss fight
+    // Allow paths to be spawned for defending and laser traps to be happened during the boss fight
     {
       "match": {
         "classname": "logic_relay",
@@ -1489,6 +1583,64 @@
             "targetname": "!self",
             "inputname": "AddOutput",
             "overrideparam": "OnTrigger>bahamut_zmprops>EnableCollision>>0>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnTrigger>[PR#]consola>Command>say ** WELCOME TO EXTREME 4! **>1.5>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnTrigger>[PR#]consola>Command>say ** WELCOME TO EXTREME 4! **>1.5>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnTrigger>[PR#]consola>Command>say ** WELCOME TO EXTREME 4! **>1.5>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnTrigger>[PR#]consola>Command>say ** WELCOME TO EXTREME 4! **>1.5>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnTrigger>[PR#]consola>Command>say ** WELCOME TO EXTREME 4! **>1.5>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "[PR#]bah_cast",
+            "inputname": "FireUser1",
+            "timestofire": 1
+          }
+        ]
+      }
+    },
+    {
+      "match": {
+        "classname": "logic_relay",
+        "targetname": "[PR#]bah_cast"
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnTrigger>bah_cast_LASER>Enable>>0>1",
             "timestofire": 1
           }
         ]
@@ -1513,6 +1665,13 @@
             "targetname": "!self",
             "inputname": "AddOutput",
             "overrideparam": "OnHitMin>bahamut_zmprops>DisableCollision>>0>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnHitMin>bah_cast_LASER>Disable>>0>1",
             "timestofire": 1
           }
         ]
@@ -1806,6 +1965,11 @@
           {
             "outputname": "OnStartTouch",
             "targetname": "trigger_extreme3_ex",
+            "inputname": "Trigger"
+          },
+          {
+            "outputname": "OnStartTouch",
+            "targetname": "trigger_extreme4_ex",
             "inputname": "Trigger"
           }
         ]
@@ -4625,7 +4789,7 @@
           "outputname": "OnTrigger",
           "targetname": "[PR#]bahamut_vida",
           "inputname": "AddOutput",
-          "overrideparam": "OnHitMin>cancion_e3rmzs>StartSound>>0.01>1",
+          "overrideparam": "OnHitMin>cancion_e3rmzs>FireUser1>>0.01>1",
           "timestofire": 1
         }
       ]
@@ -9345,6 +9509,2437 @@
         }
       ]
     },
+    // |=============================|
+    // | EXTREME IV (ZEDDYS VERSION) |
+    // |=============================|
+    {
+      "classname": "logic_relay",
+      "targetname": "Global_EX4_ZEDDYS",
+      "origin": "-3802.55 -3508.98 1220.78",
+      "io": [
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]consola",
+          "inputname": "Command",
+          "overrideparam": "say ** COLOR DUE TO EXTREME DIFFICULTY **",
+          "delay": 15,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]consola",
+          "inputname": "Command",
+          "overrideparam": "say ** CURRENT DIFFICULTY ** >> EXTREME IV << **",
+          "delay": 10,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]consola",
+          "inputname": "Command",
+          "overrideparam": "say ** ZEDDYS VERSION **",
+          "delay": 11,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]consola",
+          "inputname": "Command",
+          "overrideparam": "say ** >> WARNING! REACTOR CORE UNSTABLE << **",
+          "delay": 20,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]consola",
+          "inputname": "Command",
+          "overrideparam": "say ** >> IT IS RECOMMENDED YOU STAY INDOORS << **",
+          "delay": 22,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]materias_3",
+          "inputname": "Trigger",
+          "delay": 12,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cowbell",
+          "inputname": "ForceSpawn",
+          "delay": 5,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]teleportarS1",
+          "inputname": "ForceSpawn",
+          "delay": 5,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]teleportarS2",
+          "inputname": "ForceSpawn",
+          "delay": 5,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "randomizar4",
+          "inputname": "PickRandom",
+          "delay": 12,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]teleportarSx12",
+          "inputname": "ForceSpawn",
+          "delay": 12.1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "teleportarSx6",
+          "inputname": "ForceSpawn",
+          "delay": 12.1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]nubes_secundarias",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]nubes_secundarias",
+          "inputname": "FireUser1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "LASER_TYPES_COUNTER",
+          "inputname": "SetValue",
+          "overrideparam": "1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]verja_tren",
+          "inputname": "FireUser1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "Door30sMainButton",
+          "inputname": "FireUser1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "Door30sMainButton",
+          "inputname": "FireUser2",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "Door10sBridgeButton",
+          "inputname": "FireUser3",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]puerta5",
+          "inputname": "FireUser1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "corterand3c",
+          "inputname": "SetValue",
+          "overrideparam": "7",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "Door10sReactorButton",
+          "inputname": "FireUser1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]point_tr2",
+          "inputname": "FireUser1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]calcVidaD",
+          "inputname": "AddOutput",
+          "overrideparam": "OnStartTouch>bahamut_vida>Add>35>0>-1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]bahamut_entry",
+          "inputname": "FireUser1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]bahamut_entry",
+          "inputname": "FireUser2",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]bahamut_vida",
+          "inputname": "FireUser1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]bahamut_vida",
+          "inputname": "FireUser2",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]sephi2",
+          "inputname": "FireUser1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]boton2",
+          "inputname": "FireUser1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "trigger_extreme3_ex",
+          "inputname": "FireUser2",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]baha_vida",
+          "inputname": "AddOutput",
+          "overrideparam": "OnStartTouch>bahamutend>AddHealth>25>0>-1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger13",
+          "inputname": "FireUser1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]especial",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cloud",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]dificil_props",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]medio_breakable",
+          "inputname": "Break",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]trigger_n_d",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]trigger_n_d3",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]trigger_n_m",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]trigger_n_e",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]calcVidaM",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]sephiroth_fx",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]path_1",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]Tonemap_Normal",
+          "inputname": "Disable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]puerta_asc1",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]puerta_dasc1",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]bahamut_2",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]bahamut_3",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]bahamut_fulgor",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cancion_1_extra",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cancion_1_extra2",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cancion_3_extra_2",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]calcVidaM",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]zm_prop3",
+          "inputname": "Toggle",
+          "delay": 3,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]puerta_admin",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]AvisoExt2",
+          "inputname": "Toggle",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]baha_tr",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]bahamut_entry",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]dificil_trigger",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme_props",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme_props",
+          "inputname": "EnableCollision",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]huida2_d",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]huida_e",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]Tonemap_EX2",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]tele_Ex",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]trigger_extreme",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]trigger_extreme2_ex",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "trigger_extreme3_ex",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "trigger_extreme4_ex",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "trigger_extreme4_2",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]comienza_huida",
+          "inputname": "AddOutput",
+          "overrideparam": "OnStartTouch>trigger_extreme4_6>Enable>>0>-1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]comienza_huida",
+          "inputname": "AddOutput",
+          "overrideparam": "OnStartTouch>trigger_extreme4_7>Enable>>0>-1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger2",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger3",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger5",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger6",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger7",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger8",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger9",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger10",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger11",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger12",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_trigger13",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_triggers",
+          "inputname": "Enable",
+          "delay": 1,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_particula1",
+          "inputname": "Start",
+          "delay": 5,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extreme2_particula3",
+          "inputname": "Enable",
+          "delay": 5,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extremedanyo",
+          "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]extremedanyo",
+          "inputname": "Trigger",
+          "delay": 2,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cancion_1",
+          "inputname": "SetSoundEventName",
+          "overrideparam": "ffvii_e4_propane",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]cancion_3",
+          "inputname": "SetSoundEventName",
+          "overrideparam": "ffvii_e4_nomore",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "canciones_extreme4_23ex",
+          "inputname": "PickRandom",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]bahamut_vida",
+          "inputname": "AddOutput",
+          "overrideparam": "OnHitMin>[PR#]cancion_3>SetSoundEventName>ffvii_e4_everything>0>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]bahamut_vida",
+          "inputname": "AddOutput",
+          "overrideparam": "OnHitMin>[PR#]cancion_3>StartSound>>0.01>1",
+          "timestofire": 1
+        }
+      ]
+    },
+    // Add 1 ULTIMA spawn points 
+    {
+      "classname": "env_entity_maker",
+      "targetname": "teleportarSx6",
+      "entitytemplate": "[PR#]WTF",
+      "origin": "-9359.7 4212 -564",
+      "angles": "0 0 0"
+    },
+    {
+      "classname": "logic_case",
+      "targetname": "randomizar4",
+      "origin": "-7760 2352 -2701",
+      "io": [
+        {
+          "outputname": "OnCase01",
+          "targetname": "[PR#]teleportarSx12",
+          "inputname": "KeyValue",
+          "overrideparam": "EntityTemplate magia_ultima_template"
+        },
+        {
+          "outputname": "OnCase01",
+          "targetname": "[PR#]teleportarSx12",
+          "inputname": "AddOutput",
+          "overrideparam": "OnEntitySpawned>ULTIMA_TELEPORT_RELAY>Enable>>0.1>-1"
+        },
+        {
+          "outputname": "OnCase01",
+          "targetname": "teleportarSx6",
+          "inputname": "KeyValue",
+          "overrideparam": "EntityTemplate [PR#]WTF"
+        },
+        {
+          "outputname": "OnCase02",
+          "targetname": "teleportarSx6",
+          "inputname": "KeyValue",
+          "overrideparam": "EntityTemplate magia_ultima_template"
+        },
+        {
+          "outputname": "OnCase02",
+          "targetname": "[PR#]teleportarSx12",
+          "inputname": "KeyValue",
+          "overrideparam": "EntityTemplate [PR#]WTF"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "PickRandom"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]magia_ultima",
+          "inputname": "Kill"
+        }
+      ]
+    },
+    // Add music randomizer for EX4
+    {
+      "classname": "logic_case",
+      "targetname": "canciones_extreme4_23ex",
+      "origin": "-7544 2528 -2708",
+      "io": [
+        {
+          "outputname": "OnCase01",
+          "targetname": "[PR#]cancion_2",
+          "inputname": "SetSoundEventName",
+          "overrideparam": "ffvii_e4_watercolour"
+        },
+        {
+          "outputname": "OnCase01",
+          "targetname": "[PR#]cancion_3_extra",
+          "inputname": "SetSoundEventName",
+          "overrideparam": "ffvii_e4_showdown"
+        },
+        {
+          "outputname": "OnCase02",
+          "targetname": "[PR#]cancion_2",
+          "inputname": "SetSoundEventName",
+          "overrideparam": "ffvii_e4_illuminate"
+        },
+        {
+          "outputname": "OnCase02",
+          "targetname": "[PR#]cancion_3_extra",
+          "inputname": "SetSoundEventName",
+          "overrideparam": "ffvii_e4_hackers"
+        }
+      ]
+    },
+    // LASERS ARE EVERYWHERE!!
+    // @ Train (A side)
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_case1_move",
+      "movedistance": "3500",
+      "speed": "1120",
+      "movedir": "0 270 0",
+      "spawnflags": "8",
+      "origin": "-7429.09 -989.22 74",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/sephiroth_c3_1607.vmdl",
+      "io": [
+        {
+          "outputname": "OnFullyOpen",
+          "targetname": "!self",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephiex4_case1_picker",
+          "inputname": "FireUser1"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]espad",
+          "inputname": "PlaySound"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Open"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephiex4_case1_door*",
+          "inputname": "Alpha",
+          "overrideparam": "255"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephiex4_case1_hurt*",
+          "inputname": "Enable"
+        }
+      ]
+    },
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_case1_door1",
+      "spawnflags": "8",
+      "rendermode": "1",
+      "renderamt": "0",
+      "parentname": "sephiex4_case1_move",
+      "origin": "-7429.09 -989.22 90",
+      "angles": "0 270 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_1597.vmdl"
+    },
+    {
+      "classname": "trigger_hurt",
+      "targetname": "sephiex4_case1_hurt1",
+      "damage": "999999",
+      "filtername": "[PR#]humanos",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "parentname": "sephiex4_case1_door1",
+      "origin": "-7430.88 -1174.75 90",
+      "angles": "0 270 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case1ex_hurt_1600.vmdl"
+    },
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_case1_door2",
+      "spawnflags": "8",
+      "rendermode": "1",
+      "renderamt": "0",
+      "parentname": "sephiex4_case1_move",
+      "origin": "-7429.09 -989.22 58",
+      "angles": "0 270 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_1597.vmdl"
+    },
+    {
+      "classname": "trigger_hurt",
+      "targetname": "sephiex4_case1_hurt2",
+      "damage": "999999",
+      "filtername": "[PR#]humanos",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "parentname": "sephiex4_case1_door2",
+      "origin": "-7430.88 -1174.75 57",
+      "angles": "0 270 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_hurt_1600.vmdl"
+    },
+    {
+      "classname": "logic_case",
+      "targetname": "sephiex4_case1_picker",
+      "origin": "-7429.09 -989.22 74",
+      "io": [
+        {
+          "outputname": "OnCase01",
+          "targetname": "sephiex4_case1_door1",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnCase02",
+          "targetname": "sephiex4_case1_door2",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "PickRandom"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Kill",
+          "delay": 0.1
+        }
+      ]
+    },
+    {
+      "classname": "logic_relay",
+      "targetname": "sephiex4_case1",
+      "origin": "-7429.09 -989.22 74",
+      "io": [
+        {
+          "outputname": "OnTrigger",
+          "targetname": "!self",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]seph_modelo2_ex2",
+          "inputname": "KeyValue",
+          "overrideparam": "origin -7429.09 -1117.22 36"
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]seph_modelo2_ex2",
+          "inputname": "KeyValue",
+          "overrideparam": "angles 0 270 0"
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]seph_modelo2_ex2",
+          "inputname": "TurnOn",
+          "delay": 4
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "sephiex4_case1_move",
+          "inputname": "FireUser1",
+          "delay": 4
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]seph_modelo2_ex2",
+          "inputname": "TurnOff",
+          "delay": 5
+        }
+      ]
+    },
+    // @ Superior Doorway in 30s
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_sp_move",
+      "movedistance": "4218",
+      "speed": "1500",
+      "movedir": "0 180 0",
+      "spawnflags": "8",
+      "origin": "-6856 2648 312",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/sephiroth_c3_1607.vmdl",
+      "io": [
+        {
+          "outputname": "OnFullyOpen",
+          "targetname": "!self",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]ss_howd",
+          "inputname": "PlaySound",
+          "timestofire": 1
+        }
+      ]
+    },
+    {
+      "classname": "func_rotating",
+      "targetname": "sephiex4_sp_door1",
+      "spawnflags": "68",
+      "maxspeed": "200",
+      "renderamt": "0",
+      "rendermode": "1",
+      "parentname": "sephiex4_sp_move",
+      "origin": "-6856 2648 312",
+      "angles": "0 180 45",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case1ex_1595.vmdl",
+      "io": [
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Start",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Alpha",
+          "overrideparam": "255",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "255 0 0",
+          "delay": 0
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "255 128 0",
+          "delay": 0.1
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "255 255 0",
+          "delay": 0.2
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "128 255 0",
+          "delay": 0.3
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "0 255 0",
+          "delay": 0.4
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "0 255 128",
+          "delay": 0.5
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "0 255 255",
+          "delay": 0.6
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "0 128 255",
+          "delay": 0.7
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "0 0 255",
+          "delay": 0.8
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "128 0 255",
+          "delay": 0.9
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "255 0 255",
+          "delay": 1
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "255 0 128",
+          "delay": 1.1
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "FireUser1",
+          "delay": 1.2
+        }
+      ]
+    },
+    {
+      "classname": "func_rotating",
+      "targetname": "sephiex4_sp_door2",
+      "spawnflags": "70",
+      "maxspeed": "200",
+      "renderamt": "0",
+      "rendermode": "1",
+      "parentname": "sephiex4_sp_move",
+      "origin": "-6856 2648 312",
+      "angles": "0 180 45",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case1ex_1595.vmdl",
+      "io": [
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Start",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Alpha",
+          "overrideparam": "255",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "255 0 0",
+          "delay": 0
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "255 128 0",
+          "delay": 0.1
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "255 255 0",
+          "delay": 0.2
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "128 255 0",
+          "delay": 0.3
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "0 255 0",
+          "delay": 0.4
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "0 255 128",
+          "delay": 0.5
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "0 255 255",
+          "delay": 0.6
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "0 128 255",
+          "delay": 0.7
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "0 0 255",
+          "delay": 0.8
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "128 0 255",
+          "delay": 0.9
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "255 0 255",
+          "delay": 1
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Color",
+          "overrideparam": "255 0 128",
+          "delay": 1.1
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "FireUser1",
+          "delay": 1.2
+        }
+      ]
+    },
+    {
+      "classname": "trigger_hurt",
+      "targetname": "sephiex4_sp_hurt1",
+      "damage": "999999",
+      "filtername": "[PR#]humanos",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "parentname": "sephiex4_sp_door1",
+      "origin": "-7000 2646 313",
+      "angles": "0 180 45",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case1ex_hurt_1591.vmdl",
+      "io": [
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "sephiex4_sp_move",
+          "inputname": "FireUser1",
+          "timestofire": 1
+        }
+      ]
+    },
+    {
+      "classname": "trigger_hurt",
+      "targetname": "sephiex4_sp_hurt2",
+      "damage": "999999",
+      "filtername": "[PR#]humanos",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "parentname": "sephiex4_sp_door2",
+      "origin": "-7000 2646 313",
+      "angles": "0 180 45",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case1ex_hurt_1591.vmdl",
+      "io": [
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "sephiex4_sp_move",
+          "inputname": "FireUser1",
+          "timestofire": 1
+        }
+      ]
+    },
+    {
+      "classname": "logic_relay",
+      "targetname": "sephiex4_sp",
+      "origin": "-6856 2648 312",
+      "io": [
+        {
+          "outputname": "OnTrigger",
+          "targetname": "!self",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]espad",
+          "inputname": "PlaySound"
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "sephiex4_sp_move",
+          "inputname": "Open"
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "sephiex4_sp_door*",
+          "inputname": "FireUser1"
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "sephiex4_sp_hurt*",
+          "inputname": "Enable"
+        }
+      ]
+    },
+    // @ Bridge (after rotating)
+    {
+      "classname": "trigger_once",
+      "targetname": "trigger_extreme4_2",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "origin": "-9348 5354.39 120",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/trigger_n_d3_1139.vmdl",
+      "io": [
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "sephiex4_case2_move",
+          "inputname": "FireUser1"
+        }
+      ]
+    },
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_case2_move",
+      "movedistance": "3500",
+      "speed": "1120",
+      "movedir": "0 270 0",
+      "spawnflags": "8",
+      "origin": "-9345.85 5923.62 76",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/sephiroth_c3_1607.vmdl",
+      "io": [
+        {
+          "outputname": "OnFullyOpen",
+          "targetname": "!self",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephiex4_case2_picker",
+          "inputname": "FireUser1"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]espad",
+          "inputname": "PlaySound"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Open"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephiex4_case2_door*",
+          "inputname": "Alpha",
+          "overrideparam": "255"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephiex4_case2_hurt*",
+          "inputname": "Enable"
+        }
+      ]
+    },
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_case2_door1",
+      "spawnflags": "8",
+      "rendermode": "1",
+      "renderamt": "0",
+      "parentname": "sephiex4_case2_move",
+      "origin": "-9345.85 5923.62 92",
+      "angles": "0 270 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_1597.vmdl"
+    },
+    {
+      "classname": "trigger_hurt",
+      "targetname": "sephiex4_case2_hurt1",
+      "damage": "999999",
+      "filtername": "[PR#]humanos",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "parentname": "sephiex4_case2_door1",
+      "origin": "-9344.06 5738.09 92",
+      "angles": "0 270 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case1ex_hurt_1600.vmdl"
+    },
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_case2_door2",
+      "spawnflags": "8",
+      "rendermode": "1",
+      "renderamt": "0",
+      "parentname": "sephiex4_case2_move",
+      "origin": "-9345.85 5923.62 60",
+      "angles": "0 270 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_1597.vmdl"
+    },
+    {
+      "classname": "trigger_hurt",
+      "targetname": "sephiex4_case2_hurt2",
+      "damage": "999999",
+      "filtername": "[PR#]humanos",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "parentname": "sephiex4_case2_door2",
+      "origin": "-9344.06 5738.09 59",
+      "angles": "0 270 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_hurt_1600.vmdl"
+    },
+    {
+      "classname": "logic_case",
+      "targetname": "sephiex4_case2_picker",
+      "origin": "-9345.85 5923.62 76",
+      "io": [
+        {
+          "outputname": "OnCase01",
+          "targetname": "sephiex4_case2_door1",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnCase02",
+          "targetname": "sephiex4_case2_door2",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "PickRandom"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Kill",
+          "delay": 0.1
+        }
+      ]
+    },
+    // @ Reactor 10s door
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_case3_move",
+      "movedistance": "3500",
+      "speed": "1120",
+      "movedir": "0 90 0",
+      "spawnflags": "8",
+      "origin": "-9378.48 6355.51 172",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/sephiroth_c3_1607.vmdl",
+      "io": [
+        {
+          "outputname": "OnFullyOpen",
+          "targetname": "!self",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephiex4_case3_picker",
+          "inputname": "FireUser1"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]espad",
+          "inputname": "PlaySound"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Open"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephiex4_case3_door*",
+          "inputname": "Alpha",
+          "overrideparam": "255"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephiex4_case3_hurt*",
+          "inputname": "Enable"
+        }
+      ]
+    },
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_case3_door1",
+      "spawnflags": "8",
+      "rendermode": "1",
+      "renderamt": "0",
+      "parentname": "sephiex4_case3_move",
+      "origin": "-9378.48 6355.51 188",
+      "angles": "0 90 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_1597.vmdl"
+    },
+    {
+      "classname": "trigger_hurt",
+      "targetname": "sephiex4_case3_hurt1",
+      "damage": "999999",
+      "filtername": "[PR#]humanos",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "parentname": "sephiex4_case3_door1",
+      "origin": "-9380.27 6541.04 188",
+      "angles": "0 90 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case1ex_hurt_1600.vmdl"
+    },
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_case3_door2",
+      "spawnflags": "8",
+      "rendermode": "1",
+      "renderamt": "0",
+      "parentname": "sephiex4_case3_move",
+      "origin": "-9378.48 6355.51 156",
+      "angles": "0 90 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_1597.vmdl"
+    },
+    {
+      "classname": "trigger_hurt",
+      "targetname": "sephiex4_case3_hurt2",
+      "damage": "999999",
+      "filtername": "[PR#]humanos",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "parentname": "sephiex4_case3_door2",
+      "origin": "-9380.27 6541.04 155",
+      "angles": "0 90 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_hurt_1600.vmdl"
+    },
+    {
+      "classname": "logic_case",
+      "targetname": "sephiex4_case3_picker",
+      "origin": "-9378.48 6355.51 172",
+      "io": [
+        {
+          "outputname": "OnCase01",
+          "targetname": "sephiex4_case3_door1",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnCase02",
+          "targetname": "sephiex4_case3_door2",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "PickRandom"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Kill",
+          "delay": 0.1
+        }
+      ]
+    },
+    // @ Elevator (after descending)
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_case4_move",
+      "movedistance": "3500",
+      "speed": "900",
+      "movedir": "0 90 0",
+      "spawnflags": "8",
+      "origin": "-9836.84 7696 -1710",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/sephiroth_c3_1607.vmdl",
+      "io": [
+        {
+          "outputname": "OnFullyOpen",
+          "targetname": "!self",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephiex4_case4_picker",
+          "inputname": "FireUser1"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]espad",
+          "inputname": "PlaySound"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Open"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephiex4_case4_door*",
+          "inputname": "Alpha",
+          "overrideparam": "255"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephiex4_case4_hurt*",
+          "inputname": "Enable"
+        }
+      ]
+    },
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_case4_door1",
+      "spawnflags": "8",
+      "rendermode": "1",
+      "renderamt": "0",
+      "parentname": "sephiex4_case4_move",
+      "origin": "-9836.84 7696 -1694",
+      "angles": "0 90 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_1597.vmdl"
+    },
+    {
+      "classname": "trigger_hurt",
+      "targetname": "sephiex4_case4_hurt1",
+      "damage": "999999",
+      "filtername": "[PR#]humanos",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "parentname": "sephiex4_case4_door1",
+      "origin": "-9835.05 7881.53 -1694",
+      "angles": "0 90 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case1ex_hurt_1600.vmdl"
+    },
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_case4_door2",
+      "spawnflags": "8",
+      "rendermode": "1",
+      "renderamt": "0",
+      "parentname": "sephiex4_case4_move",
+      "origin": "-9836.84 7696 -1726",
+      "angles": "0 90 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_1597.vmdl"
+    },
+    {
+      "classname": "trigger_hurt",
+      "targetname": "sephiex4_case4_hurt2",
+      "damage": "999999",
+      "filtername": "[PR#]humanos",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "parentname": "sephiex4_case4_door2",
+      "origin": "-9835.05 7881.53 -1727",
+      "angles": "0 90 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_hurt_1600.vmdl"
+    },
+    {
+      "classname": "logic_case",
+      "targetname": "sephiex4_case4_picker",
+      "origin": "-9836.84 7696 -1710",
+      "io": [
+        {
+          "outputname": "OnCase01",
+          "targetname": "sephiex4_case4_door1",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnCase02",
+          "targetname": "sephiex4_case4_door2",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "PickRandom"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Kill",
+          "delay": 0.1
+        }
+      ]
+    },
+    // @ Bahamut (boss fight)
+    {
+      "classname": "logic_timer",
+      "targetname": "bah_cast_LASER",
+      "refiretime": "15",
+      "startdisabled": "1",
+      "origin": "-8662.37 9051.39 -4694",
+      "io": [
+        {
+          "outputname": "OnTimer",
+          "targetname": "sephiex4_case5_picker",
+          "inputname": "PickRandom"
+        },
+        {
+          "outputname": "OnTimer",
+          "targetname": "[PR#]ss_only",
+          "inputname": "PlaySound",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTimer",
+          "targetname": "[PR#]espad",
+          "inputname": "PlaySound"
+        },
+        {
+          "outputname": "OnTimer",
+          "targetname": "sephiex4_case5_move",
+          "inputname": "Open"
+        }
+      ]
+    },
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_case5_move",
+      "movedistance": "3500",
+      "speed": "800",
+      "movedir": "0 0 0",
+      "spawnflags": "8",
+      "origin": "-8662.37 9051.39 -4694",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/sephiroth_c3_1607.vmdl",
+      "io": [
+        {
+          "outputname": "OnFullyClosed",
+          "targetname": "sephiex4_case5_door*",
+          "inputname": "SetSpeed",
+          "overrideparam": "800"
+        },
+        {
+          "outputname": "OnFullyOpen",
+          "targetname": "!self",
+          "inputname": "Close"
+        },
+        {
+          "outputname": "OnFullyOpen",
+          "targetname": "sephiex4_case5_door*",
+          "inputname": "SetSpeed",
+          "overrideparam": "4000"
+        },
+        {
+          "outputname": "OnFullyOpen",
+          "targetname": "sephiex4_case5_door*",
+          "inputname": "Alpha",
+          "overrideparam": "0"
+        },
+        {
+          "outputname": "OnFullyOpen",
+          "targetname": "sephiex4_case5_hurt*",
+          "inputname": "Disable"
+        }
+      ]
+    },
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_case5_door1",
+      "spawnflags": "8",
+      "rendermode": "1",
+      "renderamt": "0",
+      "parentname": "sephiex4_case5_move",
+      "origin": "-8662.37 9051.39 -4678",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_1597.vmdl"
+    },
+    {
+      "classname": "trigger_hurt",
+      "targetname": "sephiex4_case5_hurt1",
+      "damage": "999999",
+      "filtername": "[PR#]humanos",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "parentname": "sephiex4_case5_door1",
+      "origin": "-8476.84 9049.6 -4678",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case1ex_hurt_1600.vmdl"
+    },
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_case5_door2",
+      "spawnflags": "8",
+      "rendermode": "1",
+      "renderamt": "0",
+      "parentname": "sephiex4_case5_move",
+      "origin": "-8662.37 9051.39 -4710",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_1597.vmdl"
+    },
+    {
+      "classname": "trigger_hurt",
+      "targetname": "sephiex4_case5_hurt2",
+      "damage": "999999",
+      "filtername": "[PR#]humanos",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "parentname": "sephiex4_case5_door2",
+      "origin": "-8476.84 9049.6 -4711",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_hurt_1600.vmdl"
+    },
+    {
+      "classname": "logic_case",
+      "targetname": "sephiex4_case5_picker",
+      "origin": "-8662.37 9051.39 -4694",
+      "io": [
+        {
+          "outputname": "OnCase01",
+          "targetname": "sephiex4_case5_door1",
+          "inputname": "Alpha",
+          "overrideparam": "255"
+        },
+        {
+          "outputname": "OnCase01",
+          "targetname": "sephiex4_case5_hurt1",
+          "inputname": "Enable"
+        },
+        {
+          "outputname": "OnCase02",
+          "targetname": "sephiex4_case5_door2",
+          "inputname": "Alpha",
+          "overrideparam": "255"
+        },
+        {
+          "outputname": "OnCase02",
+          "targetname": "sephiex4_case5_hurt2",
+          "inputname": "Enable"
+        }
+      ]
+    },
+    // @ Ladders (after bahamut dies)
+    {
+      "classname": "trigger_once",
+      "targetname": "trigger_extreme4_6",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "origin": "-9724.28 9064.37 -3325.09",
+      "angles": "0 90 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/sephi2_1622.vmdl",
+      "io": [
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "sephiex4_case6_move",
+          "inputname": "FireUser1"
+        }
+      ]
+    },
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_case6_move",
+      "movedistance": "3500",
+      "speed": "1120",
+      "movedir": "0 0 0",
+      "spawnflags": "8",
+      "origin": "-10345.4 9069.06 -3320",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/sephiroth_c3_1607.vmdl",
+      "io": [
+        {
+          "outputname": "OnFullyOpen",
+          "targetname": "!self",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephiex4_case6_picker",
+          "inputname": "FireUser1"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]espad",
+          "inputname": "PlaySound"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Open"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephiex4_case6_door*",
+          "inputname": "Alpha",
+          "overrideparam": "255"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephiex4_case6_hurt*",
+          "inputname": "Enable"
+        }
+      ]
+    },
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_case6_door1",
+      "spawnflags": "8",
+      "rendermode": "1",
+      "renderamt": "0",
+      "parentname": "sephiex4_case6_move",
+      "origin": "-10384 9069.06 -3300",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_1597.vmdl"
+    },
+    {
+      "classname": "trigger_hurt",
+      "targetname": "sephiex4_case6_hurt1",
+      "damage": "999999",
+      "filtername": "[PR#]humanos",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "parentname": "sephiex4_case6_door1",
+      "origin": "-10198.5 9067.27 -3300",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case1ex_hurt_1600.vmdl"
+    },
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_case6_door2",
+      "spawnflags": "8",
+      "rendermode": "1",
+      "renderamt": "0",
+      "parentname": "sephiex4_case6_move",
+      "origin": "-10384 9069.06 -3332",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_1597.vmdl"
+    },
+    {
+      "classname": "trigger_hurt",
+      "targetname": "sephiex4_case6_hurt2",
+      "damage": "999999",
+      "filtername": "[PR#]humanos",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "parentname": "sephiex4_case6_door2",
+      "origin": "-10198.5 9067.27 -3333",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_hurt_1600.vmdl"
+    },
+    {
+      "classname": "logic_case",
+      "targetname": "sephiex4_case6_picker",
+      "origin": "-10345.4 9069.06 -3320",
+      "io": [
+        {
+          "outputname": "OnCase01",
+          "targetname": "sephiex4_case6_door1",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnCase02",
+          "targetname": "sephiex4_case6_door2",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "PickRandom"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Kill",
+          "delay": 0.1
+        }
+      ]
+    },
+    // @ Stairs (after bahamut dies)
+    {
+      "classname": "trigger_once",
+      "targetname": "trigger_extreme4_7",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "origin": "-10029 7950.22 -1950.1",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/sephi2_1622.vmdl",
+      "io": [
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "sephiex4_case7_move",
+          "inputname": "FireUser1"
+        },
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "sephiex4_case8_move",
+          "inputname": "FireUser1",
+          "delay": 9.5
+        }
+      ]
+    },
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_case7_move",
+      "movedistance": "3500",
+      "speed": "1120",
+      "movedir": "32.45 270 0",
+      "spawnflags": "8",
+      "origin": "-10030.8 8386.27 -1681.65",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/sephiroth_c3_1607.vmdl",
+      "io": [
+        {
+          "outputname": "OnFullyOpen",
+          "targetname": "!self",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]espad",
+          "inputname": "PlaySound"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Open"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephiex4_case7_door",
+          "inputname": "Alpha",
+          "overrideparam": "255"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephiex4_case7_hurt",
+          "inputname": "Enable"
+        }
+      ]
+    },
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_case7_door",
+      "spawnflags": "8",
+      "rendermode": "1",
+      "renderamt": "0",
+      "parentname": "sephiex4_case7_move",
+      "origin": "-10030.8 8386.27 -1681.65",
+      "angles": "32.45 270 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_1597.vmdl"
+    },
+    {
+      "classname": "trigger_hurt",
+      "targetname": "sephiex4_case7_hurt",
+      "damage": "999999",
+      "filtername": "[PR#]humanos",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "parentname": "sephiex4_case7_door",
+      "origin": "-10029 8230.25 -1782",
+      "angles": "32.45 270 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_hurt_1600.vmdl"
+    },
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_case8_move",
+      "movedistance": "3500",
+      "speed": "1120",
+      "movedir": "32.45 270 0",
+      "spawnflags": "8",
+      "origin": "-10030.8 8386.27 -1681.65",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/sephiroth_c3_1607.vmdl",
+      "io": [
+        {
+          "outputname": "OnFullyOpen",
+          "targetname": "!self",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]espad",
+          "inputname": "PlaySound"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Open"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephiex4_case8_door",
+          "inputname": "Alpha",
+          "overrideparam": "255"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephiex4_case8_hurt",
+          "inputname": "Enable"
+        }
+      ]
+    },
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_case8_door",
+      "spawnflags": "8",
+      "rendermode": "1",
+      "renderamt": "0",
+      "parentname": "sephiex4_case8_move",
+      "origin": "-10030.8 8386.27 -1681.65",
+      "angles": "32.45 270 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_1597.vmdl"
+    },
+    {
+      "classname": "trigger_hurt",
+      "targetname": "sephiex4_case8_hurt",
+      "damage": "999999",
+      "filtername": "[PR#]humanos",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "parentname": "sephiex4_case8_door",
+      "origin": "-10029 8230.25 -1782",
+      "angles": "32.45 270 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_hurt_1600.vmdl"
+    },
+    // @ Bahamutend (after bridge rotates)
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_case9_move",
+      "movedistance": "3500",
+      "speed": "1120",
+      "movedir": "0 90 0",
+      "spawnflags": "8",
+      "origin": "-9370.28 4048.45 76",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/sephiroth_c3_1607.vmdl",
+      "io": [
+        {
+          "outputname": "OnFullyOpen",
+          "targetname": "!self",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephiex4_case9_picker",
+          "inputname": "FireUser1"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]espad",
+          "inputname": "PlaySound"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Open"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephiex4_case9_door*",
+          "inputname": "Alpha",
+          "overrideparam": "255"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephiex4_case9_hurt*",
+          "inputname": "Enable"
+        }
+      ]
+    },
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_case9_door1",
+      "spawnflags": "8",
+      "rendermode": "1",
+      "renderamt": "0",
+      "parentname": "sephiex4_case9_move",
+      "origin": "-9370.28 4048.45 92",
+      "angles": "0 90 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_1597.vmdl"
+    },
+    {
+      "classname": "trigger_hurt",
+      "targetname": "sephiex4_case9_hurt1",
+      "damage": "999999",
+      "filtername": "[PR#]humanos",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "parentname": "sephiex4_case9_door1",
+      "origin": "-9372.07 4233.98 92",
+      "angles": "0 90 0", 
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case1ex_hurt_1600.vmdl"
+    },
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_case9_door2",
+      "spawnflags": "8",
+      "rendermode": "1",
+      "renderamt": "0",
+      "parentname": "sephiex4_case9_move",
+      "origin": "-9370.28 4048.45 60",
+      "angles": "0 90 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_1597.vmdl"
+    },
+    {
+      "classname": "trigger_hurt",
+      "targetname": "sephiex4_case9_hurt2",
+      "damage": "999999",
+      "filtername": "[PR#]humanos",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "parentname": "sephiex4_case9_door2",
+      "origin": "-9372.07 4233.98 59",
+      "angles": "0 90 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_hurt_1600.vmdl"
+    },
+    {
+      "classname": "logic_case",
+      "targetname": "sephiex4_case9_picker",
+      "origin": "-9370.28 4048.45 76",
+      "io": [
+        {
+          "outputname": "OnCase01",
+          "targetname": "sephiex4_case9_door1",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnCase02",
+          "targetname": "sephiex4_case9_door2",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "PickRandom"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Kill",
+          "delay": 0.1
+        }
+      ]
+    },
+    // @ Ending (after sephiroth dies)
+    {
+      "classname": "trigger_once",
+      "targetname": "trigger_e4_extreme",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "origin": "-10880 4410 128",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/trigger_n_e2_1492.vmdl",
+      "io": [
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "[PR#]seph_modelox1",
+          "inputname": "Enable"
+        },
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "[PR#]ss_seeyou",
+          "inputname": "PlaySound"
+        },
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "[PR#]corte2",
+          "inputname": "PickRandom"
+        },
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "sephiex4_case10_move",
+          "inputname": "FireUser1",
+          "delay": 2.5
+        },
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "[PR#]sephiroth_c",
+          "inputname": "StartForward",
+          "delay": 3.5
+        },
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "[PR#]espad",
+          "inputname": "PlaySound",
+          "delay": 3.5
+        },
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "[PR#]cortefatal",
+          "inputname": "Break",
+          "delay": 3.7
+        },
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "sephiex4_case11_move",
+          "inputname": "FireUser1",
+          "delay": 4.5
+        }
+      ]
+    },
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_case10_move",
+      "movedistance": "3500",
+      "speed": "1120",
+      "movedir": "0 180 0",
+      "spawnflags": "8",
+      "origin": "-9862 4010.99 71",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/sephiroth_c3_1607.vmdl",
+      "io": [
+        {
+          "outputname": "OnFullyOpen",
+          "targetname": "!self",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephiex4_case10_picker",
+          "inputname": "FireUser1"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]espad",
+          "inputname": "PlaySound"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Open"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephiex4_case10_door*",
+          "inputname": "Alpha",
+          "overrideparam": "255"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephiex4_case10_hurt*",
+          "inputname": "Enable"
+        }
+      ]
+    },
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_case10_door1",
+      "spawnflags": "8",
+      "rendermode": "1",
+      "renderamt": "0",
+      "parentname": "sephiex4_case10_move",
+      "origin": "-9862 4010.99 98",
+      "angles": "0 180 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_1597.vmdl"
+    },
+    {
+      "classname": "trigger_hurt",
+      "targetname": "sephiex4_case10_hurt1",
+      "damage": "999999",
+      "filtername": "[PR#]humanos",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "parentname": "sephiex4_case10_door1",
+      "origin": "-10047.5 4009.2 98",
+      "angles": "0 180 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case1ex_hurt_1600.vmdl"
+    },
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_case10_door2",
+      "spawnflags": "8",
+      "rendermode": "1",
+      "renderamt": "0",
+      "parentname": "sephiex4_case10_move",
+      "origin": "-9862 4010.99 44",
+      "angles": "0 180 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_1597.vmdl"
+    },
+    {
+      "classname": "trigger_hurt",
+      "targetname": "sephiex4_case10_hurt2",
+      "damage": "999999",
+      "filtername": "[PR#]humanos",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "parentname": "sephiex4_case10_door2",
+      "origin": "-10047.5 4009.2 43",
+      "angles": "0 180 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_hurt_1600.vmdl"
+    },
+    {
+      "classname": "logic_case",
+      "targetname": "sephiex4_case10_picker",
+      "origin": "-9862 4010.99 71",
+      "io": [
+        {
+          "outputname": "OnCase01",
+          "targetname": "sephiex4_case10_door1",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnCase02",
+          "targetname": "sephiex4_case10_door2",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "PickRandom"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Kill",
+          "delay": 0.1
+        }
+      ]
+    },
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_case11_move",
+      "movedistance": "3500",
+      "speed": "1120",
+      "movedir": "0 180 0",
+      "spawnflags": "8",
+      "origin": "-9862 4010.99 71",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/sephiroth_c3_1607.vmdl",
+      "io": [
+        {
+          "outputname": "OnFullyOpen",
+          "targetname": "!self",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephiex4_case11_picker",
+          "inputname": "FireUser1"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]espad",
+          "inputname": "PlaySound"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Open"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephiex4_case11_door*",
+          "inputname": "Alpha",
+          "overrideparam": "255"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephiex4_case11_hurt*",
+          "inputname": "Enable"
+        }
+      ]
+    },
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_case11_door1",
+      "spawnflags": "8",
+      "rendermode": "1",
+      "renderamt": "0",
+      "parentname": "sephiex4_case11_move",
+      "origin": "-9862 4010.99 98",
+      "angles": "0 180 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_1597.vmdl"
+    },
+    {
+      "classname": "trigger_hurt",
+      "targetname": "sephiex4_case11_hurt1",
+      "damage": "999999",
+      "filtername": "[PR#]humanos",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "parentname": "sephiex4_case11_door1",
+      "origin": "-10047.5 4009.2 98",
+      "angles": "0 180 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case1ex_hurt_1600.vmdl"
+    },
+    {
+      "classname": "func_movelinear",
+      "targetname": "sephiex4_case11_door2",
+      "spawnflags": "8",
+      "rendermode": "1",
+      "renderamt": "0",
+      "parentname": "sephiex4_case11_move",
+      "origin": "-9862 4010.99 44",
+      "angles": "0 180 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_1597.vmdl"
+    },
+    {
+      "classname": "trigger_hurt",
+      "targetname": "sephiex4_case11_hurt2",
+      "damage": "999999",
+      "filtername": "[PR#]humanos",
+      "spawnflags": "1",
+      "startdisabled": "1",
+      "parentname": "sephiex4_case11_door2",
+      "origin": "-10047.5 4009.2 43",
+      "angles": "0 180 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case2ex_hurt_1600.vmdl"
+    },
+    {
+      "classname": "logic_case",
+      "targetname": "sephiex4_case11_picker",
+      "origin": "-9862 4010.99 71",
+      "io": [
+        {
+          "outputname": "OnCase01",
+          "targetname": "sephiex4_case11_door1",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnCase02",
+          "targetname": "sephiex4_case11_door2",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "PickRandom"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Kill",
+          "delay": 0.1
+        }
+      ]
+    },
+    // Add custom endings for EX4
+    {
+      "classname": "logic_relay",
+      "targetname": "trigger_extreme4_ex",
+      "startdisabled": "1",
+      "origin": "-9424 5952 65",
+      "io": [
+        {
+          "outputname": "OnTrigger",
+          "targetname": "trigger_e3_extreme",
+          "inputname": "Kill",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]ss_only",
+          "inputname": "SetSoundEventName",
+          "overrideparam": "vulcan",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "bridge2_rot",
+          "inputname": "AddOutput",
+          "overrideparam": "OnUser2>sephiex4_case9_move>FireUser1>>4>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "[PR#]bahamutend1",
+          "inputname": "AddOutput",
+          "overrideparam": "OnBreak>trigger_e4_extreme>Enable>>0>1",
+          "delay": 0.01,
+          "timestofire": 1
+        }
+      ]
+    },
     // Add adminroom buttons
     {
       "classname": "func_button",
@@ -9407,6 +12002,22 @@
           "targetname": "[PR#]Global_Level_Counter",
           "inputname": "SetValue",
           "overrideparam": "12"
+        }
+      ]
+    },
+    {
+      "classname": "func_button",
+      "spawnflags": "1024",
+      "speed": "5",
+      "wait": "2",
+      "origin": "-4366 -3636 1136",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/unnamed_1657.vmdl",
+      "io": [
+        {
+          "outputname": "OnPressed",
+          "targetname": "[PR#]Global_Level_Counter",
+          "inputname": "SetValue",
+          "overrideparam": "13"
         }
       ]
     },
