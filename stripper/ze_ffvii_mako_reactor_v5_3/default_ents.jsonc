@@ -4789,7 +4789,7 @@
           "outputname": "OnTrigger",
           "targetname": "[PR#]bahamut_vida",
           "inputname": "AddOutput",
-          "overrideparam": "OnHitMin>cancion_e3rmzs>FireUser1>>0.01>1",
+          "overrideparam": "OnHitMin>cancion_e3rmzs>StartSound>>0.01>1",
           "timestofire": 1
         }
       ]
@@ -6985,14 +6985,14 @@
       "targetname": "teleportarSx4",
       "entitytemplate": "[PR#]WTF",
       "origin": "-9682 7926 -4640",
-      "angles": "0 180 0"
+      "angles": "0 45 0"
     },
     {
       "classname": "env_entity_maker",
       "targetname": "teleportarSx5",
       "entitytemplate": "[PR#]WTF",
       "origin": "-9984 10352 -4932",
-      "angles": "0 45 0"
+      "angles": "0 180 0"
     },
     // Add a custom explosion and teleport ULTIMA to different positions for optional events
     {
@@ -8078,6 +8078,13 @@
           "inputname": "KeyValue",
           "overrideparam": "targetname cancion_e3srzs",
           "delay": 5,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "Door10sReactorButton",
+          "inputname": "AddOutput",
+          "overrideparam": "OnPressed>cancion_e3srzs>KeyValue>targetname cancion_2>0.1>1",
           "timestofire": 1
         },
         {
