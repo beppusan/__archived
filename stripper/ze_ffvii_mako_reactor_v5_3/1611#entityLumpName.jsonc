@@ -60,10 +60,127 @@
             "inputname": "Disable"
           },
           {
+            "outputname": "OnBreak",
+            "targetname": "cortes2w",
+            "inputname": "Disable"
+          },
+          {
             "outputname": "OnUser1",
             "targetname": "!self",
             "inputname": "AddOutput",
             "overrideparam": "OnBreak>trigger_e3_extreme>Enable>>0>-1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnBreak>[PR#]expl3epic2>Stop>>0>-1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnBreak>[PR#]ss_howd>PlaySound>>5>-1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnBreak>[PR#]seph_modelox1>Enable>>5>-1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnBreak>[PR#]puerta5>Open>>5>-1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnBreak>[PR#]pFinal>Close>>5>-1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnBreak>[PR#]espad>PlaySound>>7.5>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnBreak>GUARDIAN_LASER_PICKER>PickRandomShuffle>>7.5>-1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnBreak>[PR#]espad>PlaySound>>8.3>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnBreak>GUARDIAN_LASER_PICKER>PickRandomShuffle>>8.3>-1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnBreak>GUARDIAN_LASER_PICKER>FireUser1>>9>-1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnBreak>[PR#]espad>PlaySound>>9.1>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnBreak>sephi_guardian2_move*>FireUser1>>9.1>-1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnBreak>sephi_guardian2_hurt*>Enable>>9.1>-1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnBreak>[PR#]espad>PlaySound>>9.9>1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnBreak>sephi_guardian3_move*>FireUser1>>9.9>-1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnBreak>sephi_guardian3_hurt*>Enable>>9.9>-1",
             "timestofire": 1
           }
         ]
