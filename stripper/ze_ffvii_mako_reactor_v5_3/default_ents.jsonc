@@ -2010,7 +2010,7 @@
     {
       "classname": "logic_relay",
       "targetname": "Global_EX2_HEALULTIMA",
-      "origin": "-3779 -3540.98 1220.78",
+      "origin": "-3782.75 -3524.98 1220.78",
       "io": [
         {
           "outputname": "OnTrigger",
@@ -2503,7 +2503,7 @@
     {
       "classname": "logic_relay",
       "targetname": "Global_EX2_SPECIALLASER",
-      "origin": "-3779 -3540.98 1220.78",
+      "origin": "-3802.55 -3524.98 1220.78",
       "io": [
         {
           "outputname": "OnTrigger",
@@ -2974,7 +2974,7 @@
     {
       "classname": "logic_relay",
       "targetname": "Global_EX3_HELLZ",
-      "origin": "-3779 -3540.98 1220.78",
+      "origin": "-3822.36 -3524.98 1220.78",
       "io": [
         {
           "outputname": "OnTrigger",
@@ -4101,7 +4101,7 @@
     {
       "classname": "logic_relay",
       "targetname": "Global_EX3_RMZS",
-      "origin": "-3779 -3540.98 1220.78",
+      "origin": "-3841.4 -3524.98 1220.78",
       "io": [
         {
           "outputname": "OnTrigger",
@@ -5090,7 +5090,7 @@
     {
       "classname": "logic_relay",
       "targetname": "Global_EX3_ZOMBIEDEN",
-      "origin": "-3779 -3540.98 1220.78",
+      "origin": "-3860.25 -3524.98 1220.78",
       "io": [
         {
           "outputname": "OnTrigger",
@@ -7439,7 +7439,7 @@
     {
       "classname": "logic_relay",
       "targetname": "Global_EX3_SRZS",
-      "origin": "-3779 -3540.98 1220.78",
+      "origin": "-3782.75 -3508.98 1220.78",
       "io": [
         {
           "outputname": "OnTrigger",
