@@ -46,7 +46,7 @@
         ]
       }
     },
-    // Stop all lasers when sephiroth dies
+    // Stop all lasers & enable extra events when sephiroth dies
     {
       "match": {
         "classname": "func_breakable",
@@ -58,6 +58,12 @@
             "outputname": "OnBreak",
             "targetname": "cortes2sp",
             "inputname": "Disable"
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnBreak>trigger_e3_extreme>Enable>>0>-1"
           }
         ]
       }

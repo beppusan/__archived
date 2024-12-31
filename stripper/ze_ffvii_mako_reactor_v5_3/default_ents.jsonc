@@ -4085,12 +4085,6 @@
         },
         {
           "outputname": "OnTrigger",
-          "targetname": "trigger_n_laser",
-          "inputname": "Enable",
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
           "targetname": "[PR#]especial",
           "inputname": "Kill",
           "timestofire": 1
@@ -4870,7 +4864,7 @@
     // Add laser triggered after entering the banker
     {
       "classname": "trigger_once",
-      "targetname": "trigger_n_laser",
+      "targetname": "trigger_e3_extreme",
       "spawnflags": "1",
       "startdisabled": "1",
       "origin": "-10880 4410 128",
@@ -7307,6 +7301,13 @@
           "targetname": "!self",
           "inputname": "AddOutput",
           "overrideparam": "OnTrigger>bahamutend_props>EnableCollision>>0>1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnUser2",
+          "targetname": "!self",
+          "inputname": "AddOutput",
+          "overrideparam": "OnTrigger>[PR#]bahamutend1>FireUser1>>0.01>1",
           "timestofire": 1
         },
         {
