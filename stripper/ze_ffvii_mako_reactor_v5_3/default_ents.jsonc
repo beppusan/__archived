@@ -984,7 +984,7 @@
         ]
       }
     },
-    // Rework laser firing mechanics & add support for special lasers
+    // Rework laser firing mechanics & rename point_template entities to support custom lasers
     {
       "match": {
         "classname": "point_template",
@@ -1018,32 +1018,10 @@
       "insert": {
         "io": [
           {
-            "outputname": "OnUser1",
-            "targetname": "!self",
-            "inputname": "AddOutput",
-            "overrideparam": "OnTimer>NORMAL_LASER_TEMP>ForceSpawn>>0>-1",
-            "timestofire": 1
-          },
-          {
-            "outputname": "OnUser2",
-            "targetname": "!self",
-            "inputname": "UpperRandomBound",
-            "overrideparam": "2.0",
-            "timestofire": 1
-          },
-          {
-            "outputname": "OnUser2",
-            "targetname": "!self",
-            "inputname": "LowerRandomBound",
-            "overrideparam": "1.0",
-            "timestofire": 1
-          },
-          {
-            "outputname": "OnUser2",
-            "targetname": "!self",
-            "inputname": "AddOutput",
-            "overrideparam": "OnTimer>SPECIAL_LASER_TEMP>ForceSpawn>>0>-1",
-            "timestofire": 1
+            "outputname": "OnTimer",
+            "targetname": "NORMAL_LASER_TEMP",
+            "inputname": "ForceSpawn",
+            "overrideparam": "OnTimer"
           }
         ]
       }
@@ -1058,8 +1036,8 @@
         "io": [
           {
             "outputname": "OnTrigger",
-            "targetname": "SPECIAL_LASER_BRANCH",
-            "inputname": "Test"
+            "targetname": "LASER_TYPES_COUNTER",
+            "inputname": "GetValue"
           },
           {
             "outputname": "OnUser1",
@@ -1530,7 +1508,7 @@
             "outputname": "OnUser2",
             "targetname": "!self",
             "inputname": "AddOutput",
-            "overrideparam": "OnStart>elevator_blocker>Disable>>35>1",
+            "overrideparam": "OnStart>ascensor_push>Disable>>35>1",
             "timestofire": 1
           },
           {
@@ -2318,7 +2296,7 @@
         },
         {
           "outputname": "OnTrigger",
-          "targetname": "SPECIAL_LASER_BRANCH",
+          "targetname": "LASER_TYPES_COUNTER",
           "inputname": "SetValue",
           "overrideparam": "1",
           "timestofire": 1
@@ -2688,20 +2666,67 @@
     },
     // SPECIAL LASERS AT THE END
     {
-      "classname": "logic_branch",
-      "targetname": "SPECIAL_LASER_BRANCH",
-      "initialvalue": "0",
+      "classname": "logic_timer",
+      "targetname": "cortes2sp",
+      "userandomtime": "1",
+      "upperrandombound": "2",
+      "lowerrandombound": "1",
+      "startdisabled": "1",
+      "origin": "-10769 4025.719971 37",
+      "io": [
+        {
+          "outputname": "OnTimer",
+          "targetname": "[PR#]espad",
+          "inputname": "PlaySound"
+        },
+        {
+          "outputname": "OnTimer",
+          "targetname": "SPECIAL_LASER_TEMP",
+          "inputname": "ForceSpawn"
+        }
+      ]
+    },
+    // Add detection for what types of lasers should fire
+    {
+      "classname": "math_counter",
+      "targetname": "LASER_TYPES_COUNTER",
+      "max": "3",
+      "min": "0",
+      "startvalue": "0",
       "origin": "-10769 4025.72 37",
       "io": [
         {
-          "outputname": "OnFalse",
+          "outputname": "OnGetValue",
+          "targetname": "LASER_TYPES_CASE",
+          "inputname": "InValue"
+        }
+      ]
+    },
+    {
+      "classname": "logic_case",
+      "targetname": "LASER_TYPES_CASE",
+      "case01": "1",
+      "origin": "-10769 4025.72 37",
+      "io": [
+        {
+          "outputname": "OnDefault",
           "targetname": "[PR#]cortes2",
-          "inputname": "FireUser1"
+          "inputname": "Enable"
         },
         {
-          "outputname": "OnTrue",
+          "outputname": "OnDefault",
+          "targetname": "cortes2sp",
+          "inputname": "Kill"
+        },
+        {
+          "outputname": "OnCase01",
+          "targetname": "cortes2sp",
+          "inputname": "Enable"
+        },
+        {
+          "outputname": "OnCase01",
           "targetname": "[PR#]cortes2",
-          "inputname": "FireUser2"
+          "inputname": "Kill"
         }
       ]
     },
@@ -2780,7 +2805,7 @@
         },
         {
           "outputname": "OnTrigger",
-          "targetname": "SPECIAL_LASER_BRANCH",
+          "targetname": "LASER_TYPES_COUNTER",
           "inputname": "SetValue",
           "overrideparam": "1",
           "timestofire": 1
@@ -3979,7 +4004,7 @@
         },
         {
           "outputname": "OnTrigger",
-          "targetname": "SPECIAL_LASER_BRANCH",
+          "targetname": "LASER_TYPES_COUNTER",
           "inputname": "SetValue",
           "overrideparam": "1",
           "timestofire": 1
