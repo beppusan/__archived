@@ -1055,7 +1055,7 @@
             "outputname": "OnUser1",
             "targetname": "!self",
             "inputname": "AddOutput",
-            "overrideparam": "OnTrigger>[PR#]bahamut2>SetAniMation>bahamut_entrada>1.92>-1"
+            "overrideparam": "OnTrigger>[PR#]bahamut2>SetAnimation>bahamut_entrada>1.92>-1"
           },
           {
             "outputname": "OnUser1",
@@ -1067,7 +1067,7 @@
             "outputname": "OnUser1",
             "targetname": "!self",
             "inputname": "AddOutput",
-            "overrideparam": "OnTrigger>[PR#]bahamut2>SetAniMation>bahamut_grito>3.8>-1"
+            "overrideparam": "OnTrigger>[PR#]bahamut2>SetAnimation>bahamut_grito>3.8>-1"
           },
           {
             "outputname": "OnUser1",
@@ -1452,7 +1452,7 @@
             "outputname": "OnUser2",
             "targetname": "!self",
             "inputname": "AddOutput",
-            "overrideparam": "OnStart>elevator_blocker>Enable>>1>1",
+            "overrideparam": "OnStart>ascensor_push>Enable>>1>1",
             "timestofire": 1
           },
           {
@@ -6648,7 +6648,7 @@
     },
     {
       "classname": "trigger_push",
-      "targetname": "elevator_blocker",
+      "targetname": "ascensor_push",
       "spawnflags": "1",
       "startdisabled": "1",
       "speed": "400",
