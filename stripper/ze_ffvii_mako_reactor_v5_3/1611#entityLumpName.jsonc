@@ -63,7 +63,8 @@
             "outputname": "OnUser1",
             "targetname": "!self",
             "inputname": "AddOutput",
-            "overrideparam": "OnBreak>trigger_e3_extreme>Enable>>0>-1"
+            "overrideparam": "OnBreak>trigger_e3_extreme>Enable>>0>-1",
+            "timestofire": 1
           }
         ]
       }
