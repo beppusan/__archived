@@ -1518,27 +1518,6 @@
         ]
       }
     },
-    // Allow changing the music after boss dies
-    {
-      "match": {
-        "classname": "point_soundevent",
-        "targetname": "[PR#]cancion_1"
-      },
-      "insert": {
-        "io": [
-          {
-            "outputname": "OnUser1",
-            "targetname": "[PR#]cancion_3",
-            "inputname": "StopSound"
-          },
-          {
-            "outputname": "OnUser1",
-            "targetname": "!self",
-            "inputname": "StartSound"
-          }
-        ]
-      }
-    },
     // Enable activation of elevator trap
     {
       "match": {
@@ -4646,7 +4625,7 @@
           "outputname": "OnTrigger",
           "targetname": "[PR#]bahamut_vida",
           "inputname": "AddOutput",
-          "overrideparam": "OnHitMin>cancion_e3rmzs>FireUser1>>0.01>1",
+          "overrideparam": "OnHitMin>cancion_e3rmzs>StartSound>>0.01>1",
           "timestofire": 1
         }
       ]
