@@ -9385,10 +9385,10 @@
     },
     {
       "classname": "func_button",
-      "origin": "-4366 -3476 1136",
       "spawnflags": "1024",
       "speed": "5",
       "wait": "2",
+      "origin": "-4366 -3476 1136",
       "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/unnamed_1657.vmdl",
       "io": [
         {
@@ -9401,10 +9401,10 @@
     },
     {
       "classname": "func_button",
-      "origin": "-4366 -3508 1136",
       "spawnflags": "1024",
       "speed": "5",
       "wait": "2",
+      "origin": "-4366 -3508 1136",
       "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/unnamed_1657.vmdl",
       "io": [
         {
