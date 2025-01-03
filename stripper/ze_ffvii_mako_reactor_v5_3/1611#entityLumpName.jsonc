@@ -82,6 +82,20 @@
             "outputname": "OnUser2",
             "targetname": "!self",
             "inputname": "AddOutput",
+            "overrideparam": "OnBreak>[PR#]telee_FIX>Disable>>0>-1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnBreak>telee_SRZSfin>Enable>>0>-1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
             "overrideparam": "OnBreak>[PR#]ss_howd>PlaySound>>5>-1",
             "timestofire": 1
           },
@@ -200,14 +214,19 @@
           "outputname": "OnPlayerPickup",
           "targetname": "!activator",
           "inputname": "KeyValue",
-          "overrideparam": "health 100000",
+          "overrideparam": "targetname ZM_SEPHIROTH_OWNER",
           "timestofire": 1
         },
         {
           "outputname": "OnPlayerPickup",
-          "targetname": "!activator",
-          "inputname": "KeyValue",
-          "overrideparam": "targetname ZM_SEPHIROTH_OWNER",
+          "targetname": "sephi_vida_counter",
+          "inputname": "GetValue",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnPlayerPickup",
+          "targetname": "sephi_death_tracker",
+          "inputname": "Enable",
           "timestofire": 1
         },
         {
@@ -225,12 +244,20 @@
         {
           "outputname": "OnPlayerPickup",
           "targetname": "sephi_timer_tracker",
-          "inputname": "Enable"
+          "inputname": "Enable",
+          "timestofire": 1
         },
         {
           "outputname": "OnPlayerPickup",
           "targetname": "ZM_SEPHIROTH_LASERRELAY",
           "inputname": "Enable",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnPlayerPickup",
+          "targetname": "!self",
+          "inputname": "FireUser1",
+          "delay": 0.5,
           "timestofire": 1
         },
         {
@@ -252,8 +279,25 @@
           "outputname": "OnPlayerPickup",
           "targetname": "ZM_SEPHIROTH_ATTACK",
           "inputname": "Activate",
-          "delay": 0.6,
+          "delay": 1.5,
           "timestofire": 1
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephi_death_tracker",
+          "inputname": "CancelPending"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "sephi_death_tracker",
+          "inputname": "Trigger",
+          "delay": 0.01
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "FireUser1",
+          "delay": 0.02
         }
       ]
     },
@@ -271,64 +315,6 @@
       "parentname": "ZM_SEPHIROTH_KNIFE",
       "origin": "-311.000000 -9071.799805 -549.341995",
       "model": "models/syoudous/sethkh1.vmdl"
-    },
-    {
-      "classname": "func_physbox",
-      "targetname": "ZM_SEPHIROTH_HITBOX",
-      "spawnflags": "50176",
-      "health": "20",
-      "disableshadows": "1",
-      "damagefilter": "[PR#]humanos",
-      "parentname": "ZM_SEPHIROTH_PROP",
-      "origin": "-311.000000 -9067.799805 -508.031995",
-      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/bahamutend1_3531.vmdl",
-      "io": [
-        {
-          "outputname": "OnBreak",
-          "targetname": "ZM_SEPHIROTH_PROP",
-          "inputname": "SetAnimation",
-          "overrideparam": "seph_death"
-        },
-        {
-          "outputname": "OnBreak",
-          "targetname": "ZM_SEPHIROTH_PROP",
-          "inputname": "SetDefaultAnimation",
-          "overrideparam": "sephi_desaparecer"
-        },
-        {
-          "outputname": "OnBreak",
-          "targetname": "ZM_SEPHIROTH_BOMBTIMER",
-          "inputname": "Disable"
-        },
-        {
-          "outputname": "OnBreak",
-          "targetname": "sephi_timer_tracker",
-          "inputname": "Disable"
-        },
-        {
-          "outputname": "OnBreak",
-          "targetname": "ZM_SEPHIROTH_ATTACK",
-          "inputname": "Deactivate"
-        },
-        {
-          "outputname": "OnBreak",
-          "targetname": "ZM_SEPHIROTH_OWNER",
-          "inputname": "KeyValue",
-          "overrideparam": "max_health 1"
-        },
-        {
-          "outputname": "OnBreak",
-          "targetname": "ZM_SEPHIROTH_OWNER",
-          "inputname": "KeyValue",
-          "overrideparam": "health 1"
-        },
-        {
-          "outputname": "OnBreak",
-          "targetname": "sephi_ending_win",
-          "inputname": "FireUser1",
-          "delay": 1
-        }
-      ]
     },
     {
       "classname": "game_player_equip",
@@ -358,7 +344,7 @@
       "targetname": "ZM_SEPHIROTH_LASER",
       "entitytemplate": "ZM_SEPHIROTH_LASERTEMP",
       "parentname": "ZM_SEPHIROTH_KNIFE",
-      "origin": "-137.000000 -9071.799805 -517.251995",
+      "origin": "-476.000000 -9071.799805 -517.251995",
       "io": [
         {
           "outputname": "OnUser1",
@@ -608,30 +594,6 @@
           "outputname": "OnCase03",
           "targetname": "ZM_SEPHIROTH_LASERS",
           "inputname": "SetValue",
-          "overrideparam": "2"
-        },
-        {
-          "outputname": "OnCase04",
-          "targetname": "ZM_SEPHIROTH_LASERS",
-          "inputname": "SetValue",
-          "overrideparam": "3"
-        },
-        {
-          "outputname": "OnCase05",
-          "targetname": "ZM_SEPHIROTH_LASERS",
-          "inputname": "SetValue",
-          "overrideparam": "3"
-        },
-        {
-          "outputname": "OnCase06",
-          "targetname": "ZM_SEPHIROTH_LASERS",
-          "inputname": "SetValue",
-          "overrideparam": "3"
-        },
-        {
-          "outputname": "OnCase07",
-          "targetname": "ZM_SEPHIROTH_LASERS",
-          "inputname": "SetValue",
           "overrideparam": "3"
         }
       ]
@@ -671,21 +633,20 @@
         },
         {
           "outputname": "OnHitMin",
+          "targetname": "!self",
+          "inputname": "Disable"
+        },
+        {
+          "outputname": "OnHitMin",
           "targetname": "sephi_ending_lose",
           "inputname": "FireUser1",
           "timestofire": 1
         },
         {
           "outputname": "OnHitMin",
-          "targetname": "ZM_SEPHIROTH_HITBOX",
-          "inputname": "SetHealth",
-          "overrideparam": "9999999999",
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnHitMin",
-          "targetname": "ZM_SEPHIROTH_HEALTH",
-          "inputname": "Disable",
+          "targetname": "ZM_SEPHIROTH_OWNER",
+          "inputname": "KeyValue",
+          "overrideparam": "health 2147483647",
           "timestofire": 1
         },
         {
@@ -699,7 +660,7 @@
           "targetname": "ZM_SEPHIROTH_BOMBTIMER",
           "inputname": "SetMessage",
           "overrideparam": "YOU HAVE FAILED",
-          "delay": 1,
+          "delay": 0.5,
           "timestofire": 1
         },
         {
@@ -707,7 +668,7 @@
           "targetname": "ZM_SEPHIROTH_BOMBTIMER",
           "inputname": "Color",
           "overrideparam": "255 0 0 255",
-          "delay": 1,
+          "delay": 0.5,
           "timestofire": 1
         },
         {
