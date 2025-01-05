@@ -1069,6 +1069,247 @@
         ]
       }
     },
+    // Standardize title particles for the 5 default stages and & start/stop loops to help late joiners identify the current stage
+    {
+      "match": {
+        "classname": "info_particle_system",
+        "targetname": "[PR#]Title_Normal"
+      },
+      "replace": {
+        "effect_name": "particles/mako/title_normal.vpcf"
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "Start"
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "Stop",
+            "delay": 9.98
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "FireUser1",
+            "delay": 10
+          }
+        ]
+      }
+    },
+    {
+      "match": {
+        "classname": "info_particle_system",
+        "targetname": "[PR#]Title_Hard"
+      },
+      "replace": {
+        "effect_name": "particles/mako/title_hard.vpcf"
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "Start"
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "Stop",
+            "delay": 9.98
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "FireUser1",
+            "delay": 10
+          }
+        ]
+      }
+    },
+    {
+      "match": {
+        "classname": "info_particle_system",
+        "targetname": "[PR#]Title_EX1"
+      },
+      "replace": {
+        "effect_name": "particles/mako/title_ex1.vpcf"
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "Start"
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "Stop",
+            "delay": 9.98
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "FireUser1",
+            "delay": 10
+          }
+        ]
+      }
+    },
+    {
+      "match": {
+        "classname": "info_particle_system",
+        "targetname": "[PR#]Title_EX2"
+      },
+      "replace": {
+        "effect_name": "particles/mako/title_ex2.vpcf"
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "Start"
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "Stop",
+            "delay": 9.98
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "FireUser1",
+            "delay": 10
+          }
+        ]
+      }
+    },
+    {
+      "match": {
+        "classname": "info_particle_system",
+        "targetname": "[PR#]Title_ZM"
+      },
+      "replace": {
+        "effect_name": "particles/mako/title_zm.vpcf"
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "Start"
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "Stop",
+            "delay": 9.98
+          },
+          {
+            "outputname": "OnUser1",
+            "targetname": "!self",
+            "inputname": "FireUser1",
+            "delay": 10
+          }
+        ]
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "targetname": "[PR#]Title_Normal",
+            "inputname": "Start"
+          }
+        ]
+      },
+      "replace": {
+        "io": {
+          "inputname": "FireUser1"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "targetname": "[PR#]Title_Normal",
+            "inputname": "Start"
+          }
+        ]
+      },
+      "replace": {
+        "io": {
+          "inputname": "FireUser1"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "targetname": "[PR#]Title_Hard",
+            "inputname": "Start"
+          }
+        ]
+      },
+      "replace": {
+        "io": {
+          "inputname": "FireUser1"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "targetname": "[PR#]Title_EX1",
+            "inputname": "Start"
+          }
+        ]
+      },
+      "replace": {
+        "io": {
+          "inputname": "FireUser1"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "targetname": "[PR#]Title_EX2",
+            "inputname": "Start"
+          }
+        ]
+      },
+      "replace": {
+        "io": {
+          "inputname": "FireUser1"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "targetname": "[PR#]Title_ZM",
+            "inputname": "Start"
+          }
+        ]
+      },
+      "replace": {
+        "io": {
+          "inputname": "FireUser1"
+        }
+      }
+    },
     // Rework laser firing mechanics & rename point_template entities to support custom lasers
     {
       "match": {
@@ -2284,6 +2525,13 @@
         },
         {
           "outputname": "OnTrigger",
+          "targetname": "Title_EX2_HEALULTIMA",
+          "inputname": "FireUser1",
+          "delay": 10,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
           "targetname": "[PR#]materias_3",
           "inputname": "Trigger",
           "delay": 11,
@@ -2777,6 +3025,13 @@
         },
         {
           "outputname": "OnTrigger",
+          "targetname": "Title_EX2_SPECIALLASERS",
+          "inputname": "FireUser1",
+          "delay": 10,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
           "targetname": "[PR#]materias_3",
           "inputname": "Trigger",
           "delay": 12,
@@ -3244,6 +3499,13 @@
           "inputname": "Command",
           "overrideparam": "say ** HELLZ VERSION **",
           "delay": 11,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "Title_EX3_HELLZ",
+          "inputname": "FireUser1",
+          "delay": 10,
           "timestofire": 1
         },
         {
@@ -4375,6 +4637,13 @@
         },
         {
           "outputname": "OnTrigger",
+          "targetname": "Title_EX3_RMZS",
+          "inputname": "FireUser1",
+          "delay": 10,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
           "targetname": "[PR#]materias_3",
           "inputname": "Trigger",
           "delay": 12,
@@ -5381,6 +5650,13 @@
           "inputname": "Command",
           "overrideparam": "say ** ZOMBIEDEN VERSION **",
           "delay": 11,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "Title_EX3_ZOMBIEDEN",
+          "inputname": "FireUser1",
+          "delay": 10,
           "timestofire": 1
         },
         {
@@ -7223,7 +7499,7 @@
       "spawnflags": "4097",
       "startdisabled": "1",
       "origin": "-7743.37 -1057.82 42.9868",
-      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/Tonemap_EX2_5225.vmdl"
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/Tonemap_EX2_5482.vmdl"
     },
     // Add custom props for EX3 ZED
     // @ Inside Reactor
@@ -8221,6 +8497,13 @@
           "inputname": "Command",
           "overrideparam": "say ** SRZS VERSION **",
           "delay": 11,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "Title_EX3_SRZS",
+          "inputname": "FireUser1",
+          "delay": 10,
           "timestofire": 1
         },
         {
@@ -10287,6 +10570,13 @@
           "inputname": "Command",
           "overrideparam": "say ** ZEDDYS VERSION **",
           "delay": 11,
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
+          "targetname": "Title_EX4_ZEDDYS",
+          "inputname": "FireUser1",
+          "delay": 10,
           "timestofire": 1
         },
         {
@@ -12671,6 +12961,189 @@
           "overrideparam": "OnBreak>trigger_e4_extreme>Enable>>0>1",
           "delay": 0.01,
           "timestofire": 1
+        }
+      ]
+    },
+    // Add stage title particles for extra stages
+    {
+      "classname": "info_particle_system",
+      "targetname": "Title_EX2_HEALULTIMA",
+      "start_active": "0",
+      "effect_name": "particles/mako/title_ex2healultima.vpcf",
+      "origin": "-4366 -3700 1097.07",
+      "io": [
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Start"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Stop",
+          "delay": 9.98
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "FireUser1",
+          "delay": 10
+        }
+      ]
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "Title_EX2_SPECIALLASERS",
+      "start_active": "0",
+      "effect_name": "particles/mako/title_ex2special.vpcf",
+      "origin": "-4366 -3732 1097.07",
+      "io": [
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Start"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Stop",
+          "delay": 9.98
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "FireUser1",
+          "delay": 10
+        }
+      ]
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "Title_EX3_HELLZ",
+      "start_active": "0",
+      "effect_name": "particles/mako/title_ex3hellz.vpcf",
+      "origin": "-4366 -3444 1097.07",
+      "io": [
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Start"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Stop",
+          "delay": 9.98
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "FireUser1",
+          "delay": 10
+        }
+      ]
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "Title_EX3_RMZS",
+      "start_active": "0",
+      "effect_name": "particles/mako/title_ex3rmzs.vpcf",
+      "origin": "-4366 -3476 1097.07",
+      "io": [
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Start"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Stop",
+          "delay": 9.98
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "FireUser1",
+          "delay": 10
+        }
+      ]
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "Title_EX3_ZOMBIEDEN",
+      "start_active": "0",
+      "effect_name": "particles/mako/title_ex3zed.vpcf",
+      "origin": "-4366 -3508 1097.07",
+      "io": [
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Start"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Stop",
+          "delay": 9.98
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "FireUser1",
+          "delay": 10
+        }
+      ]
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "Title_EX3_SRZS",
+      "start_active": "0",
+      "effect_name": "particles/mako/title_ex3srzs.vpcf",
+      "origin": "-4366 -3572 1097.07",
+      "io": [
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Start"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Stop",
+          "delay": 9.98
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "FireUser1",
+          "delay": 10
+        }
+      ]
+    },
+    {
+      "classname": "info_particle_system",
+      "targetname": "Title_EX4_ZEDDYS",
+      "start_active": "0",
+      "effect_name": "particles/mako/title_ex4zeddys.vpcf",
+      "origin": "-4366 -3636 1097.07",
+      "io": [
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Start"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "Stop",
+          "delay": 9.98
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "!self",
+          "inputname": "FireUser1",
+          "delay": 10
         }
       ]
     },
