@@ -679,36 +679,6 @@
       "match": {
         "io": [
           {
-            "overrideparam": "say ** Bahamut is in attack position ** Keep firing !! **"
-          }
-        ]
-      },
-      "replace": {
-        "io":
-        {
-          "overrideparam": "say ** Bahamut is in attack position ** Keep firing!! **"
-        }
-      }
-    },
-    {
-      "match": {
-        "io": [
-          {
-            "overrideparam": "say ** Bahamut is going to cast Mega Flare !! Shoot !! **"
-          }
-        ]
-      },
-      "replace": {
-        "io":
-        {
-          "overrideparam": "say ** Bahamut is going to cast Mega Flare!! Shoot!! **"
-        }
-      }
-    },
-    {
-      "match": {
-        "io": [
-          {
             "overrideparam": "say ** ALL COWBELLS HAVE BEEN BROKEN ** BAHAMUT WILL NOT USE MATERIAS **  "
           }
         ]
@@ -1218,21 +1188,6 @@
             "delay": 10
           }
         ]
-      }
-    },
-    {
-      "match": {
-        "io": [
-          {
-            "targetname": "[PR#]Title_Normal",
-            "inputname": "Start"
-          }
-        ]
-      },
-      "replace": {
-        "io": {
-          "inputname": "FireUser1"
-        }
       }
     },
     {
