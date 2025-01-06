@@ -94,7 +94,7 @@
         "targetname": "[PR#]bahamut_vida"
       },
       "replace": {
-        "max": "0"
+        "max": "999999"
       }
     },
     // Standardize message format
