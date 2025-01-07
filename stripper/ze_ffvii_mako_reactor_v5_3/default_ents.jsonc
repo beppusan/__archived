@@ -12955,7 +12955,7 @@
       "targetname": "Title_EX2_HEALULTIMA",
       "start_active": "0",
       "effect_name": "particles/mako/title_ex2healultima.vpcf",
-      "origin": "-4366 -3700 1097.07",
+      "origin": "-4656 -3340 1097.07",
       "io": [
         {
           "outputname": "OnUser1",
@@ -12981,7 +12981,7 @@
       "targetname": "Title_EX2_SPECIALLASERS",
       "start_active": "0",
       "effect_name": "particles/mako/title_ex2special.vpcf",
-      "origin": "-4366 -3732 1097.07",
+      "origin": "-4608 -3340 1097.07",
       "io": [
         {
           "outputname": "OnUser1",
@@ -13033,7 +13033,7 @@
       "targetname": "Title_EX3_RMZS",
       "start_active": "0",
       "effect_name": "particles/mako/title_ex3rmzs.vpcf",
-      "origin": "-4366 -3476 1097.07",
+      "origin": "-4366 -3492 1097.07",
       "io": [
         {
           "outputname": "OnUser1",
@@ -13059,7 +13059,7 @@
       "targetname": "Title_EX3_ZOMBIEDEN",
       "start_active": "0",
       "effect_name": "particles/mako/title_ex3zed.vpcf",
-      "origin": "-4366 -3508 1097.07",
+      "origin": "-4366 -3540 1097.07",
       "io": [
         {
           "outputname": "OnUser1",
@@ -13085,7 +13085,7 @@
       "targetname": "Title_EX3_SRZS",
       "start_active": "0",
       "effect_name": "particles/mako/title_ex3srzs.vpcf",
-      "origin": "-4366 -3572 1097.07",
+      "origin": "-4366 -3636 1097.07",
       "io": [
         {
           "outputname": "OnUser1",
@@ -13111,7 +13111,7 @@
       "targetname": "Title_EX4_ZEDDYS",
       "start_active": "0",
       "effect_name": "particles/mako/title_ex4zeddys.vpcf",
-      "origin": "-4366 -3636 1097.07",
+      "origin": "-4366 -3732 1097.07",
       "io": [
         {
           "outputname": "OnUser1",
@@ -13132,12 +13132,107 @@
         }
       ]
     },
-    // Add adminroom buttons
+    // Add buttons and texts in the adminroom to make extra stage navigation easier
+    // @ EX2+
+    {
+      "classname": "point_worldtext",
+      "justify_vertical": "1",
+      "justify_horizontal": "1",
+      "font_name": "Cambria Bold",
+      "font_size": "140",
+      "world_units_per_pixel": "0.25",
+      "color": "255 255 255 255",
+      "fullbright": "1",
+      "enabled": "1",
+      "message": "EX2+",
+      "origin": "-4736 -3328 1120",
+      "angles": "0 0 90"
+    },
     {
       "classname": "func_button",
       "spawnflags": "1024",
       "speed": "5",
       "wait": "2",
+      "lip": "2",
+      "origin": "-4656 -3334 1140.5",
+      "angles": "0 90 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/unnamed_1657.vmdl",
+      "io": [
+        {
+          "outputname": "OnPressed",
+          "targetname": "[PR#]Global_Level_Counter",
+          "inputname": "SetValue",
+          "overrideparam": "6"
+        }
+      ]
+    },
+    {
+      "classname": "point_worldtext",
+      "justify_vertical": "1",
+      "justify_horizontal": "0",
+      "font_name": "Cambria Bold Italic",
+      "font_size": "100",
+      "world_units_per_pixel": "0.1",
+      "color": "0 255 255 255",
+      "fullbright": "1",
+      "enabled": "1",
+      "message": "HEAL&\n      ULTIMA",
+      "origin": "-4656 -3328 1134",
+      "angles": "90 270 0"
+    },
+    {
+      "classname": "func_button",
+      "spawnflags": "1024",
+      "speed": "5",
+      "wait": "2",
+      "lip": "2",
+      "origin": "-4608 -3334 1140.5",
+      "angles": "0 90 0",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/unnamed_1657.vmdl",
+      "io": [
+        {
+          "outputname": "OnPressed",
+          "targetname": "[PR#]Global_Level_Counter",
+          "inputname": "SetValue",
+          "overrideparam": "7"
+        }
+      ]
+    },
+    {
+      "classname": "point_worldtext",
+      "justify_vertical": "1",
+      "justify_horizontal": "0",
+      "font_name": "Cambria Bold Italic",
+      "font_size": "100",
+      "world_units_per_pixel": "0.1",
+      "color": "255 128 0 255",
+      "fullbright": "1",
+      "enabled": "1",
+      "message": "SPECIAL\n      LASERS",
+      "origin": "-4608 -3328 1134",
+      "angles": "90 270 0"
+    },
+    // @ EX3&4
+    {
+      "classname": "point_worldtext",
+      "justify_vertical": "1",
+      "justify_horizontal": "1",
+      "font_name": "Cambria Bold",
+      "font_size": "140",
+      "world_units_per_pixel": "0.25",
+      "color": "255 255 255 255",
+      "fullbright": "1",
+      "enabled": "1",
+      "message": "EX3\nEX4",
+      "origin": "-4352 -3376 1136",
+      "angles": "0 270 90"
+    },
+    {
+      "classname": "func_button",
+      "spawnflags": "1024",
+      "speed": "5",
+      "wait": "2",
+      "lip": "2",
       "origin": "-4366 -3444 1136",
       "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/unnamed_1657.vmdl",
       "io": [
@@ -13150,11 +13245,26 @@
       ]
     },
     {
+      "classname": "point_worldtext",
+      "justify_vertical": "1",
+      "justify_horizontal": "1",
+      "font_name": "Cambria Bold Italic",
+      "font_size": "150",
+      "world_units_per_pixel": "0.1",
+      "color": "255 128 0 255",
+      "fullbright": "1",
+      "enabled": "1",
+      "message": "HELLZ",
+      "origin": "-4352 -3444 1108",
+      "angles": "0 270 90"
+    },
+    {
       "classname": "func_button",
       "spawnflags": "1024",
       "speed": "5",
       "wait": "2",
-      "origin": "-4366 -3476 1136",
+      "lip": "2",
+      "origin": "-4366 -3492 1136",
       "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/unnamed_1657.vmdl",
       "io": [
         {
@@ -13166,11 +13276,26 @@
       ]
     },
     {
+      "classname": "point_worldtext",
+      "justify_vertical": "1",
+      "justify_horizontal": "1",
+      "font_name": "Cambria Bold Italic",
+      "font_size": "150",
+      "world_units_per_pixel": "0.1",
+      "color": "178 101 255 255",
+      "fullbright": "1",
+      "enabled": "1",
+      "message": "RMZS",
+      "origin": "-4352 -3492 1108",
+      "angles": "0 270 90"
+    },
+    {
       "classname": "func_button",
       "spawnflags": "1024",
       "speed": "5",
       "wait": "2",
-      "origin": "-4366 -3508 1136",
+      "lip": "2",
+      "origin": "-4366 -3540 1136",
       "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/unnamed_1657.vmdl",
       "io": [
         {
@@ -13182,11 +13307,26 @@
       ]
     },
     {
+      "classname": "point_worldtext",
+      "justify_vertical": "1",
+      "justify_horizontal": "1",
+      "font_name": "Cambria Bold Italic",
+      "font_size": "150",
+      "world_units_per_pixel": "0.1",
+      "color": "255 101 255 255",
+      "fullbright": "1",
+      "enabled": "1",
+      "message": "ZED",
+      "origin": "-4352 -3540 1108",
+      "angles": "0 270 90"
+    },
+    {
       "classname": "func_button",
       "spawnflags": "1024",
       "speed": "5",
       "wait": "2",
-      "origin": "-4366 -3572 1136",
+      "lip": "2",
+      "origin": "-4366 -3636 1136",
       "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/unnamed_1657.vmdl",
       "io": [
         {
@@ -13198,11 +13338,26 @@
       ]
     },
     {
+      "classname": "point_worldtext",
+      "justify_vertical": "1",
+      "justify_horizontal": "1",
+      "font_name": "Cambria Bold Italic",
+      "font_size": "150",
+      "world_units_per_pixel": "0.1",
+      "color": "101 255 101 255",
+      "fullbright": "1",
+      "enabled": "1",
+      "message": "SRZS",
+      "origin": "-4352 -3636 1108",
+      "angles": "0 270 90"
+    },
+    {
       "classname": "func_button",
       "spawnflags": "1024",
       "speed": "5",
       "wait": "2",
-      "origin": "-4366 -3636 1136",
+      "lip": "2",
+      "origin": "-4366 -3732 1136",
       "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/unnamed_1657.vmdl",
       "io": [
         {
@@ -13214,36 +13369,18 @@
       ]
     },
     {
-      "classname": "func_button",
-      "spawnflags": "1024",
-      "speed": "5",
-      "wait": "2",
-      "origin": "-4366 -3700 1136",
-      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/unnamed_1657.vmdl",
-      "io": [
-        {
-          "outputname": "OnPressed",
-          "targetname": "[PR#]Global_Level_Counter",
-          "inputname": "SetValue",
-          "overrideparam": "6"
-        }
-      ]
-    },
-    {
-      "classname": "func_button",
-      "spawnflags": "1024",
-      "speed": "5",
-      "wait": "2",
-      "origin": "-4366 -3732 1136",
-      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/unnamed_1657.vmdl",
-      "io": [
-        {
-          "outputname": "OnPressed",
-          "targetname": "[PR#]Global_Level_Counter",
-          "inputname": "SetValue",
-          "overrideparam": "7"
-        }
-      ]
+      "classname": "point_worldtext",
+      "justify_vertical": "1",
+      "justify_horizontal": "1",
+      "font_name": "Cambria Bold Italic",
+      "font_size": "150",
+      "world_units_per_pixel": "0.1",
+      "color": "255 0 0 255",
+      "fullbright": "1",
+      "enabled": "1",
+      "message": "ZDG",
+      "origin": "-4352 -3732 1108",
+      "angles": "0 270 90"
     }
   ]
 }
