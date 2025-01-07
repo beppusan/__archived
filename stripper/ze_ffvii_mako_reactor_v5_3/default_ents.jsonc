@@ -10,8 +10,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "mp_roundtime 10"
         }
       }
@@ -107,8 +106,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** We have reached the core... **"
         }
       }
@@ -122,8 +120,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** ...Cloud is planting the bomb **"
         }
       }
@@ -137,8 +134,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** Bomb has been planted ** Run **"
         }
       }
@@ -152,8 +148,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** Keep shooting! ** We do not know what it can do **"
         }
       }
@@ -167,8 +162,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** Door is opening in 10 seconds **"
         }
       }
@@ -182,8 +176,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** Elevator is leaving in 10 seconds **"
         }
       }
@@ -197,8 +190,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** 10 SECONDS LEFT **"
         }
       }
@@ -212,8 +204,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** 20 SECONDS LEFT **"
         }
       }
@@ -227,8 +218,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** 30 SECONDS LEFT **"
         }
       }
@@ -242,8 +232,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** 40 SECONDS LEFT **"
         }
       }
@@ -257,8 +246,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** 50 SECONDS LEFT **"
         }
       }
@@ -272,8 +260,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** 60 SECONDS LEFT **"
         }
       }
@@ -287,8 +274,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** 70 SECONDS LEFT **"
         }
       }
@@ -302,8 +288,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** 80 SECONDS LEFT **"
         }
       }
@@ -317,8 +302,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** 90 SECONDS LEFT **"
         }
       }
@@ -332,8 +316,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** 100 SECONDS LEFT **"
         }
       }
@@ -347,8 +330,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** 110 SECONDS LEFT **"
         }
       }
@@ -362,8 +344,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** 120 SECONDS LEFT **"
         }
       }
@@ -377,8 +358,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** Door is open **"
         }
       }
@@ -392,8 +372,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** Door is opening in 5 **"
         }
       }
@@ -407,8 +386,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** DOOR OPENS IN 35S **"
         }
       }
@@ -422,8 +400,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** Congratulations! You beat NORMAL mode! ** The challenge begins at HARD mode! **"
         }
       }
@@ -437,8 +414,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** You did it! You won at the HARDEST difficulty ** Time to EXTREME mode ** Good luck! **"
         }
       }
@@ -452,8 +428,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** Do not stop shooting! Do not let him attack! **"
         }
       }
@@ -467,8 +442,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** TIP: GRENADES MAKE A LOT OF DAMAGE ** USE THEM **"
         }
       }
@@ -482,8 +456,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** Bahamut is going to cast Mega Flare!! Shoot!! **"
         }
       }
@@ -497,8 +470,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** Bahamut is in attack position ** Keep firing!! **"
         }
       }
@@ -512,8 +484,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** Bahamut has been defeated! ** Go go! Run upstairs! **"
         }
       }
@@ -527,8 +498,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** BAHAMUT IS GOING TO EXTERMINATE ALL US! ** DO NOT STOP SHOOTING! **"
         }
       }
@@ -542,8 +512,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** The monster is going to attack! **"
         }
       }
@@ -557,8 +526,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** YOU DID IT! YOU WON EXTREME! YOU OWN! **"
         }
       }
@@ -572,8 +540,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** Nice job! You interrupted Sephiroth attack **"
         }
       }
@@ -587,8 +554,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** YOU ARE THE MASTERS OF MAKO REACTOR! **"
         }
       }
@@ -602,8 +568,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** Door is opening in 10 seconds **"
         }
       }
@@ -617,8 +582,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** DOOR OPENS IN 5S **"
         }
       }
@@ -632,8 +596,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** Superior door is opening in 30 seconds **"
         }
       }
@@ -647,8 +610,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** BAHAMUT HAS HEALED 300 HIT POINTS **"
         }
       }
@@ -662,8 +624,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** ULTIMA CAST WILL SUCCEED IN 10 SECONDS **"
         }
       }
@@ -677,8 +638,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** ALL COWBELLS HAVE BEEN BROKEN ** BAHAMUT WILL NOT USE MATERIAS **"
         }
       }
@@ -692,8 +652,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** 1 COWBELL LEFT!!! **"
         }
       }
@@ -707,8 +666,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** It is dead ** Go go! Run upstairs! **"
         }
       }
@@ -722,8 +680,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** CURRENT DIFFICULTY ** >> EXTREME II << **"
         }
       }
@@ -737,8 +694,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** THIS IS A ZM ROUND ** FIND A PLACE AND RESIST ** DO NOT FOLLOW THE ZE PATH **"
         }
       }
@@ -752,8 +708,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** MAP COMPLETED ** ZM ROUND **"
         }
       }
@@ -767,8 +722,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** CURRENT DIFFICULTY ** >> HARD << **"
         }
       }
@@ -782,8 +736,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** CURRENT DIFFICULTY ** >> EXTREME << **"
         }
       }
@@ -797,8 +750,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** CURRENT DIFFICULTY ** >> NORMAL << **"
         }
       }
@@ -812,8 +764,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "say ** Server settings are initialized **"
         }
       }
@@ -827,8 +778,7 @@
         ]
       },
       "replace": {
-        "io":
-        {
+        "io": {
           "overrideparam": "** CURRENT DIFFICULTY ** >> EXTREME II << **"
         }
       }
@@ -1678,7 +1628,7 @@
         "io": [
           {
             "outputname": "OnUser1",
-            "targetname":  "!self",
+            "targetname": "!self",
             "inputname": "AddOutput",
             "overrideparam": "OnPass>sephiex4_case4_move>FireUser1>>0>1",
             "timestofire": 1
@@ -1950,7 +1900,7 @@
         "io": {
           "timestofire": 0
         }
-      }     
+      }
     },
     // Enable activation of elevator trap
     {
@@ -2259,7 +2209,7 @@
       "replace": {
         "classname": "trigger_multiple"
       },
-      "insert" :{
+      "insert": {
         "io": [
           {
             "outputname": "OnUser1",
@@ -2458,6 +2408,58 @@
       "replace": {
         "spawnflags": "0",
         "targetname": "ZM_SEPHIROTH_LASERTEMP"
+      }
+    },
+    //Invalid input for ApplyScore in cs2, replace with AddScore
+    {
+      "match": {
+        "targetname": "[PR#]glassT"
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnBreak",
+            "targetname": "!activator",
+            "inputname": "AddScore",
+            "overrideparam": "100",
+            "delay": 0.1,
+            "targettype": 7
+          }
+        ]
+      }
+    },
+    {
+      "match": {
+        "targetname": "[PR#]trigger_100"
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnStartTouch",
+            "targetname": "!activator",
+            "inputname": "AddScore",
+            "overrideparam": "100",
+            "delay": 0.1,
+            "targettype": 7
+          }
+        ]
+      }
+    },
+    {
+      "match": {
+        "targetname": "[PR#]trigger_n_e2"
+      },
+      "insert": {
+        "io": [
+          {
+            "outputname": "OnStartTouch",
+            "targetname": "!activator",
+            "inputname": "AddScore",
+            "overrideparam": "1000",
+            "delay": 0.1,
+            "targettype": 7
+          }
+        ]
       }
     }
   ],
@@ -12568,7 +12570,7 @@
       "startdisabled": "1",
       "parentname": "sephiex4_case9_door1",
       "origin": "-9372.07 4233.98 92",
-      "angles": "0 90 0", 
+      "angles": "0 90 0",
       "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/case1ex_hurt_1600.vmdl"
     },
     {
@@ -13381,6 +13383,28 @@
       "message": "ZDG",
       "origin": "-4352 -3732 1108",
       "angles": "0 270 90"
+    },
+    //Prevent early triggering of the control room by using glitch to the top of the elevator
+    {
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/puerta_dasc1_955.vmdl",
+      "wait": "1",
+      "targetname": "DontAbuseGlitch",
+      "StartDisabled": "0",
+      "spawnflags": "1",
+      "parentname": "[PR#]puerta_dasc1",
+      "origin": "-9796 8600 224",
+      "classname": "trigger_multiple",
+      "io": [
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "!activator",
+          "inputname": "SetHealth",
+          "overrideparam": "0",
+          "delay": 0,
+          "targettype": 7,
+          "timestofire": -1
+        }
+      ]
     }
   ]
 }
