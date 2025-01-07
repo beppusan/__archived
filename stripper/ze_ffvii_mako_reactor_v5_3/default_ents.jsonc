@@ -8412,6 +8412,13 @@
           "targetname": "sephi_ending_Tnuke",
           "inputname": "Enable",
           "delay": 3
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]Global_Level_Counter",
+          "inputname": "SetValue",
+          "overrideparam": "5",
+          "delay": 3
         }
       ]
     },
