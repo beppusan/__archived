@@ -16,7 +16,7 @@
         }
       }
     },
-    // Reset cvar values changed during the round every new round
+    // Reset player contexts and cvar values changed during the round every new round
     {
       "match": {
         "classname": "logic_auto",
@@ -24,6 +24,11 @@
       },
       "insert": {
         "io": [
+          {
+            "outputname": "OnNewGame",
+            "targetname": "player",
+            "inputname": "ClearContext"
+          },
           {
             "outputname": "OnNewGame",
             "targetname": "[PR#]consola",
@@ -7751,8 +7756,8 @@
         {
           "outputname": "OnStartTouch",
           "targetname": "!activator",
-          "inputname": "KeyValue",
-          "overrideparam": "targetname zed_inside_arena"
+          "inputname": "AddContext",
+          "overrideparam": "SEPHIROTH_ENTRY:1"
         },
         {
           "outputname": "OnStartTouch",
@@ -7807,7 +7812,7 @@
       "targetname": "sephi_afktp",
       "spawnflags": "1",
       "startdisabled": "1",
-      "filtername": "zed_outside_arena",
+      "filtername": "sephi_outside",
       "origin": "-8634.5 2427.5 -4968",
       "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/boom2_984.vmdl",
       "io": [
@@ -7820,9 +7825,9 @@
       ]
     },
     {
-      "classname": "filter_activator_name",
-      "targetname": "zed_outside_arena",
-      "filtername": "zed_inside_arena",
+      "classname": "filter_activator_context",
+      "targetname": "sephi_outside",
+      "responsecontext": "SEPHIROTH_ENTRY",
       "negated": "1",
       "origin": "-9600 -1602 -284"
     },
