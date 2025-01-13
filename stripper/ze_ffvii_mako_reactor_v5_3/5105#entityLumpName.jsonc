@@ -2318,7 +2318,7 @@
           "outputname": "OnCase02",
           "targetname": "case7ex_hurt&0000",
           "inputname": "SetDamage",
-          "overrideparam": "75"
+          "overrideparam": "150"
         },
         {
           "outputname": "OnCase02",
@@ -2339,7 +2339,7 @@
           "outputname": "OnCase02",
           "targetname": "case8ex_hurt&0000",
           "inputname": "SetDamage",
-          "overrideparam": "75"
+          "overrideparam": "150"
         },
         {
           "outputname": "OnCase02",

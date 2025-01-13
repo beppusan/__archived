@@ -91,7 +91,7 @@
       "range": "256",
       "bright_lumens": "304",
       "colortemperature": "6600",
-      "color": "145 255 255",
+      "color": "255 255 0",
       "colormode": "0",
       "directlight": "2",
       "enabled": "1",
@@ -102,15 +102,7 @@
       "brightness_units": "0",
       "clientsideentity": "0",
       "parentname": "case9ex&0000",
-      "origin": "121.429688 -302.432861 67.646461",
-      "io": [
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "SetColor",
-          "overrideparam": "255 255 0"
-        }
-      ]
+      "origin": "121.429688 -302.432861 67.646461"
     },
     {
       "classname": "light_omni2",
@@ -138,7 +130,7 @@
       "range": "256",
       "bright_lumens": "304",
       "colortemperature": "6600",
-      "color": "145 255 255",
+      "color": "255 255 0",
       "colormode": "0",
       "directlight": "2",
       "enabled": "1",
@@ -149,15 +141,7 @@
       "brightness_units": "0",
       "clientsideentity": "0",
       "parentname": "case9ex&0000",
-      "origin": "121.429688 -195.08081 67.646461",
-      "io": [
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "SetColor",
-          "overrideparam": "255 255 0"
-        }
-      ]
+      "origin": "121.429688 -195.08081 67.646461"
     },
     {
       "classname": "light_omni2",
@@ -185,7 +169,7 @@
       "range": "256",
       "bright_lumens": "304",
       "colortemperature": "6600",
-      "color": "145 255 255",
+      "color": "255 255 0",
       "colormode": "0",
       "directlight": "2",
       "enabled": "1",
@@ -196,15 +180,7 @@
       "brightness_units": "0",
       "clientsideentity": "0",
       "parentname": "case9ex&0000",
-      "origin": "121.429688 -78.233398 67.646461",
-      "io": [
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "SetColor",
-          "overrideparam": "255 255 0"
-        }
-      ]
+      "origin": "121.429688 -78.233398 67.646461"
     },
     // MIDDLE
     {
@@ -291,7 +267,7 @@
       "range": "256",
       "bright_lumens": "304",
       "colortemperature": "6600",
-      "color": "145 255 255",
+      "color": "255 255 0",
       "colormode": "0",
       "directlight": "2",
       "enabled": "1",
@@ -302,15 +278,7 @@
       "brightness_units": "0",
       "clientsideentity": "0",
       "parentname": "case10ex&0000",
-      "origin": "121.429688 -302.432861 45.646461",
-      "io": [
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "SetColor",
-          "overrideparam": "255 255 0"
-        }
-      ]
+      "origin": "121.429688 -302.432861 45.646461"
     },
     {
       "classname": "light_omni2",
@@ -338,7 +306,7 @@
       "range": "256",
       "bright_lumens": "304",
       "colortemperature": "6600",
-      "color": "145 255 255",
+      "color": "255 255 0",
       "colormode": "0",
       "directlight": "2",
       "enabled": "1",
@@ -349,15 +317,7 @@
       "brightness_units": "0",
       "clientsideentity": "0",
       "parentname": "case10ex&0000",
-      "origin": "121.429688 -195.08081 45.646461",
-      "io": [
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "SetColor",
-          "overrideparam": "255 255 0"
-        }
-      ]
+      "origin": "121.429688 -195.08081 45.646461"
     },
     {
       "classname": "light_omni2",
@@ -385,7 +345,7 @@
       "range": "256",
       "bright_lumens": "304",
       "colortemperature": "6600",
-      "color": "145 255 255",
+      "color": "255 255 0",
       "colormode": "0",
       "directlight": "2",
       "enabled": "1",
@@ -396,15 +356,7 @@
       "brightness_units": "0",
       "clientsideentity": "0",
       "parentname": "case10ex&0000",
-      "origin": "121.429688 -78.233398 45.646461",
-      "io": [
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "SetColor",
-          "overrideparam": "255 255 0"
-        }
-      ]
+      "origin": "121.429688 -78.233398 45.646461"
     },
     // JUMP
     {
@@ -491,7 +443,7 @@
       "range": "256",
       "bright_lumens": "304",
       "colortemperature": "6600",
-      "color": "145 255 255",
+      "color": "255 255 0",
       "colormode": "0",
       "directlight": "2",
       "enabled": "1",
@@ -502,15 +454,7 @@
       "brightness_units": "0",
       "clientsideentity": "0",
       "parentname": "case11ex&0000",
-      "origin": "121.429688 -302.432861 23.646461",
-      "io": [
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "SetColor",
-          "overrideparam": "255 255 0"
-        }
-      ]
+      "origin": "121.429688 -302.432861 23.646461"
     },
     {
       "classname": "light_omni2",
@@ -538,7 +482,7 @@
       "range": "256",
       "bright_lumens": "304",
       "colortemperature": "6600",
-      "color": "145 255 255",
+      "color": "255 255 0",
       "colormode": "0",
       "directlight": "2",
       "enabled": "1",
@@ -549,15 +493,7 @@
       "brightness_units": "0",
       "clientsideentity": "0",
       "parentname": "case11ex&0000",
-      "origin": "121.429688 -195.08081 23.646461",
-      "io": [
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "SetColor",
-          "overrideparam": "255 255 0"
-        }
-      ]
+      "origin": "121.429688 -195.08081 23.646461"
     },
     {
       "classname": "light_omni2",
@@ -585,7 +521,7 @@
       "range": "256",
       "bright_lumens": "304",
       "colortemperature": "6600",
-      "color": "145 255 255",
+      "color": "255 255 0",
       "colormode": "0",
       "directlight": "2",
       "enabled": "1",
@@ -596,15 +532,7 @@
       "brightness_units": "0",
       "clientsideentity": "0",
       "parentname": "case11ex&0000",
-      "origin": "121.429688 -78.233398 23.646461",
-      "io": [
-        {
-          "outputname": "OnUser1",
-          "targetname": "!self",
-          "inputname": "SetColor",
-          "overrideparam": "255 255 0"
-        }
-      ]
+      "origin": "121.429688 -78.233398 23.646461"
     },
     // Add laser firing logic
     {

@@ -196,6 +196,13 @@
             "inputname": "AddOutput",
             "overrideparam": "OnBreak>sephi_guardian3_hurt*>Enable>>9.9>-1",
             "timestofire": 1
+          },
+          {
+            "outputname": "OnUser3",
+            "targetname": "!self",
+            "inputname": "AddOutput",
+            "overrideparam": "OnBreak>trigger_e4_extreme>Enable>>0>-1",
+            "timestofire": 1
           }
         ]
       }
