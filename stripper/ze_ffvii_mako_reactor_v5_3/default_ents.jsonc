@@ -2451,6 +2451,22 @@
     }
   ],
   "add": [
+    // Fix elevator door behavior to properly kill players when closing
+    {
+      "classname": "trigger_multiple",
+      "spawnflags": "1",
+      "parentname": "[PR#]puerta_dasc1",
+      "origin": "-9796 8600 224",
+      "model": "maps/ze_ffvii_mako_reactor_v5_3/entities/puerta_dasc1_955.vmdl",
+      "io": [
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "!activator",
+          "inputname": "KeyValue",
+          "overrideparam": "health 0"
+        }
+      ]
+    },
     // |=================================|
     // | EXTREME II (HEAL & ULTIMA ONLY) | 
     // |=================================|
