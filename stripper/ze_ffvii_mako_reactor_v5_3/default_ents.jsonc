@@ -2462,8 +2462,8 @@
         {
           "outputname": "OnStartTouch",
           "targetname": "!activator",
-          "inputname": "KeyValue",
-          "overrideparam": "health 0"
+          "inputname": "SetHealth",
+          "overrideparam": "0"
         }
       ]
     },
