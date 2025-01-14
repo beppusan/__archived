@@ -1,6 +1,6 @@
 {
   "modify": [
-    // Extend round time by 1 minute in general
+    // Extend round time by 3 minute in general
     {
       "match": {
         "io": [
@@ -11,7 +11,7 @@
       },
       "replace": {
         "io": {
-          "overrideparam": "mp_roundtime 10"
+          "overrideparam": "mp_roundtime 12"
         }
       }
     },
@@ -5573,13 +5573,6 @@
           "outputname": "OnTrigger",
           "targetname": "[PR#]consola",
           "inputname": "Command",
-          "overrideparam": "mp_roundtime 12",
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]consola",
-          "inputname": "Command",
           "overrideparam": "zr_infect_spawn_time_min 14",
           "timestofire": 1
         },
@@ -6177,12 +6170,6 @@
           "outputname": "OnCase01",
           "targetname": "[PR#]consola",
           "inputname": "Command",
-          "overrideparam": "mp_roundtime 12"
-        },
-        {
-          "outputname": "OnCase01",
-          "targetname": "[PR#]consola",
-          "inputname": "Command",
           "overrideparam": "zr_infect_spawn_time_min 14"
         },
         {
@@ -6190,12 +6177,6 @@
           "targetname": "[PR#]consola",
           "inputname": "Command",
           "overrideparam": "zr_infect_spawn_time_max 14"
-        },
-        {
-          "outputname": "OnDefault",
-          "targetname": "[PR#]consola",
-          "inputname": "Command",
-          "overrideparam": "mp_roundtime 10"
         },
         {
           "outputname": "OnDefault",
