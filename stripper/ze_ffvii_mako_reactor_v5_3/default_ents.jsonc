@@ -932,6 +932,41 @@
         ]
       }
     },
+    // Replace ApplyScore with AddScore using CS2Fixes implementation as game_score was removed in CS2
+    {
+      "match": {
+        "io": [
+          {
+            "targetname": "[PR#]sephikiller",
+            "inputname": "ApplyScore"
+          }
+        ]
+      },
+      "replace": {
+        "io": {
+          "targetname": "!activator",
+          "inputname": "AddScore",
+          "overrideparam": "100"
+        }
+      }
+    },
+    {
+      "match": {
+        "io": [
+          {
+            "targetname": "[PR#]sephikillerEx",
+            "inputname": "ApplyScore"
+          }
+        ]
+      },
+      "replace": {
+        "io": {
+          "targetname": "!activator",
+          "inputname": "AddScore",
+          "overrideparam": "1000"
+        }
+      }
+    },
     // Fix some buttons not locking in ZM round due to the entity name being changed
     {
       "match": {
