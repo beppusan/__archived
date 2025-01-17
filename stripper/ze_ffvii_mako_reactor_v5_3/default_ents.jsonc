@@ -2676,12 +2676,6 @@
         },
         {
           "outputname": "OnTrigger",
-          "targetname": "[PR#]calcVidaM",
-          "inputname": "Kill",
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
           "targetname": "[PR#]zm_prop3",
           "inputname": "Toggle",
           "delay": 3,
@@ -3177,12 +3171,6 @@
         {
           "outputname": "OnTrigger",
           "targetname": "[PR#]cancion_3_extra_2",
-          "inputname": "Kill",
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]calcVidaM",
           "inputname": "Kill",
           "timestofire": 1
         },
@@ -3706,12 +3694,6 @@
         {
           "outputname": "OnTrigger",
           "targetname": "[PR#]cancion_3_extra_2",
-          "inputname": "Kill",
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]calcVidaM",
           "inputname": "Kill",
           "timestofire": 1
         },
@@ -4885,12 +4867,6 @@
         },
         {
           "outputname": "OnTrigger",
-          "targetname": "[PR#]calcVidaM",
-          "inputname": "Kill",
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
           "targetname": "[PR#]zm_prop3",
           "inputname": "Toggle",
           "delay": 3,
@@ -5883,12 +5859,6 @@
         {
           "outputname": "OnTrigger",
           "targetname": "[PR#]cancion_1_extra2",
-          "inputname": "Kill",
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]calcVidaM",
           "inputname": "Kill",
           "timestofire": 1
         },
@@ -8761,12 +8731,6 @@
         },
         {
           "outputname": "OnTrigger",
-          "targetname": "[PR#]calcVidaM",
-          "inputname": "Kill",
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
           "targetname": "[PR#]zm_prop3",
           "inputname": "Toggle",
           "delay": 3,
@@ -10845,12 +10809,6 @@
         {
           "outputname": "OnTrigger",
           "targetname": "[PR#]cancion_3_extra_2",
-          "inputname": "Kill",
-          "timestofire": 1
-        },
-        {
-          "outputname": "OnTrigger",
-          "targetname": "[PR#]calcVidaM",
           "inputname": "Kill",
           "timestofire": 1
         },
