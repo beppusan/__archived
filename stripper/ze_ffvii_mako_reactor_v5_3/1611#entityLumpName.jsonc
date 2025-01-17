@@ -89,6 +89,13 @@
             "outputname": "OnUser2",
             "targetname": "!self",
             "inputname": "AddOutput",
+            "overrideparam": "OnBreak>[PR#]telee>Enable>>0>-1",
+            "timestofire": 1
+          },
+          {
+            "outputname": "OnUser2",
+            "targetname": "!self",
+            "inputname": "AddOutput",
             "overrideparam": "OnBreak>telee_SRZSfin>Enable>>0>-1",
             "timestofire": 1
           },

@@ -2228,7 +2228,7 @@
     {
       "match": {
         "classname": "trigger_teleport",
-        "targetname": "teleporte_masivo3"
+        "targetname": "[PR#]teleporte_masivo3"
       },
       "replace": {
         "classname": "trigger_multiple"
@@ -5762,6 +5762,12 @@
         },
         {
           "outputname": "OnTrigger",
+          "targetname": "[PR#]teleporte_masivo3",
+          "inputname": "FireUser1",
+          "timestofire": 1
+        },
+        {
+          "outputname": "OnTrigger",
           "targetname": "[PR#]especial",
           "inputname": "Kill",
           "timestofire": 1
@@ -7752,7 +7758,7 @@
         },
         {
           "outputname": "OnUser1",
-          "targetname": "teleporte_masivo3",
+          "targetname": "[PR#]teleporte_masivo3",
           "inputname": "Enable",
           "delay": 0.03,
           "timestofire": 1
@@ -9447,6 +9453,12 @@
           "outputname": "OnStartTouch",
           "targetname": "[PR#]telee_FIX",
           "inputname": "Disable",
+          "delay": 11
+        },
+        {
+          "outputname": "OnStartTouch",
+          "targetname": "[PR#]telee",
+          "inputname": "Enable",
           "delay": 11
         }
       ]
