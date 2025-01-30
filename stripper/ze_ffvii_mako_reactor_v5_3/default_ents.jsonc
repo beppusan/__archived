@@ -4664,7 +4664,7 @@
           "outputname": "OnTrigger",
           "targetname": "[PR#]nubes_secundarias",
           "inputname": "Color",
-          "overrideparam": "144 128 192",
+          "overrideparam": "140 114 191",
           "timestofire": 1
         },
         {
