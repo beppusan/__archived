@@ -1710,7 +1710,7 @@
             "outputname": "OnUser1",
             "targetname": "!self",
             "inputname": "AddOutput",
-            "overrideparam": "OnPressed>bridge2_rot>FireUser1>>0>1",
+            "overrideparam": "OnPressed>bridge2_rot_fast>FireUser1>>0>1",
             "timestofire": 1
           },
           {
@@ -1724,7 +1724,7 @@
             "outputname": "OnUser1",
             "targetname": "!self",
             "inputname": "AddOutput",
-            "overrideparam": "OnPressed>bridge2_rot>FireUser2>>40>1",
+            "overrideparam": "OnPressed>bridge2_rot_fast>FireUser2>>40>1",
             "timestofire": 1
           },
           {
@@ -5231,6 +5231,51 @@
           "inputname": "KeyValue",
           "overrideparam": "angles 0 0 0",
           "delay": 3.6
+        }
+      ]
+    },
+    {
+      "classname": "func_rotating",
+      "targetname": "bridge2_rot_fast",
+      "spawnflags": "66",
+      "maxspeed": "75",
+      "origin": "-9355 4864 50",
+      "io": [
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]puente_1",
+          "inputname": "SetParent",
+          "overrideparam": "bridge2_rot_fast"
+        },
+        {
+          "outputname": "OnUser1",
+          "targetname": "[PR#]puente_1",
+          "inputname": "KeyValue",
+          "overrideparam": "angles 0 90 0"
+        },
+        {
+          "outputname": "OnUser2",
+          "targetname": "!self",
+          "inputname": "Start"
+        },
+        {
+          "outputname": "OnUser2",
+          "targetname": "!self",
+          "inputname": "Stop",
+          "delay": 1.5
+        },
+        {
+          "outputname": "OnUser2",
+          "targetname": "[PR#]puente_1",
+          "inputname": "ClearParent",
+          "delay": 1.5
+        },
+        {
+          "outputname": "OnUser2",
+          "targetname": "[PR#]puente_1",
+          "inputname": "KeyValue",
+          "overrideparam": "angles 0 0 0",
+          "delay": 5
         }
       ]
     },
